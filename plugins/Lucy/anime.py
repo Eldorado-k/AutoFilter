@@ -145,7 +145,7 @@ async def get_anime(title):
             "https://graphql.anilist.co",
             json={"query": anime_query, "variables": title},
         )
-        return await r.read()
+        return await r.json()
 
 
 def shorten(description, info="anilist.co"):
@@ -172,8 +172,13 @@ async def anime_search(_, mesg):
     else:
         search = search[1]
     variables = {"search": search}
-    if not (res := json.loads(await get_anime(variables))["data"].get("Media", None)):
-        return await reply.edit("💢 Aucun anime trouvé ! [404]")
+    try:
+        res = (await get_anime(variables))["data"].get("Media", None)
+        if not res:
+            return await reply.edit("💢 Aucun anime trouvé ! [404]")
+    except Exception as e:
+        return await reply.edit(f"❌ Erreur API : {str(e)}")
+
     durasi = (
         get_readable_time(int(res.get("duration") * 60))
         if res.get("duration") is not None
@@ -183,22 +188,26 @@ async def anime_search(_, mesg):
     for x in res["genres"]:
         msg += f"{x}, "
     msg = msg[:-2] + "</code>\n"
+    
     try:
         sd = res["startDate"]
         startdate = str(f"{month_name[sd['month']]} {sd['day']}, {sd['year']}")
     except:
         startdate = "-"
     msg += f"<b>Date de début</b>: <code>{startdate}</code>\n"
+    
     try:
         ed = res["endDate"]
         enddate = str(f"{month_name[ed['month']]} {ed['day']}, {ed['year']}")
     except:
         enddate = "-"
     msg += f"<b>Date de fin</b>: <code>{enddate}</code>\n"
+    
     msg += "<b>Studios</b>: <code>"
     for x in res["studios"]["nodes"]:
         msg += f"{x['name']}, "
     msg = msg[:-2] + "</code>\n"
+    
     info = res.get("siteUrl")
     trailer = res.get("trailer", None)
     if trailer:
@@ -206,16 +215,16 @@ async def anime_search(_, mesg):
         site = trailer.get("site", None)
         if site == "youtube":
             trailer = f"https://youtu.be/{trailer_id}"
+    
     description = (
-        res.get("description")
+        res.get("description", "N/A")
         .replace("<i>", "")
         .replace("</i>", "")
         .replace("<br>", "")
-        if res.get("description") is not None
-        else "N/A"
     )
     msg += shorten(description, info)
-    image = info.replace("anilist.co/anime/", "img.anili.st/media/")
+    image = info.replace("anilist.co/anime/", "img.anili.st/media/") if info else None
+    
     btn = (
         [
             [
@@ -230,10 +239,15 @@ async def anime_search(_, mesg):
     if image:
         try:
             await mesg.reply_photo(
-                image, caption=msg, reply_markup=InlineKeyboardMarkup(btn)
-        except:
+                image, 
+                caption=msg, 
+                reply_markup=InlineKeyboardMarkup(btn)
+            )
+        except Exception as e:
+            print(f"Erreur d'envoi photo: {e}")
             msg += f" [〽️]({image})"
-            await reply.edit(msg)
+            await reply.edit(msg, reply_markup=InlineKeyboardMarkup(btn) if btn else await reply.edit(msg)
     else:
-        await reply.edit(msg)
+        await reply.edit(msg, reply_markup=InlineKeyboardMarkup(btn)) if btn else await reply.edit(msg)
+    
     await reply.delete()
