@@ -26,11 +26,11 @@ async def autoapprove(client, message: ChatJoinRequest):
     if APPROVED == "on":
         invite_link = await client.export_chat_invite_link(chat.id)
         buttons = [
-            [InlineKeyboardButton('• ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇs •', url='https://t.me/codeflix_bots')],
-            [InlineKeyboardButton(f'• ᴊᴏɪɴ {chat.title} •', url=invite_link)]
+            [InlineKeyboardButton('• Rejoindre mes mises à jour •', url='https://t.me/BotZFlix')],
+            [InlineKeyboardButton(f'• Rejoindre {chat.title} •', url=invite_link)]
         ]
         markup = InlineKeyboardMarkup(buttons)
-        caption = f"<b>ʜᴇʏ {user.mention()},\n\nʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴊᴏɪɴ {chat.title} ʜᴀs ʙᴇᴇɴ ᴀᴘᴘʀᴏᴠᴇᴅ.</b>"
+        caption = f"<b>Bonjour {user.mention()},\n\nVotre demande pour rejoindre {chat.title} a été approuvée.</b>"
         
         await client.send_photo(
             chat_id=user.id,
@@ -44,19 +44,19 @@ async def set_reqtime(client, message: Message):
     global APPROVAL_WAIT_TIME
     
     if len(message.command) != 2 or not message.command[1].isdigit():
-        return await message.reply_text("Usage: <code>/reqtime {seconds}</code>")
+        return await message.reply_text("Utilisation : <code>/reqtime {secondes}</code>")
     
     APPROVAL_WAIT_TIME = int(message.command[1])
-    await message.reply_text(f"✅ Request approval time set to <b>{APPROVAL_WAIT_TIME}</b> seconds.")
+    await message.reply_text(f"✅ Temps d'approbation défini à <b>{APPROVAL_WAIT_TIME}</b> secondes.")
 
 @Client.on_message(filters.command("reqmode") & filters.user(ADMINS))
 async def toggle_reqmode(client, message: Message):
     global AUTO_APPROVE_ENABLED
     
     if len(message.command) != 2 or message.command[1].lower() not in ["on", "off"]:
-        return await message.reply_text("Usage: <code>/reqmode on</code> or <code>/reqmode off</code>")
+        return await message.reply_text("Utilisation : <code>/reqmode on</code> ou <code>/reqmode off</code>")
     
     mode = message.command[1].lower()
     AUTO_APPROVE_ENABLED = (mode == "on")
-    status = "enabled ✅" if AUTO_APPROVE_ENABLED else "disabled ❌"
-    await message.reply_text(f"Auto-approval has been {status}.")
+    status = "activé ✅" if AUTO_APPROVE_ENABLED else "désactivé ❌"
+    await message.reply_text(f"L'approbation automatique a été {status}.")

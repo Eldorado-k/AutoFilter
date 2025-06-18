@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta property="og:image" content="https://www.flaticon.com/premium-icon/icons/svg/2626/2626281.svg" itemprop="thumbnailUrl">
@@ -9,6 +9,33 @@
     <link rel="stylesheet" type='text/css' href="https://drive.google.com/uc?export=view&id=1pVLG4gZy7jdow3sO-wFS06aP_A9QX0O6">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
+    <style>
+        body.cyber {
+            background-image: url('https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2232&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        body.cyber::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 
 <body class='cyber'>
@@ -22,14 +49,14 @@
     <div class="container">
         <a href="{{file_url}}">
             <button class="cybr-btn">
-                Download
+                Télécharger
                 <span aria-hidden>_</span>
-                <span aria-hidden class="cybr-btn__glitch">_404 Error</span>
+                <span aria-hidden class="cybr-btn__glitch">_404 Erreur</span>
                 <span aria-hidden class="cybr-btn__tag">_%s</span>
             </button>
         </a>
     </div>
-	<script>
+    <script>
         const body = document.querySelector('body');
         const title = document.querySelector('#file-name');
         const footer = document.querySelector('footer');

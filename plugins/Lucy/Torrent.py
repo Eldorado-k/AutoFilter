@@ -4,26 +4,45 @@ import requests
 from info import LOG_CHANNEL
 
 @Client.on_message(filters.command("torrent"))
-async def google_text(client, message):
+async def torrent_search(client, message):
     try:
+        # Récupérer la requête de l'utilisateur
         user_query = message.text.split()[1:]
         if not user_query:
-            await message.reply_text("please provide a movie name, <code>/torent your name</code>")
+            await message.reply_text("Veuillez fournir un nom de film, <code>/torrent nom du film</code>")
             return 
-        encoded_query = " ".join(user_query).replace(" ", "")
+        
+        # Encoder la requête pour l'URL
+        encoded_query = " ".join(user_query).replace(" ", "%20")
 
+        # Faire la requête à l'API Torrent
         response = requests.get(f"https://api.safone.dev/torrent?query={encoded_query}&limit=1")
+        
         if response.status_code == 200:
             data = response.json()
+            
+            # Vérifier si des résultats existent
+            if not data['results']:
+                await message.reply_text("Aucun torrent trouvé pour cette recherche.")
+                return
+                
             torrent_r = data['results'][0]
           
-            tor = f"**File Name:**<code>{torrent_r['name']}</code>\n\n"\
-                  f"**🔖 size:** <code>{torrent_r['size']}</code>\n" \
-                  f"**🔗 type:** {torrent_r['type']}\n" \
-                  f"**✨ language:** <code>{torrent_r['language']}</code>\n" \
-                  f"**📡 magnetLink:** <code>{torrent_r['magnetLink']}</code>"
+            # Formater la réponse
+            tor = f"**📁 Nom du fichier:** <code>{torrent_r['name']}</code>\n\n"\
+                  f"**📏 Taille:** <code>{torrent_r['size']}</code>\n" \
+                  f"**📌 Type:** <code>{torrent_r['type']}</code>\n" \
+                  f"**🌐 Langue:** <code>{torrent_r['language']}</code>\n" \
+                  f"**🧲 Lien Magnet:** \n<code>{torrent_r['magnetLink']}</code>"
     
+            # Envoyer les résultats
             await client.send_message(message.chat.id, tor)
-            await client.send_message(LOG_CHANNEL, text=f"#ᴛᴏʀᴇɴᴛ\nʜᴇʏ {message.from_user.mention}\nʀᴇǫᴜᴇsᴛ ɪs {user_query}")
+            
+            # Logger dans le canal de logs
+            log_msg = f"#TORRENT\nUtilisateur: {message.from_user.mention}\nRecherche: {' '.join(user_query)}"
+            await client.send_message(LOG_CHANNEL, text=log_msg)
+            
+    except IndexError:
+        await message.reply_text("Format incorrect. Utilisez: <code>/torrent nom du film</code>")
     except Exception as e:
-       await message.reply_text(f"An error occurred: {e}")
+        await message.reply_text(f"Une erreur est survenue: {str(e)}")

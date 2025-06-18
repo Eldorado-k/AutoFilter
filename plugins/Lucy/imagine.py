@@ -10,7 +10,7 @@ async def generate_image(client, message):
     prompt = ' '.join(message.command[1:])
 
     # Send a message to inform the user to wait
-    wait_message = await message.reply_text("Please wait while I generate the image...")
+    wait_message = await message.reply_text("Veuillez patienter pendant que je génère l'image...")
     StartTime = time.time()
 
 
@@ -42,13 +42,13 @@ async def generate_image(client, message):
                 await wait_message.delete()
 
                 # Send the generated image
-                await message.reply_photo(destination_path, caption=f"Here's the generated image!\nTime Taken: {time.time() - StartTime}")
+                await message.reply_photo(destination_path, caption=f"Voici l'image générée !\nTemps pris : {time.time() - StartTime}")
 
                 # Delete the generated image after sending
                 os.remove(destination_path)
             else:
-                await wait_message.edit_text("Failed to generate the image.")
+                await wait_message.edit_text("Échec de la génération de l'image.")
         except Exception as e:
-            await wait_message.edit_text("Error: {}".format(e))
+            await wait_message.edit_text("Erreur : {}".format(e))
     else:
-        await wait_message.edit_text("Error: {}".format(response.status_code))
+        await wait_message.edit_text("Erreur : {}".format(response.status_code))

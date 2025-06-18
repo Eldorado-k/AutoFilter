@@ -1,616 +1,599 @@
 class script(object):
-    START_TXT = """<b>ʜᴇʏ {}, {}\n\nɪ ᴀᴍ ᴛʜᴇ ᴍᴏꜱᴛ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ, ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴇɴᴊᴏʏ!\n\n<blockquote>‣ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/codeflix_bots">ʏᴀᴛᴏ</a></blockquote></b>"""
+    START_TXT = """<b>Salut {}, {}\n\nJe Suis Marsh ƈɾσɯ V2.0 je suis un puissant bot Marsh ƈɾσɯ Je peux vous fournir des Films Et des Séries de tout genre mais je peux maintenant vous fournir des Cartoons (dessin animés). Rejoins mon canal et mon Groupe puis profite de ta journée!\n\n<blockquote>‣ Maintenu par : <a href="https://t.me/BotZFlix">BotZFlix</a></blockquote></b>"""
 
-    GSTART_TXT = """<b>ʜᴇʏ {}, {}\n\nɪ ᴀᴍ ᴛʜᴇ ᴍᴏꜱᴛ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ, ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴇɴᴊᴏʏ!\n\n<blockquote>‣ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/codeflix_bots">ʏᴀᴛᴏ</a></blockquote></b>"""
+    GSTART_TXT = """<b>Salut {}, {}\n\nJe suis le bot de filtrage automatique le plus puissant avec des fonctionnalités premium, ajoute-moi simplement à ton groupe et profite !\n\n<blockquote>‣ Maintenu par : <a href="https://t.me/BotZFlix">BotZFlix</a></blockquote></b>"""
     
-    HELP_TXT = """» ᴡʜᴇʀᴇ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴏᴘᴇɴ ᴛʜᴇ sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ?."""
+    HELP_TXT = """» Où veux-tu ouvrir le menu des paramètres ?"""
 
-    ABOUT_TXT = """<blockquote><b>❍ ᴍʏ ɴᴀᴍᴇ : <a href="https://t.me/Lucy_Filter_bot">ʟᴜᴄʏ ʙᴏᴛ</a>
-❍ ᴄʀᴇᴀᴛᴏʀ : <a href="https://t.me/sewxiy">Subaru</a>
-❍ ʟɪʙʀᴀʀʏ : <a href="https://pyrogram.org/">ᴘʏʀᴏɢʀᴀᴍ</a>
-❍ ʟᴀɴɢᴜᴀɢᴇ : <a href="https://www.python.org/">ᴘʏᴛʜᴏɴ</a>
-❍ ᴅᴀᴛᴀʙᴀꜱᴇ : <a href="https://www.mongodb.com/">ᴍᴏɴɢᴏ ᴅʙ</a>
-❍ ʜᴏꜱᴛᴇᴅ ᴏɴ : <a href="https://t.me/codeflix_bots">ᴠᴘs</a>
-❍ ʙᴜɪʟᴅ ꜱᴛᴀᴛᴜꜱ : ᴠ3 [ᴀᴅᴠᴀɴᴄᴇ]</blockquote>
+    ABOUT_TXT = """<blockquote><b>❍ Mon nom : <a href="https://t.me/Marsh_Mello_bot">Lucy Bot</a>
+❍ Créateur : <a href="https://t.me/Kingcey">Kingcey</a>
+❍ Bibliothèque : <a href="https://pyrogram.org/">Pyrogram</a>
+❍ Langage : <a href="https://www.python.org/">Python</a>
+❍ Base de données : <a href="https://www.mongodb.com/">Mongo DB</a>
+❍ Hébergé sur : <a href="https://t.me/Neko_Crunchy">Vercel</a>
+❍ Statut de version : v3 [Avancé]</blockquote>
 
-➻ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ғᴏʀ ɢᴇᴛᴛɪɴɢ ʙᴀsɪᴄ ʜᴇʟᴩ ᴀɴᴅ ɪɴғᴏ ᴀʙᴏᴜᴛ ᴍᴇ.</b>"""
+➻ Clique sur les boutons ci-dessous pour obtenir de l'aide de base et des informations sur moi.</b>"""
         
     MAIN_TXT = """
-ʜᴇʀᴇ ɪꜱ ʜᴇʟᴘ ᴍᴇɴᴜ
+Voici le menu d'aide
 """
 
-    SUPPORT_TXT = """ᴛʜᴇsᴇ ᴀʀᴇ ᴍʏ sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ɢʀᴏᴜᴘ. ɪғ ᴀɴʏ ᴘʀᴏʙʟᴇᴍ, ʀᴇᴘᴏʀᴛ ᴛᴏ ᴛʜᴇ ᴀᴅᴍɪɴ
-ᴘᴏᴡᴇʀᴇᴅ ʙʏ - @codeflix_bots"""
+    SUPPORT_TXT = """Voici mes canaux et groupes de support. Si tu as un problème, signale-le à l'admin.
+Propulsé par - @BotZFlix"""
         
-    HELPS_TXT = """» ᴡʜᴇʀᴇ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴏᴘᴇɴ ᴛʜᴇ sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ?."""
+    HELPS_TXT = """» Où veux-tu ouvrir le menu des paramètres ?"""
     
     CHANNELS = """
-<b>๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟs ᴀɴᴅ ɢᴇᴛ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴜs.
+<b>๏ Clique sur les boutons ci-dessous pour rejoindre les canaux et obtenir plus d'informations sur nous.
 
-ɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ɪɴ ˹ʟᴜᴄʏ˼ ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ˼, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴀᴛ <a href='https://t.me/+DnmZbLjS0iw0YWI1'>sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ</a>.</b>"""
+Si tu trouves un bug ou si tu veux donner ton avis sur le bot, merci de le signaler au <a href='https://t.me/BotZFlixsupport'>groupe de support</a>.</b>"""
 
     
-    STATUS_TXT = """<b>╭────[ 🗃 ᴅᴀᴛᴀʙᴀsᴇ 1 🗃 ]────⍟</b>
+    STATUS_TXT = """<b>╭────[ 🗃 Base de données 1 🗃 ]────⍟</b>
 │
-├⋟ 🕵️ ᴀʟʟ ᴜsᴇʀs ⋟ <code>{}</code>
-├⋟ 🏹 ᴀʟʟ ɢʀᴏᴜᴘs ⋟ <code>{}</code>
-├⋟ ❤️‍🔥 Pʀᴇᴍɪᴜᴍ Usᴇʀs ⋟ <code>{}</code>
-├⋟ 🎬 ᴀʟʟ ꜰɪʟᴇs ⋟ <code>{}</code>
-├⋟ 📽️ ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ ⋟ <code>{}</code>
-├⋟ 🏷️ ꜰʀᴇᴇ sᴛᴏʀᴀɢᴇ ⋟ <code>{}</code>
+├⋟ 🕵️ Tous les utilisateurs ⋟ <code>{}</code>
+├⋟ 🏹 Tous les groupes ⋟ <code>{}</code>
+├⋟ ❤️‍🔥 Utilisateurs Premium ⋟ <code>{}</code>
+├⋟ 🎬 Tous les fichiers ⋟ <code>{}</code>
+├⋟ 📽️ Stockage utilisé ⋟ <code>{}</code>
+├⋟ 🏷️ Stockage libre ⋟ <code>{}</code>
 │
-<b>├────[ 🗳 ᴅᴀᴛᴀʙᴀsᴇ 2 🗳 ]────⍟</b>   
+<b>├────[ 🗳 Base de données 2 🗳 ]────⍟</b>   
 │
-├⋟ 🎬 ᴀʟʟ ꜰɪʟᴇs ➤ <code>{}</code>
-├⋟ 🎤 size ➤ <code>{}</code>
-├⋟ 🎭 free ➤ <code>{}</code>
+├⋟ 🎬 Tous les fichiers ➤ <code>{}</code>
+├⋟ 🎤 Taille ➤ <code>{}</code>
+├⋟ 🎭 Libre ➤ <code>{}</code>
 │
-<b>├────[ 🤖 ʙᴏᴛ ᴅᴇᴛᴀɪʟs 🤖 ]────⍟</b>   
+<b>├────[ 🤖 Détails du bot 🤖 ]────⍟</b>   
 │
-├⋟ ⏱ Bᴏᴛ Uᴘᴛɪᴍᴇ ➤ {}
-├⋟ 🌐 ʀᴀᴍ ➤ <code>{}%</code>
-├⋟ 🤖 ᴄᴘᴜ ➤ <code>{}%</code>   
+├⋟ ⏱ Temps de fonctionnement ➤ {}
+├⋟ 🌐 RAM ➤ <code>{}%</code>
+├⋟ 🤖 CPU ➤ <code>{}%</code>   
 │
-├⋟ 🗼 Bᴏᴛʜ DBs Fɪʟᴇs: <code>{}</code>
+├⋟ 🗼 Fichiers dans les deux DBs: <code>{}</code>
 │
 <b>╰─────────────────────⍟</b>"""
 
-    LOG_TEXT_G = """#NewGroup
+    LOG_TEXT_G = """#NouveauGroupe
     
-Gʀᴏᴜᴘ = {}
-Iᴅ = <code>{}</code>
-Tᴏᴛᴀʟ Mᴇᴍʙᴇʀs = <code>{}</code>
-Aᴅᴅᴇᴅ Bʏ - {}
+Groupe = {}
+ID = <code>{}</code>
+Nombre total de membres = <code>{}</code>
+Ajouté par - {}
 """
 
-    LOG_TEXT_P = """#NewUser
+    LOG_TEXT_P = """#NouvelUtilisateur
     
-Iᴅ - <code>{}</code>
-Nᴀᴍᴇ - {}
+ID - <code>{}</code>
+Nom - {}
 """
 
-    ALRT_TXT = """ʜᴇʟʟᴏ {},
-ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ,
-ʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ..."""
+    ALRT_TXT = """Salut {},
+ce n'est pas ta demande de film,
+demande le tien..."""
 
-    OLD_ALRT_TXT = """ʜᴇʏ {},
-ʏᴏᴜ ᴀʀᴇ ᴜꜱɪɴɢ ᴏɴᴇ ᴏꜰ ᴍʏ ᴏʟᴅ ᴍᴇꜱꜱᴀɢᴇꜱ, 
-ᴘʟᴇᴀꜱᴇ ꜱᴇɴᴅ ᴛʜᴇ ʀᴇǫᴜᴇꜱᴛ ᴀɢᴀɪɴ."""
+    OLD_ALRT_TXT = """Hey {},
+tu utilises un de mes anciens messages,
+merci de renvoyer la demande."""
 
-    CUDNT_FND = """<b>😴 ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ ɴᴏᴛ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ.\n\n<blockquote>» ᴍᴀʏʙᴇ ᴛᴜɴᴇ ɢᴀʟᴀᴛ ʟɪᴋʜᴀ ʜᴏ, ᴩᴀᴅʜᴀɪ - ʟɪᴋʜᴀɪ ᴛᴏʜ ᴋᴀʀᴛᴀ ɴᴀʜɪ ᴛᴜ !</blockquote></b>"""
+    CUDNT_FND = """<b>😴 Ta demande n'a pas été trouvée dans ma base de données.\n\n<blockquote>» Peut-être que tu as mal orthographié, tu ne fais pas tes devoirs non plus !</blockquote></b>"""
 
-    I_CUDNT = """<b>sᴏʀʀʏ ɴᴏ ꜰɪʟᴇs ᴡᴇʀᴇ ꜰᴏᴜɴᴅ ꜰᴏʀ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ {}
+    I_CUDNT = """<b>Désolé, aucun fichier trouvé pour ta demande {}
 
-» ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ ɪɴ ɢᴏᴏɢʟᴇ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ 
+» Vérifie ton orthographe sur Google et réessaye
 
-» ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ 
+» Format pour les demandes de films :
 
-‣ ᴇxᴀᴍᴘʟᴇ : Jawan or Jawan 2023 
-‣ ꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ 👇
-‣ ᴇxᴀᴍᴘʟᴇ : Loki S01 or Loki S01E04 or Lucifer S03E24
+‣ Exemple : Straw ou Straw 2025 
+‣ Format pour les séries 👇
+‣ Exemple : Loki S01 ou Loki S01E04 ou Lucifer S03E24
 
-» ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)</b>"""
+» N'utilise pas ➠ ':(!,./)</b>"""
     
-    I_CUD_NT = """<b>ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}.
+    I_CUD_NT = """<b>Je n'ai trouvé aucun film lié à {}.
 
-» ᴍᴏᴠɪᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ʀᴇᴀsᴏɴ :
+» Raisons possibles :
 
-1) ᴏ.ᴛ.ᴛ ᴏʀ ᴅᴠᴅ ɴᴏᴛ ʀᴇʟᴇᴀsᴇᴅ
-2) ᴛʏᴘᴇ ɴᴀᴍᴇ ᴡɪᴛʜ ʏᴇᴀʀ
-3) ᴍᴏᴠɪᴇ ɪs ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴛʜᴇ ᴅᴀᴛᴀʙᴀsᴇ ʀᴇᴘᴏʀᴛ ᴛᴏ ᴀᴅᴍɪɴs</b>"""
+1) Pas encore sorti en O.T.T. ou DVD
+2) Indique le nom avec l'année
+3) Le film n'est pas disponible dans la base de données, signale aux admins</b>"""
 
-    MVE_NT_FND = """<b>😴 ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ ɴᴏᴛ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ.\n\n<blockquote>» ᴍᴀʏʙᴇ ᴛᴜɴᴇ ɢᴀʟᴀᴛ ʟɪᴋʜᴀ ʜᴏ, ᴩᴀᴅʜᴀɪ - ʟɪᴋʜᴀɪ ᴛᴏʜ ᴋᴀʀᴛᴀ ɴᴀʜɪ ᴛᴜ !</blockquote></b>"""
+    MVE_NT_FND = """<b>😴 Ta demande n'a pas été trouvée dans ma base de données.\n\n<blockquote>» Peut-être que tu as mal orthographié, tu ne fais pas tes devoirs non plus !</blockquote></b>"""
     
 
-    TOP_ALRT_MSG = """ꜱᴇᴀʀᴄʜɪɴɢ ꜰᴏʀ ǫᴜᴇʀʏ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀꜱᴇ..."""
+    TOP_ALRT_MSG = """Recherche de la demande dans ma base de données..."""
 
-    MELCOW_ENG = """<b>👋 ʜᴇʏ {},\n\n🍁 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ\n🌟 {} \n\n🔍 ʜᴇʀᴇ ʏᴏᴜ ᴄᴀɴ ꜱᴇᴀʀᴄʜ ʏᴏᴜʀ ꜰᴀᴠᴏᴜʀɪᴛᴇ ᴍᴏᴠɪᴇꜱ ᴏʀ ꜱᴇʀɪᴇꜱ ʙʏ ᴊᴜꜱᴛ ᴛʏᴘɪɴɢ ɪᴛ'ꜱ ɴᴀᴍᴇ 🔎\n\n⚠️ ɪꜰ ʏᴏᴜ'ʀᴇ ʜᴀᴠɪɴɢ ᴀɴʏ ᴘʀᴏʙʟᴇᴍ ʀᴇɢᴀʀᴅɪɴɢ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴏʀ ꜱᴏᴍᴇᴛʜɪɴɢ ᴇʟꜱᴇ ᴛʜᴇɴ ᴍᴇꜱꜱᴀɢᴇ ʜᴇʀᴇ 👇</b>"""
+    MELCOW_ENG = """<b>👋 Salut {},\n\n🍁 Bienvenue dans\n🌟 {} \n\n🔍 Ici tu peux rechercher tes films ou séries préférés en tapant simplement leur nom 🔎\n\n⚠️ Si tu as un problème concernant le téléchargement ou autre, message ici 👇</b>"""
     
     DISCLAIMER_TXT = """
-<b>ᴛʜɪꜱ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ.
+<b>Ceci est un projet open source.
 
-ᴀʟʟ ᴛʜᴇ ꜰɪʟᴇꜱ ɪɴ ᴛʜɪꜱ ʙᴏᴛ ᴀʀᴇ ꜰʀᴇᴇʟʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛʜᴇ ɪɴᴛᴇʀɴᴇᴛ ᴏʀ ᴘᴏꜱᴛᴇᴅ ʙʏ ꜱᴏᴍᴇʙᴏᴅʏ ᴇʟꜱᴇ. ᴊᴜꜱᴛ ꜰᴏʀ ᴇᴀꜱʏ ꜱᴇᴀʀᴄʜɪɴɢ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ɪɴᴅᴇxɪɴɢ ꜰɪʟᴇꜱ ᴡʜɪᴄʜ ᴀʀᴇ ᴀʟʀᴇᴀᴅʏ ᴜᴘʟᴏᴀᴅᴇᴅ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ. ᴡᴇ ʀᴇꜱᴘᴇᴄᴛ ᴀʟʟ ᴛʜᴇ ᴄᴏᴘʏʀɪɢʜᴛ ʟᴀᴡꜱ ᴀɴᴅ ᴡᴏʀᴋꜱ ɪɴ ᴄᴏᴍᴘʟɪᴀɴᴄᴇ ᴡɪᴛʜ ᴅᴍᴄᴀ ᴀɴᴅ ᴇᴜᴄᴅ. ɪꜰ ᴀɴʏᴛʜɪɴɢ ɪꜱ ᴀɢᴀɪɴꜱᴛ ʟᴀᴡ ᴘʟᴇᴀꜱᴇ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ꜱᴏ ᴛʜᴀᴛ ɪᴛ ᴄᴀɴ ʙᴇ ʀᴇᴍᴏᴠᴇᴅ ᴀꜱᴀᴘ. ɪᴛ ɪꜱ ꜰᴏʀʙɪʙʙᴇɴ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ, ꜱᴛʀᴇᴀᴍ, ʀᴇᴘʀᴏᴅᴜᴄᴇ, ꜱʜᴀʀᴇ ᴏʀ ᴄᴏɴꜱᴜᴍᴇ ᴄᴏɴᴛᴇɴᴛ ᴡɪᴛʜᴏᴜᴛ ᴇxᴘʟɪᴄɪᴛ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ꜰʀᴏᴍ ᴛʜᴇ ᴄᴏɴᴛᴇɴᴛ ᴄʀᴇᴀᴛᴏʀ ᴏʀ ʟᴇɢᴀʟ ᴄᴏᴘʏʀɪɢʜᴛ ʜᴏʟᴅᴇʀ. ɪꜰ ʏᴏᴜ ʙᴇʟɪᴇᴠᴇ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴠɪᴏʟᴀᴛɪɴɢ ʏᴏᴜʀ ɪɴᴛᴇʟʟᴇᴄᴛᴜᴀʟ ᴘʀᴏᴘᴇʀᴛʏ, ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ʀᴇꜱᴘᴇᴄᴛɪᴠᴇ ᴄʜᴀɴɴᴇʟꜱ ꜰᴏʀ ʀᴇᴍᴏᴠᴀʟ. ᴛʜᴇ ʙᴏᴛ ᴅᴏᴇꜱ ɴᴏᴛ ᴏᴡɴ ᴀɴʏ ᴏꜰ ᴛʜᴇꜱᴇ ᴄᴏɴᴛᴇɴᴛꜱ, ɪᴛ ᴏɴʟʏ ɪɴᴅᴇx ᴛʜᴇ ꜰɪʟᴇꜱ ꜰʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ. 
-</b>"""
+Tous les fichiers de ce bot sont librement disponibles sur Internet ou postés par quelqu'un d'autre. Juste pour faciliter la recherche, ce bot indexe les fichiers qui sont déjà uploadés sur Telegram. Nous respectons toutes les lois sur le copyright et travaillons en conformité avec le DMCA et l'EUCD. Si quelque chose est illégal, contacte-moi pour que je puisse le supprimer rapidement. Il est interdit de télécharger, streamer, reproduire, partager ou consommer du contenu sans permission explicite du créateur ou du détenteur des droits. Si tu penses que ce bot viole ta propriété intellectuelle, contacte les canaux respectifs pour suppression. Le bot ne possède aucun de ces contenus, il indexe seulement les fichiers depuis Telegram.</b>"""
 
-    USERS_TXT = """👋 ʜᴇʏ {},
+    USERS_TXT = """👋 Salut {},
 
-📚 ʜᴇʀᴇ ᴀʀᴇ ᴍʏ ᴄᴏᴍᴍᴀɴᴅꜱ ʟɪꜱᴛ ꜰᴏʀ ᴀʟʟ ʙᴏᴛ ᴜꜱᴇʀꜱ ⇊
+📚 Voici ma liste de commandes pour tous les utilisateurs du bot ⇊
     
-• /batch - ᴄʀᴇᴀᴛᴇ ᴀ ʙᴀᴛᴄʜ ʟɪɴᴋ ᴏғ ᴍᴜʟᴛɪᴘʟᴇ ғɪʟᴇs.
-• /link - ᴄʀᴇᴀᴛᴇ ᴀ sɪɴɢʟᴇ ғɪʟᴇ sᴛᴏʀᴇ ʟɪɴᴋ.
-• /pbatch - ᴊᴜsᴛ ʟɪᴋᴇ <code>/batch</code>, ʙᴜᴛ ᴛʜᴇ ғɪʟᴇs ᴡɪʟʟ ʙᴇ sᴇɴᴅ ᴡɪᴛʜ ғᴏʀᴡᴀʀᴅ ʀᴇsᴛʀɪᴄᴛɪᴏɴs.
-• /plink - ᴊᴜsᴛ ʟɪᴋᴇ <code>/link</code>, ʙᴜᴛ ᴛʜᴇ ғɪʟᴇ ᴡɪʟʟ ʙᴇ sᴇɴᴅ ᴡɪᴛʜ ғᴏʀᴡᴀʀᴅ ʀᴇsᴛʀɪᴄᴛɪᴏɴ.
-• /id - ɢᴇᴛ ɪᴅ ᴏꜰ ᴀ ꜱᴘᴇᴄɪꜰɪᴇᴅ ᴜꜱᴇʀ.
-• /info  - ɢᴇᴛ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴜꜱᴇʀ.
-• /imdb  - ɢᴇᴛ ᴛʜᴇ ꜰɪʟᴍ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ꜰʀᴏᴍ ɪᴍᴅʙ ꜱᴏᴜʀᴄᴇ.
-• /search  - ɢᴇᴛ ᴛʜᴇ ꜰɪʟᴍ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ꜰʀᴏᴍ ᴠᴀʀɪᴏᴜꜱ ꜱᴏᴜʀᴄᴇꜱ.
-• /stats - ɢᴇᴛ ꜱᴛᴀᴛᴜꜱ ᴏꜰ ꜰɪʟᴇꜱ ɪɴ ᴅʙ.
-• /request - sᴇɴᴅ ᴀ Mᴏᴠɪᴇ/Sᴇʀɪᴇs ʀᴇᴏ̨ᴜᴇsᴛ ᴛᴏ ʙᴏᴛ ᴀᴅᴍɪɴs. ( ᴏɴʟʏ ᴡᴏʀᴋs ᴏɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ )
-• /plan - ᴄʜᴇᴄᴋ ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʀᴇᴍɪᴜᴍ ᴍᴇᴍʙᴇʀꜱʜɪᴘ ᴘʟᴀɴꜱ.
-• /myplan - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴜɴᴛ ᴘʟᴀɴ."""
-
-    
-    ADMIC_TXT = """👋 ʜᴇʏ {},
-
-    📚 ʜᴇʀᴇ ᴀʀᴇ ᴍʏ ᴄᴏᴍᴍᴀɴᴅꜱ ʟɪꜱᴛ ꜰᴏʀ ᴀʟʟ ʙᴏᴛ ᴀᴅᴍɪɴꜱ ⇊
-
-• /system - <code>sʏsᴛᴇᴍ ɪɴғᴏʀᴍᴀᴛɪᴏɴ </code>
-• /del_msg - <code>ʀᴇᴍᴏᴠᴇ ғɪʟᴇ ɴᴀᴍᴇ ᴄᴏʟʟᴇᴄᴛɪᴏɴ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ...</code> 
-• /movie_update - <code>ᴏɴ ᴏғғ ᴀᴄᴄᴏʀᴅɪɴɢ ʏᴏᴜʀ ɴᴇᴇᴅᴇᴅ...</code> 
-• /pm_search - <code>ᴘᴍ sᴇᴀʀᴄʜ ᴏɴ ᴏғғ ᴀᴄᴄᴏʀᴅɪɴɢ ʏᴏᴜʀ ɴᴇᴇᴅᴇᴅ...</code>
-• /logs - <code>ɢᴇᴛ ᴛʜᴇ ʀᴇᴄᴇɴᴛ ᴇʀʀᴏʀꜱ.</code>
-• /delete - <code>ᴅᴇʟᴇᴛᴇ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ꜰɪʟᴇ ꜰʀᴏᴍ ᴅʙ.</code>
-• /users - <code>ɢᴇᴛ ʟɪꜱᴛ ᴏꜰ ᴍʏ ᴜꜱᴇʀꜱ ᴀɴᴅ ɪᴅꜱ.</code>
-• /chats - <code>ɢᴇᴛ ʟɪꜱᴛ ᴏꜰ ᴍʏ ᴄʜᴀᴛꜱ ᴀɴᴅ ɪᴅꜱ.</code>
-• /leave  - <code>ʟᴇᴀᴠᴇ ꜰʀᴏᴍ ᴀ ᴄʜᴀᴛ.</code>
-• /disable  -  <code>ᴅɪꜱᴀʙʟᴇ ᴀ ᴄʜᴀᴛ.</code>
-• /ban  - <code>ʙᴀɴ ᴀ ᴜꜱᴇʀ.</code>
-• /unban  - <code>ᴜɴʙᴀɴ ᴀ ᴜꜱᴇʀ.</code>
-• /channel - <code>ɢᴇᴛ ʟɪꜱᴛ ᴏꜰ ᴛᴏᴛᴀʟ ᴄᴏɴɴᴇᴄᴛᴇᴅ ɢʀᴏᴜᴘꜱ.</code>
-• /broadcast - <code>ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴀ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜꜱᴇʀꜱ.</code>
-• /grp_broadcast - <code>ʙʀᴏᴀᴅᴄᴀsᴛ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀʟʟ ᴄᴏɴɴᴇᴄᴛᴇᴅ ɢʀᴏᴜᴘs.</code>
-• /gfilter - <code>ᴀᴅᴅ ɢʟᴏʙᴀʟ ғɪʟᴛᴇʀs.</code>
-• /gfilters - <code>ᴠɪᴇᴡ ʟɪsᴛ ᴏғ ᴀʟʟ ɢʟᴏʙᴀʟ ғɪʟᴛᴇʀs.</code>
-• /delg - <code>ᴅᴇʟᴇᴛᴇ ᴀ sᴘᴇᴄɪғɪᴄ ɢʟᴏʙᴀʟ ғɪʟᴛᴇʀ.</code>
-• /delallg - <code>ᴅᴇʟᴇᴛᴇ ᴀʟʟ Gғɪʟᴛᴇʀs ғʀᴏᴍ ᴛʜᴇ ʙᴏᴛ's ᴅᴀᴛᴀʙᴀsᴇ.</code>
-• /deletefiles - <code>ᴅᴇʟᴇᴛᴇ CᴀᴍRɪᴘ ᴀɴᴅ PʀᴇDVD ғɪʟᴇs ғʀᴏᴍ ᴛʜᴇ ʙᴏᴛ's ᴅᴀᴛᴀʙᴀsᴇ.</code>
-• /send - <code>ꜱᴇɴᴅ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ ᴀ ᴘᴀʀᴛɪᴄᴜʟᴀʀ ᴜꜱᴇʀ.</code>
-• /add_premium - <code>ᴀᴅᴅ ᴀɴʏ ᴜꜱᴇʀ ᴛᴏ ᴘʀᴇᴍɪᴜᴍ.</code>
-• /remove_premium - <code>ʀᴇᴍᴏᴠᴇ ᴀɴʏ ᴜꜱᴇʀ ꜰʀᴏᴍ ᴘʀᴇᴍɪᴜᴍ.</code>
-• /premium_users - <code>ɢᴇᴛ ʟɪꜱᴛ ᴏꜰ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ.</code>
-• /get_premium - <code>ɢᴇᴛ ɪɴꜰᴏ ᴏꜰ ᴀɴʏ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀ.</code>
-• /restart - <code>ʀᴇꜱᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ.</code>"""      
+• /batch - Créer un lien batch pour plusieurs fichiers.
+• /link - Créer un lien de stockage pour un seul fichier.
+• /pbatch - Comme <code>/batch</code>, mais avec restrictions de transfert.
+• /plink - Comme <code>/link</code>, mais avec restrictions de transfert.
+• /id - Obtenir l'ID d'un utilisateur spécifique.
+• /info - Obtenir des informations sur un utilisateur.
+• /imdb - Obtenir les infos du film depuis IMDB.
+• /search - Obtenir les infos du film depuis diverses sources.
+• /stats - Obtenir le statut des fichiers dans la base de données.
+• /request - Envoyer une demande de film/série aux admins du bot. (Fonctionne seulement dans le groupe de support)
+• /plan - Voir les plans d'abonnement premium disponibles.
+• /myplan - Voir ton plan actuel."""
 
     
-    GROUP_TXT = """👋 ʜᴇʏ {},
+    ADMIC_TXT = """👋 Salut {},
 
-📚 ʜᴇʀᴇ ᴀʀᴇ ᴍʏ ᴄᴏᴍᴍᴀɴᴅꜱ ʟɪꜱᴛ ꜰᴏʀ ᴀʟʟ ɢʀᴏᴜᴘ ᴏᴡɴᴇʀꜱ ⇊
+📚 Voici ma liste de commandes pour tous les admins du bot ⇊
+
+• /system - <code>Informations système</code>
+• /del_msg - <code>Supprimer la notification de collecte de noms de fichiers...</code> 
+• /movie_update - <code>Activer/désactiver selon tes besoins...</code> 
+• /pm_search - <code>Recherche en MP activer/désactiver selon tes besoins...</code>
+• /logs - <code>Obtenir les erreurs récentes.</code>
+• /delete - <code>Supprimer un fichier spécifique de la base de données.</code>
+• /users - <code>Obtenir la liste de mes utilisateurs et leurs IDs.</code>
+• /chats - <code>Obtenir la liste de mes chats et leurs IDs.</code>
+• /leave - <code>Quitter un chat.</code>
+• /disable - <code>Désactiver un chat.</code>
+• /ban - <code>Bannir un utilisateur.</code>
+• /unban - <code>Débannir un utilisateur.</code>
+• /channel - <code>Obtenir la liste de tous les groupes connectés.</code>
+• /broadcast - <code>Diffuser un message à tous les utilisateurs.</code>
+• /grp_broadcast - <code>Diffuser un message à tous les groupes connectés.</code>
+• /gfilter - <code>Ajouter des filtres globaux.</code>
+• /gfilters - <code>Voir la liste de tous les filtres globaux.</code>
+• /delg - <code>Supprimer un filtre global spécifique.</code>
+• /delallg - <code>Supprimer tous les filtres globaux de la base de données.</code>
+• /deletefiles - <code>Supprimer les fichiers CamRip et PreDVD de la base de données.</code>
+• /send - <code>Envoyer un message à un utilisateur spécifique.</code>
+• /add_premium - <code>Ajouter un utilisateur au premium.</code>
+• /remove_premium - <code>Retirer un utilisateur du premium.</code>
+• /premium_users - <code>Obtenir la liste des utilisateurs premium.</code>
+• /get_premium - <code>Obtenir les infos d'un utilisateur premium.</code>
+• /restart - <code>Redémarrer le bot.</code>"""      
+
     
-• /connect  - ᴄᴏɴɴᴇᴄᴛ ᴀ ᴘᴀʀᴛɪᴄᴜʟᴀʀ ᴄʜᴀᴛ ᴛᴏ ʏᴏᴜʀ ᴘᴍ.
-• /disconnect  - ᴅɪꜱᴄᴏɴɴᴇᴄᴛ ꜰʀᴏᴍ ᴀ ᴄʜᴀᴛ.
-• /shortlink - ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ ꜱʜᴏʀᴛɴᴇʀ ᴡᴇʙꜱɪᴛᴇ.
-• /set_tutorial - ꜱᴇᴛ ʏᴏᴜʀ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ.
-• /remove_tutorial - ꜱᴇᴛ ʏᴏᴜʀ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ.
-• /shortlink_info - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ.
-• /setshortlinkon - ᴏɴ ꜱʜᴏʀᴛʟɪɴᴋ ꜰᴏʀ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
-• /setshortlinkoff - ᴏꜰꜰ ꜱʜᴏʀᴛʟɪɴᴋ ꜰᴏʀ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
-• /connections - ʟɪꜱᴛ ᴀʟʟ ʏᴏᴜʀ ᴄᴏɴɴᴇᴄᴛɪᴏɴꜱ.
-• /settings - ᴄʜᴀɴɢᴇ sᴇᴛᴛɪɴɢs ᴀs ʏᴏᴜʀ ᴡɪsʜ.
-• /filter - ᴀᴅᴅ ᴀ ꜰɪʟᴛᴇʀ ɪɴ ᴀ ɢʀᴏᴜᴘ.
-• /filters - ʟɪꜱᴛ ᴀʟʟ ᴛʜᴇ ꜰɪʟᴛᴇʀꜱ ᴏꜰ ᴀ ɢʀᴏᴜᴘ.
-• /del - ᴅᴇʟᴇᴛᴇ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ꜰɪʟᴛᴇʀ ɪɴ ᴀ ɢʀᴏᴜᴘ.
-• /delall - ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ᴡʜᴏʟᴇ ꜰɪʟᴛᴇʀꜱ ɪɴ ᴀ ɢʀᴏᴜᴘ.
-• /purge - ᴅᴇʟᴇᴛᴇ ᴀʟʟ ᴍᴇssᴀɢᴇs ꜰʀᴏᴍ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴍᴇssᴀɢᴇ, ᴛᴏ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴍᴇssᴀɢᴇ."""
+    GROUP_TXT = """👋 Salut {},
 
-    DONATION = """<b>👋 ʜᴇʏ {},
+📚 Voici ma liste de commandes pour tous les propriétaires de groupe ⇊
     
-<b>𝑷𝒍𝒆𝒂𝒔𝒆 𝑫𝒐𝒏𝒂𝒕𝒆 𝑻𝒉𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝑭𝒐𝒓 𝑲𝒆𝒆𝒑𝒊𝒏𝒈 𝑻𝒉𝒆 𝑺𝒆𝒓𝒗𝒊𝒄𝒆 𝑨𝒍𝒊𝒗𝒆 & 𝑲𝒆𝒆𝒑 𝑩𝒓𝒊𝒏𝒈𝒊𝒏𝒈 𝑴𝒐𝒓𝒆 𝑵𝒆𝒘 𝑭𝒆𝒂𝒕𝒖𝒓𝒆𝒔 𝑭𝒐𝒓 𝒀𝒐𝒖...... 𝑰𝑻 𝑾𝒊𝒍𝒍 𝑺𝒖𝒑𝒑𝒐𝒓𝒕 𝑼𝒔 𝑻𝒐 𝑲𝒆𝒆𝒑 𝑶𝒖𝒓 𝑩𝒐𝒕 𝑶𝒏 𝑯𝒆𝒓𝒐𝒌𝒖 𝑨𝒏𝒅 𝑺𝒐 𝑻𝒉𝒂𝒕 𝑾𝒆 𝑪𝒂𝒏 𝑲𝒆𝒆𝒑 𝑼𝒑𝒍𝒐𝒂𝒅𝒊𝒏𝒈 𝑴𝒐𝒗𝒊𝒆𝒔 𝑨𝒏𝒅 𝑾𝒆𝒃𝒔𝒆𝒓𝒊𝒆𝒔 𝑵𝒐𝒏 𝑺𝒕𝒐𝒑 𝑰𝒏 𝑩𝒆𝒔𝒕 𝑸𝒖𝒂𝒍𝒊𝒕𝒊𝒆𝒔.<b>
+•  - Connecter un chat spécifique à tes MPs.
+• /disconnect - Déconnecter d'un chat.
+• /shortlink - Connecter ton site de liens raccourcis.
+• /set_tutorial - Définir ton tutoriel de téléchargement vidéo.
+• /remove_tutorial - Supprimer ton tutoriel de téléchargement vidéo.
+• /shortlink_info - Voir les infos de ton groupe.
+• /setshortlinkon - Activer les liens raccourcis pour ton groupe.
+• /setshortlinkoff - Désactiver les liens raccourcis pour ton groupe.
+• /connections - Lister toutes tes connexions.
+• /settings - Modifier les paramètres comme tu veux.
+• /filter - Ajouter un filtre dans un groupe.
+• /filters - Lister tous les filtres d'un groupe.
+• /del - Supprimer un filtre spécifique dans un groupe.
+• /delall - Supprimer tous les filtres d'un groupe.
+• /purge - Supprimer tous les messages depuis le message répondu jusqu'au message actuel."""
 
-<b>𝒀𝒐𝒖 𝑪𝒂𝒏 𝑫𝒐𝒏𝒂𝒕𝒆 𝑨𝒏𝒚 𝑨𝒎𝒐𝒖𝒏𝒕 𝒀𝒐𝒖 𝑯𝒂𝒗𝒆 🌝<b>
+    DONATION = """<b>👋 Salut {},
+    
+<b>Merci de soutenir le développeur pour maintenir le service actif et continuer à ajouter de nouvelles fonctionnalités pour vous... Cela nous aidera à garder notre bot sur Heroku et à continuer à uploader des films et séries en permanence dans la meilleure qualité.</b>
 
-<b>🎉 𝑺𝒆𝒍𝒆𝒄𝒕 𝒀𝒐𝒖𝒓 𝑫𝒐𝒏𝒂𝒕𝒆 𝑴𝒆𝒕𝒉𝒐𝒅 👇</b>
+<b>Vous pouvez faire un don du montant que vous souhaitez 🌝</b>
 
-➢ QR Cᴏᴅᴇ : <a href='{}'>𝑪𝑳𝑰𝑪𝑲 𝑯𝑬𝑹𝑬 𝑻𝑶 𝑺𝑪𝑨𝑵</a>
+<b>🎉 Choisissez votre méthode de don 👇</b>
 
-➢ Uᴘɪ Iᴅ : <code>{}</code>
+➢  Par Adresse USDT TRC20: <code>TYUGH5DtPc2gcz1v6hgEU2igdZ8sQ8HE9h</code>
 
-‼️ 𝑴𝒖𝒔𝒕 𝑺𝒆𝒏𝒅 𝑺𝒄𝒓𝒆𝒆𝒏𝒔𝒉𝒐𝒕 𝑨𝒇𝒕𝒆𝒓 𝑫𝒐𝒏𝒂𝒕𝒆.</b>"""
+
+➢  Par Adresse $TON: <code>UQB8a-qTnI_c9oPkWIXNDMNs6Z_C-TDdYFwLKQ_m_b7essq9</code>
+
+
+➢  Vous pouvez me faire don par mobile Money
+
+‼️ Merci d'envoyer une capture d'écran après votre don.</b>"""
     
 
     SHORTLINK_INFO = """<b>
- ❗<u>ʜᴏᴡ ᴛᴏ ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴜꜱɪɴɢ ʙᴏᴛ</u>❗
+ ❗<u>Comment gagner de l'argent avec ce bot</u>❗
 
-★ ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ꜱᴛᴀʀᴛ ᴇᴀʀɴɪɴɢ 💸 ᴍᴏɴᴇʏ ᴛᴏᴅᴀʏ ᴡɪᴛʜ ᴏᴜʀ ꜱɪᴍᴘʟᴇ ᴀɴᴅ ᴇᴀꜱʏ-ᴛᴏ-ᴜꜱᴇ ʙᴏᴛ!
+★ Vous pouvez commencer à gagner 💸 de l'argent dès aujourd'hui avec notre bot simple et facile à utiliser !
 
-›› ꜱᴛᴇᴘ 1 : ᴀᴅᴅ ᴛʜɪꜱ ʙᴏᴛ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀꜱ ᴀɴ ᴀᴅᴍɪɴ...
+›› Étape 1 : Ajoutez ce bot à votre groupe en tant qu'admin...
 
-›› ꜱᴛᴇᴘ 2 : ᴜꜱᴇ /connect ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ʙᴏᴛ ᴛᴏ ʏᴏᴜʀ ᴘᴍ.
+›› Étape 2 : Utilisez /je_suis_curieux dans votre groupe pour lier le bot à vos messages privés.
 
-›› ꜱᴛᴇᴘ 3 : ᴄʟɪᴄᴋ ᴏɴ ɴᴇxᴛ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ꜱʜᴏʀᴛʟɪɴᴋ ᴡᴇʙꜱɪᴛᴇ ᴡɪᴛʜ ᴛʜɪs ʙᴏᴛ.
+›› Étape 3 : Cliquez sur le bouton suivant pour savoir comment connecter un site de liens raccourcis à ce bot.
 
-★ ᴅᴏɴ'ᴛ ᴡᴀɪᴛ ᴀɴʏ ʟᴏɴɢᴇʀ ᴛᴏ ꜱᴛᴀʀᴛ ᴇᴀʀɴɪɴɢ ᴍᴏɴᴇʏ ꜰʀᴏᴍ ʏᴏᴜʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘ. ᴀᴅᴅ ᴏᴜʀ ʙᴏᴛ ᴛᴏᴅᴀʏ ᴀɴᴅ ꜱᴛᴀʀᴛ ᴍᴀᴋɪɴɢ ᴍᴏɴᴇʏ 💰! </b>
+★ N'attendez plus pour commencer à gagner de l'argent 💰 avec votre groupe Telegram. Ajoutez notre bot dès aujourd'hui !</b>
+
+<spoiler> Bof. tu fait tout ça mais tu ne peux pas m'ajouter à ton Groupe</spoiler>
 """
 
     SHORTLINK_INFO2 = """<b>
-❗<u>ʜᴏᴡ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ sʜᴏʀᴛɴᴇʀ</u>❗
+❗<u>Comment connecter votre raccourcisseur</u>❗
 
-›› ꜱᴛᴇᴘ 4 : ɪꜰ ʏᴏᴜ ᴅᴏɴ'ᴛ ᴜꜱɪɴɢ ᴀɴʏ ꜱʜᴏʀᴛɴᴇʀ ᴡᴇʙꜱɪᴛᴇ ᴛʜᴇɴ ᴍᴀᴋᴇ ᴀᴄᴄᴏᴜɴᴛ ꜰɪʀꜱᴛ ᴏɴ instantearn.in (ʏᴏᴜ ᴄᴀɴ ᴀʟꜱᴏ ᴜꜱᴇ ᴏᴛʜᴇʀ ʟɪɴᴋ ꜱʜᴏʀᴛɴᴇʀ ᴡᴇʙꜱɪᴛᴇ).
-
-›› ꜱᴛᴇᴘ 5 : ᴄᴏᴘʏ ʏᴏᴜʀ ᴀᴘɪ ꜰʀᴏᴍ ᴡᴇʙꜱɪᴛᴇ ᴀɴᴅ ᴛʜᴇɴ, ꜱɪᴍᴘʟʏ ꜱᴇᴛ ʏᴏᴜʀ ᴡᴇʙꜱɪᴛᴇ ᴀɴᴅ ᴀᴘɪ ᴜꜱɪɴɢ ᴛʜᴇ /shortlink ᴄᴏᴍᴍᴀɴᴅ.
-
-› ʟɪᴋᴇ ᴛʜɪꜱ :</b>  <code>/shortlink Shortxlinks.com 1502a197c85d59929d50f1cba1d5e6f967d1e962</code>
-
-<b>›› ꜱᴛᴇᴘ 6 : ᴄʟɪᴄᴋ ᴏɴ ɴᴇxᴛ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ ᴛᴜᴛᴏʀɪᴀʟ ᴡɪᴛʜ ᴛʜɪs ʙᴏᴛ.
-
-★ ᴛʜɪꜱ ʙᴏᴛ ᴡɪʟʟ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴄᴏɴᴠᴇʀᴛꜱ ʟɪɴᴋꜱ ᴡɪᴛʜ ʏᴏᴜʀ ᴀᴘɪ ᴀɴᴅ ᴡɪʟʟ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜʀ ʟɪɴᴋꜱ.</b>
+››Dans la vie, tout savoir peut etre un risque.</b>
 """
     SHORTLINK_INFO3 = """<b>
-❗<u>ʜᴏᴡ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ ᴛᴜᴛᴏʀɪᴀʟ</u>❗
+❗<u>Comment connecter votre tutoriel</u>❗
 
-›› ꜱᴛᴇᴘ 7 : ᴜꜱᴇ /set_tutorial ᴛᴏ ᴀᴅᴅ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ꜰᴏʀ ʏᴏᴜʀ ꜱʜᴏʀᴛɴᴇʀ ᴡᴇʙꜱɪᴛᴇ.
-
-› ʟɪᴋᴇ ᴛʜɪꜱ :</b> <code>/set_tutorial https://t.me/How_to_Download_7x</code>
-
-<b>›› ꜱᴛᴇᴘ 8 : ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄʜᴇᴄᴋ ᴡʜɪᴄʜ sʜᴏʀᴛᴇɴᴇʀ ʏᴏᴜ ʜᴀᴠᴇ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛʜᴇɴ sᴇɴᴅ /shortlink_info ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
-
-★ ᴛʜᴀᴛ'ꜱ ɪᴛ, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴇᴀʀɴ ᴀ ʟᴏᴛ ᴍᴏɴᴇʏ 💸 ᴜꜱɪɴɢ ᴛʜɪs ʙᴏᴛ.</b>
+›› La curiosité est un vilain défaut</b>
 """
     
     
     SELECT = """
-➢ ᴄʟɪᴄᴋ ᴏɴ "ǫᴜᴀʟɪᴛʏ" ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ꜰɪʟᴇ ɪɴ ʏᴏᴜʀ ᴅᴇꜱɪʀᴇᴅ ǫᴜᴀʟɪᴛʏ.
-➢ ᴄʟɪᴄᴋ ᴏɴ "ʟᴀɴɢᴜᴀɢᴇ" ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ꜰɪʟᴇ ɪɴ ʏᴏᴜʀ ᴅᴇꜱɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇ.
-➢ ᴄʟɪᴄᴋ ᴏɴ "ꜱᴇᴀꜱᴏɴ" ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ꜰɪʟᴇ ɪɴ ʏᴏᴜʀ ᴅᴇꜱɪʀᴇᴅ ꜱᴇᴀꜱᴏɴ.
+➢ Cliquez sur le bouton "Qualité" pour obtenir le fichier dans la qualité souhaitée.
+➢ Cliquez sur le bouton "Langue" pour obtenir le fichier dans la langue souhaitée.
+➢ Cliquez sur le bouton "Saison" pour obtenir le fichier dans la saison souhaitée.
 
-➢ ᴄʟɪᴄᴋ ᴏɴ "♨️ ꜱᴇɴᴅ ᴀʟʟ ꜰɪʟᴇꜱ ♨️" ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ᴀʟʟ ꜰɪʟᴇꜱ ɪɴ ᴀ ꜱɪɴɢʟᴇ ᴄʟɪᴄᴋ.
-
+➢ Cliquez sur le bouton "♨️ Envoyer tous les fichiers ♨️" pour obtenir tous les fichiers en un clic.
 """
 
-    REQINFO = """➢ ᴄʟɪᴄᴋ "ǫᴜᴀʟɪᴛʏ" ᴀɴᴅ ᴄʜᴀɴɢᴇ ǫᴜᴀʟɪᴛʏ.
-➢ ᴄʟɪᴄᴋ "ʟᴀɴɢᴜᴀɢᴇ" ᴀɴᴅ ᴄʜᴀɴɢᴇ ʟᴀɴɢᴜᴀɢᴇ.
-➢ ᴄʟɪᴄᴋ "ꜱᴇᴀꜱᴏɴ" ᴀɴᴅ ᴄʜᴀɴɢᴇ ꜱᴇᴀꜱᴏɴ.
-➢ ᴄʟɪᴄᴋ "♨️ ꜱᴇɴᴅ ᴀʟʟ ꜰɪʟᴇꜱ ♨️" ᴀɴᴅ ɢᴇᴛ ᴀʟʟ ꜰɪʟᴇꜱ."""
+    REQINFO = """➢ Cliquez sur "Qualité" pour changer la qualité.
+➢ Cliquez sur "Langue" pour changer la langue. 
+➢ Cliquez sur "Saison" pour changer la saison.
+➢ Cliquez sur "♨️ Envoyer tous les fichiers ♨️" pour obtenir tous les fichiers."""
 
     SINFO = """
 ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
-ꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ
+Format pour les demandes de séries
 ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
-ɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ꜱᴇʀɪᴇꜱ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ
+Allez sur Google ➠ Tapez le nom de la série ➠ Copiez le nom correct ➠ Collez dans ce groupe
 
-ᴇxᴀᴍᴘʟᴇ : Loki S01E01
+Exemple : Loki S01E01
 
-🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)"""
+🚯 Ne pas utiliser ➠ ':(!,./)"""
 
     NORSLTS = """ 
-#NoResults
+#AucunRésultat
 
-Iᴅ : <code>{}</code>
-Nᴀᴍᴇ : {}
+ID : <code>{}</code>
+Nom : {}
 
-Mᴇꜱꜱᴀɢᴇ : <b>{}</b>"""
+Message : <b>{}</b>"""
     
-    CAPTION = """<b><a href="https://t.me/nova_flix">{file_name}</a></b>\n\n<b><blockquote><i>ᴘʟᴇᴀsᴇ ꜰᴏʀᴡᴀʀᴅ ᴛʜɪs ꜰɪʟᴇs ᴛᴏ ᴛʜᴇ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇ ᴀɴᴅ ᴄʟᴏsᴇ ᴛʜɪs ᴍᴇssᴀɢᴇ</i></blockquote></b>"""
+    CAPTION = """<b><a href="https://t.me/ZFlixTeam">{file_name}</a></b>\n\n<b><blockquote><i>Merci de transférer ces fichiers vers les messages sauvegardés et de fermer ce message</i></blockquote></b>"""
 
     IMDB_TEMPLATE_TXT = """
-<b>‣ ᴛɪᴛʟᴇ : <a href={url}>{title}</a>
+<b>‣ Titre : <a href={url}>{title}</a>
 
-‣ ɢᴇɴʀᴇs : {genres}
-‣ ʏᴇᴀʀ : <a href={url}/releaseinfo>{year}</a>
-‣ ʀᴀᴛɪɴɢ : <a href={url}/ratings>{rating}</a> / 10 (Based on {votes} user ratings)
-‣ ʟᴀɴɢᴜᴀɢᴇ : <code>{languages}</code></a>
-‣ ʀᴜɴᴛɪᴍᴇ : {runtime} Minutes</a>
+‣ Genres : {genres}
+‣ Année : <a href={url}/releaseinfo>{year}</a> 
+‣ Note : <a href={url}/ratings>{rating}</a> / 10 (Basé sur {votes} votes)
+‣ Langue : <code>{languages}</code></a>
+‣ Durée : {runtime} Minutes</a>
 
-» Result Shown in: {remaining_seconds} <i>seconds</i>
-» Requested by : {message.from_user.mention}</b>"""
+» Résultats affichés en : {remaining_seconds} <i>secondes</i>
+» Demandé par : {message.from_user.mention}</b>"""
     
 
     RESTART_TXT = """
-<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
+<b>Bot redémarré !
 
-• Dᴀᴛᴇ : <code>{}</code>
-• Tɪᴍᴇ : <code>{}</code>
-• Tɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code>
-• Bᴜɪʟᴅ Sᴛᴀᴛᴜs: <code> v4.7 [ Sᴛᴀʙʟᴇ ]</code>
+• Date : <code>{}</code>
+• Heure : <code>{}</code>
+• Fuseau horaire : <code>Africa/Lome</code>
+• Version : <code>v4.7 [Stable]</code>
 </b>"""
 
     LOGO = """
 
-BOT WORKING PROPERLY"""
+Le bot fonctionne correctement"""
 
     #PLANS
 
-    PAGE_TXT = """ᴡʜʏ ᴀʀᴇ ʏᴏᴜ ꜱᴏ ᴄᴜʀɪᴏᴜꜱ ⁉️"""
+    PAGE_TXT = """Pourquoi êtes-vous si curieux ⁉️"""
 
-    PURCHASE_TXT = """ꜱᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ᴍᴇᴛʜᴏᴅ."""
+    PURCHASE_TXT = """Sélectionnez votre méthode de paiement."""
 
-    PREMIUM_TEXT = """<b>👋 ʜᴇʏ {}
+    PREMIUM_TEXT = """<b>👋 Salut {}
 
-<blockquote>🎁 ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇ ʙᴇɴɪꜰɪᴛꜱ:</blockquote>
+<blockquote>🎁 Avantages Premium :</blockquote>
 
-›› ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋꜱ
-❏ ɢᴇᴛ ᴅɪʀᴇᴄᴛ ғɪʟᴇs   
-›› ᴀᴅ-ғʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ 
-❏ ʜɪɢʜ-sᴘᴇᴇᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ                         
-›› ᴍᴜʟᴛɪ-ᴘʟᴀʏᴇʀ sᴛʀᴇᴀᴍɪɴɢ ʟɪɴᴋs                           
-❏ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏᴠɪᴇs ᴀɴᴅ sᴇʀɪᴇs                                                                        
-›› ꜰᴜʟʟ ᴀᴅᴍɪɴ sᴜᴘᴘᴏʀᴛ                              
-❏ ʀᴇǫᴜᴇsᴛ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ɪɴ 𝟷ʜ [ ɪꜰ ᴀᴠᴀɪʟᴀʙʟᴇ ]
+›› Pas besoin d'ouvrir les liens
+❏ Fichiers directs   
+›› Expérience sans pub
+❏ Liens de téléchargement ultra-rapides                         
+›› Liens de streaming multi-joueurs                           
+❏ Films et séries illimités                                                                        
+›› Support admin complet                              
+❏ Demandes traitées en 1h [si disponible]
 
-›› ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ: /myplan
+›› Vérifiez votre abonnement : /myplan
 </b>"""
 
-    CPREMIUM_TEXT = """<b>👋 ʜᴇʏ {},
+    CPREMIUM_TEXT = """<b>👋 Salut {},
     
-🎁 <u>ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇs</u> :
+🎁 <u>Fonctionnalités Premium</u> :
 
-›› ɴᴏ ɴᴇᴇᴅ ᴛᴏ Vᴇʀɪғʏ
-›› ᴅɪʀᴇᴄᴛ ꜰɪʟᴇꜱ  
-›› ʜɪɢʜ-sᴘᴇᴇᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ  
-›› ᴍᴜʟᴛɪ-ᴘʟᴀʏᴇʀ sᴛʀᴇᴀᴍɪɴɢ ʟɪɴᴋs      
-›› ᴀᴅ-ғʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ                           
-›› ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏᴠɪᴇs & sᴇʀɪᴇs
+›› Pas besoin de vérification
+›› Fichiers directs  
+›› Liens de téléchargement ultra-rapides  
+›› Liens de streaming multi-joueurs      
+›› Expérience sans pub                           
+›› Films & séries illimités
 
 
-🌹 ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
-➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan
+🌹 Utilisez /plan pour voir tous nos abonnements.
+➛ Vérifiez votre abonnement avec : /myplan
 
-‼️ ᴀғᴛᴇʀ sᴇɴᴅɪɴɢ ᴀ sᴄʀᴇᴇɴsʜᴏᴛ ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴜs sᴏᴍᴇ ᴛɪᴍᴇ ᴛᴏ ᴀᴅᴅ ʏᴏᴜ ɪɴ ᴛʜᴇ ᴘʀᴇᴍɪᴜᴍ ʟɪsᴛ.</b>"""
+‼️ Après avoir envoyé une capture, merci de nous laisser un peu de temps pour vous ajouter.</b>"""
 
-    PLAN_TXT = """<b>👋 ʜᴇʏ {},
+    PLAN_TXT = """<b>👋 Salut {},
     
-🎁 <u>ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇs</u> :
+🎁 <u>Fonctionnalités Premium</u> :
 
-○ ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋꜱ
-○ ᴅɪʀᴇᴄᴛ ғɪʟᴇs   
-○ ᴀᴅ-ғʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ 
-○ ʜɪɢʜ-sᴘᴇᴇᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ                         
-○ ᴍᴜʟᴛɪ-ᴘʟᴀʏᴇʀ sᴛʀᴇᴀᴍɪɴɢ ʟɪɴᴋs                           
-○ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏᴠɪᴇs & sᴇʀɪᴇs                                                                        
-○ ꜰᴜʟʟ ᴀᴅᴍɪɴ sᴜᴘᴘᴏʀᴛ                              
-○ ʀᴇǫᴜᴇsᴛ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ɪɴ 1ʜ [ ɪꜰ ᴀᴠᴀɪʟᴀʙʟᴇ ]
+○ Pas besoin d'ouvrir les liens
+○ Fichiers directs   
+○ Expérience sans pub 
+○ Liens de téléchargement ultra-rapides                         
+○ Streaming multi-joueurs                           
+○ Films & séries illimités                                                                        
+○ Support admin complet                              
+○ Demandes traitées en 1h [si disponible]
 
-➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
-➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan
+➛ Utilisez /plan pour voir tous nos abonnements.
+➛ Vérifiez votre abonnement avec : /myplan
 
-‼️ ᴀғᴛᴇʀ sᴇɴᴅɪɴɢ ᴀ sᴄʀᴇᴇɴsʜᴏᴛ ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴜs sᴏᴍᴇ ᴛɪᴍᴇ ᴛᴏ ᴀᴅᴅ ʏᴏᴜ ɪɴ ᴛʜᴇ ᴘʀᴇᴍɪᴜᴍ ʟɪsᴛ.</b>"""
+‼️ Après envoi d'une capture, merci de patienter.</b>"""
 
-    FREE_TXT = """<b>👋 ʜᴇʏ {},
+    FREE_TXT = """<b>👋 Salut {},
     
-🎉 <u>ꜰʀᴇᴇ ᴛʀɪᴀʟ</u> 🎉
-❗ ᴏɴʟʏ ꜰᴏʀ 5 ᴍɪɴᴜᴛᴇꜱ
+🎉 <u>Essai gratuit</u> 🎉
+❗ Seulement 5 minutes
  
-○ ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋꜱ
-○ ᴍᴜʟᴛɪ-ᴘʟᴀʏᴇʀ sᴛʀᴇᴀᴍɪɴɢ ʟɪɴᴋs
-○ ᴀᴅ-ғʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ
+○ Pas besoin d'ouvrir les liens
+○ Streaming multi-joueurs
+○ Expérience sans pub
 
-👨‍💻 ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ <a href='https://t.me/proyato'>Owner</a> ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ᴛʀɪᴀʟ.
+👨‍💻 Contactez le <a href='https://t.me/Kingcey'>propriétaire</a> pour votre essai.
 
-➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
-➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+➛ Utilisez /plan pour voir nos offres.
+➛ Vérifiez votre abonnement avec : /myplan</b>"""
 
-    BRONZE_TXT = """<b>👋 ʜᴇʏ {},
+    BRONZE_TXT = """<b>👋 Salut {},
     
-🥉 <u>ʙʀᴏɴᴄᴇ ᴘʟᴀɴ</u>
-⏰ 7 ᴅᴀʏꜱ
-💸 ᴘʟᴀɴ ᴘʀɪᴄᴇ ➛ 10₹
+🥉 <u>Offre Bronze</u>
+⏰ 7 jours (1 Semaine)
+💸 Prix : 500F CFA
 
-➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
-➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+➛ Utilisez /plan pour voir nos offres.
+➛ Vérifiez votre abonnement avec : /myplan</b>"""
 
-    SILVER_TXT = """<b>👋 ʜᴇʏ {},
+    SILVER_TXT = """<b>👋 Salut {},
     
-🥈 <u>ꜱɪʟᴠᴇʀ ᴘʟᴀɴ</u>
-⏰ 15 ᴅᴀʏꜱ 
-💸 ᴘʟᴀɴ ᴘʀɪᴄᴇ ➛ 20₹
+🥈 <u>Offre Argent</u>
+⏰ 15 jours 
+💸 Prix : 1000F CFA
 
-➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
-➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+➛ Utilisez /plan pour voir nos offres.
+➛ Vérifiez votre abonnement avec : /myplan</b>"""
 
-    GOLD_TXT = """<b>👋 ʜᴇʏ {},
+    GOLD_TXT = """<b>👋 Salut {},
     
-🥇 <u>ɢᴏʟᴅ ᴘʟᴀɴ</u>
-⏰ 30 ᴅᴀʏꜱ 
-💸 ᴘʟᴀɴ ᴘʀɪᴄᴇ ➛ 40₹
+🥇 <u>Offre Or</u>
+⏰ 30 jours  (1 Mois)
+💸 Prix : 1700F
 
-➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
-➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+➛ Utilisez /plan pour voir nos offres.
+➛ Vérifiez votre abonnement avec : /myplan</b>"""
 
-    PLATINUM_TXT = """<b>👋 ʜᴇʏ {},
+    PLATINUM_TXT = """<b>👋 Salut {},
     
-🏅 <u>ᴘʟᴀᴛɪɴᴜᴍ ᴘʟᴀɴ</u>
-⏰ 45 ᴅᴀʏꜱ 
-💸 ᴘʟᴀɴ ᴘʀɪᴄᴇ ➛ 55₹
+🏅 <u>Offre Platine</u>
+⏰ 45 jours 
+💸 Prix : 2500F
 
-➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
-➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+➛ Utilisez /plan pour voir nos offres.
+➛ Vérifiez votre abonnement avec : /myplan</b>"""
     
-    DIAMOND_TXT = """<b>👋 ʜᴇʏ {},
+    DIAMOND_TXT = """<b>👋 Salut {},
 
-💎 <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u>
-⏰ 60 ᴅᴀʏꜱ 
-💸 ᴘʟᴀɴ ᴘʀɪᴄᴇ ➛ 75₹
+💎 <u>Offre Diamant</u>
+⏰ 60 jours  (2 Mois)
+💸 Prix : 3000F
 
-➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
-➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+➛ Utilisez /plan pour voir nos offres.
+➛ Vérifiez votre abonnement avec : /myplan</b>"""
 
-    OTHER_TXT = """<b>👋 ʜᴇʏ {},
+    OTHER_TXT = """<b>👋 Salut {},
     
-🎁 <u>ᴏᴛʜᴇʀ ᴘʟᴀɴ</u>
-⏰ ᴄᴜꜱᴛᴏᴍɪꜱᴇᴅ ᴅᴀʏꜱ
-💸 ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ᴅᴀʏꜱ ʏᴏᴜ ᴄʜᴏᴏꜱᴇ
+🎁 <u>Autre offre</u>
+⏰ Durée personnalisée
+💸 Tarif selon la durée choisie
 
-🏆 ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴀ ɴᴇᴡ ᴘʟᴀɴ ᴀᴘᴀʀᴛ ꜰʀᴏᴍ ᴛʜᴇ ɢɪᴠᴇɴ ᴘʟᴀɴ, ᴛʜᴇɴ ʏᴏᴜ ᴄᴀɴ ᴛᴀʟᴋ ᴛᴏ ᴏᴜʀ <a href='https://t.me/proyato'>ᴏᴡɴᴇʀ</a> ᴅɪʀᴇᴄᴛʟʏ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ᴛʜᴇ ᴄᴏɴᴛᴀᴄᴛ ʙᴜᴛᴛᴏɴ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ.
+🏆 Si vous voulez une offre différente de celles proposées, vous pouvez contacter directement notre <a href='https://t.me/Kingcey'>propriétaire</a> en cliquant sur le bouton ci-dessous.
     
-👨‍💻 ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ᴏᴡɴᴇʀ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ᴏᴛʜᴇʀ ᴘʟᴀɴ.
+👨‍💻 Contactez le propriétaire pour une offre personnalisée.
 
-➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
-➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+➛ Utilisez /plan pour voir nos offres.
+➛ Vérifiez votre abonnement avec : /myplan</b>"""
 
-    UPI_TXT = """<b>👋 ʜᴇʏ {},
+    UPI_TXT = """<b>👋 Salut {},
     
- ᴘᴀʏ ᴀᴍᴍᴏᴜɴᴛ ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ʏᴏᴜʀ ᴘʟᴀɴ ᴀɴᴅ ᴇɴᴊᴏʏ ᴘʀᴇᴍɪᴜᴍ ᴍᴇᴍʙᴇʀꜱʜɪᴘ !
+ Payez le montant correspondant à votre abonnement et profitez des avantages Premium !
 
-💵 ᴜᴘɪ ɪᴅ - <code>{}</code>
+💵 Wallet - <code>UQB8a-qTnI_c9oPkWIXNDMNs6Z_C-TDdYFwLKQ_m_b7essq9</code>
 
-‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.</b>"""
+‼️ Merci d'envoyer une capture après paiement.</b>"""
 
-    QR_TXT = """<b>👋 ʜᴇʏ {},
+    QR_TXT = """<b>👋 Salut {},
     
- ᴘᴀʏ ᴀᴍᴍᴏᴜɴᴛ ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ʏᴏᴜʀ ᴘʟᴀɴ ᴀɴᴅ ᴇɴᴊᴏʏ ᴘʀᴇᴍɪᴜᴍ ᴍᴇᴍʙᴇʀꜱʜɪᴘ !
+ Payez le montant correspondant à votre abonnement et profitez des avantages Premium !
 
-📸 ǫʀ ᴄᴏᴅᴇ - <a href='{}'>ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ꜱᴄᴀɴ</a>
+📸 QR Code - <a href='t.me/Kingcey'>Cliquez ici pour scanner</a>
 
-‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.</b>"""
+‼️ Merci d'envoyer une capture après paiement.</b>"""
 
-    PREPLANS_TXT = """<b>👋 ʜᴇʏ {},
+    PREPLANS_TXT = """<b>👋 Salut {},
 
-<blockquote>🎁 ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇ ʙᴇɴɪꜰɪᴛꜱ:</blockquote>
+<blockquote>🎁 Avantages Premium :</blockquote>
 
-›› ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋꜱ
-❏ ɢᴇᴛ ᴅɪʀᴇᴄᴛ ғɪʟᴇs   
-›› ᴀᴅ-ғʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ 
-❏ ʜɪɢʜ-sᴘᴇᴇᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ                         
-›› ᴍᴜʟᴛɪ-ᴘʟᴀʏᴇʀ sᴛʀᴇᴀᴍɪɴɢ ʟɪɴᴋs                           
-❏ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏᴠɪᴇs ᴀɴᴅ sᴇʀɪᴇs                                                                        
-›› ꜰᴜʟʟ ᴀᴅᴍɪɴ sᴜᴘᴘᴏʀᴛ                              
-❏ ʀᴇǫᴜᴇsᴛ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ɪɴ 𝟷ʜ [ ɪꜰ ᴀᴠᴀɪʟᴀʙʟᴇ ]
+›› Pas besoin d'ouvrir les liens
+❏ Fichiers directs   
+›› Expérience sans pub 
+❏ Liens de téléchargement ultra-rapides                         
+›› Streaming multi-joueurs                           
+❏ Films et séries illimités                                                                        
+›› Support admin complet                              
+❏ Demandes traitées en 1h [si disponible]
 
-›› ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ: /myplan
+›› Vérifiez votre abonnement : /myplan
 </b>"""      
 
-    SOURCE_TXT ="""<b>sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ: </b>
+    SOURCE_TXT ="""<b>Code source : </b>
 
- ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ʜᴇʀᴇ ◉› :<a href=https://github.com/codeflix-bots/autofilter.git>Lucy</a>\n """
+ Code source disponible ici ◉› :<a href=https://t.me/BotZFlix>Ne Clique Pas</a> """
 
-    EXTRAF_TXT =""" <b> ʜᴇʀᴇ ɪꜱ ᴍʏ ᴇxᴛʀᴀ ꜰᴇᴀᴛᴜʀᴇꜱ </b>"""
+    EXTRAF_TXT =""" <b> Voici mes fonctionnalités supplémentaires </b>"""
 
-    STICKER_TXT = """<b>ʏᴏᴜ ᴄᴀɴ ᴜꜱᴇ ᴛʜɪꜱ ᴍᴏᴅᴜʟᴇ ᴛᴏ ꜰɪɴᴅ ᴀɴʏ ꜱᴛɪᴄᴋᴇʀꜱ ɪᴅ. 
- • ᴜꜱᴀɢᴇ :
+    STICKER_TXT = """<b>Vous pouvez utiliser ce module pour trouver l'ID d'un sticker.
+ • Utilisation :
    
-  ʜᴏᴡ ᴛᴏ ᴜꜱᴇ 
- ◉ ʀᴇᴘʟʏ ᴛᴏ ꜱᴛɪᴄᴋᴇʀ [/stickerid]  
+  Comment l'utiliser 
+ ◉ Répondez à un sticker avec [/stickerid]  
  </b>""" 
   
-    FONT_TXT= """<b>ᴜꜱᴀɢᴇ 
+    FONT_TXT= """<b>Utilisation 
   
- ʏᴏᴜ ᴄᴀɴ ᴜꜱᴇ ᴛʜɪꜱ ᴍᴏᴅᴜʟᴇ ᴛᴏ ᴄʜᴀɴɢᴇ ꜰᴏɴᴛ ꜱᴛyʟᴇ   
+ Vous pouvez utiliser ce module pour changer le style de police   
   
- ᴄᴏᴍᴍᴀɴᴅ : /font ʏᴏᴜʀ ᴛᴇxᴛ (ᴏᴩᴛɪᴏɴᴀʟ) 
- ᴇɢ:- /font ʜᴇʟʟᴏ 
+ Commande : /font votre texte (optionnel) 
+ Exemple :- /font Bonjour 
   
  </b>"""
-    TELE_TXT = """<b>ʜᴇʟᴘ: ᴛᴇʟᴇɢʀᴀᴘʜ ᴅᴏ ᴀꜱ ʏᴏᴜ ᴡɪꜱʜ ᴡɪᴛʜ ᴛᴇʟᴇɢʀᴀ.ᴘʜ ᴍᴏᴅᴜʟᴇ! 
+
+    TELE_TXT = """<b>Aide : Module Telegraph 
   
- ᴜꜱᴀɢᴇ: /telegraph - ꜱᴇɴᴅ ᴍᴇ ᴘɪᴄᴛᴜʀᴇ ᴏʀ ᴠɪᴅᴇᴏ ᴜɴᴅᴇʀ (5ᴍʙ) 
+ Utilisation : /telegraph - Envoyez-moi une image ou vidéo (moins de 5MB) 
   
- ɴᴏᴛᴇ: 
- ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ɪꜱ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ɢᴏᴜᴘꜱ ᴀɴᴅ ᴘᴍꜱ 
- ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜꜱᴇᴅ ʙʏ ᴇᴠᴇʀʏᴏɴᴇ</b>"""
+ Note : 
+ Cette commande est disponible en groupe et en MP 
+ Tout le monde peut l'utiliser</b>"""
 
-    GITHUB_TXT = """<b>🔹 Github Commands 🔹</b>
+    GITHUB_TXT = """<b>🔹 Commandes GitHub 🔹</b>
 
-📌 <b>Use the following commands to get GitHub profile info and search repositories:</b>
+📌 <b>Utilisez ces commandes pour obtenir des infos sur les profils GitHub et rechercher des dépôts :</b>
 
-🔹 <b>Usage:</b>  
-✅ <code>/github {username}</code> - <b>Fetch GitHub profile information of the given username.</b>  
-✅ <code>/repo {repo name}</code> - <b>Search for repositories available on GitHub.  </b>"""
+🔹 <b>Utilisation :</b>  
+✅ <code>/github {nom_utilisateur}</code> - <b>Récupère les infos du profil GitHub</b>  
+✅ <code>/repo {nom_dépôt}</code> - <b>Recherche des dépôts sur GitHub</b>"""
 
 
-    SONG_TXT = """<b>ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴏᴅᴜʟᴇ</b> 
+    SONG_TXT = """<b>Module de téléchargement de musique</b> 
       
- <b>ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴏᴅᴜʟᴇ, ꜰᴏʀ ᴛʜᴏꜱᴇ ᴡʜᴏ ʟᴏᴠᴇ ᴍᴜꜱɪᴄ. yᴏᴜ ᴄᴀɴ ᴜꜱᴇ ᴛʜɪꜱ ꜰᴇᴀᴛᴜᴇ ꜰᴏʀ ᴅᴏᴡɴʟᴏᴀᴅ ᴀɴy ꜱᴏɴɢ ᴡɪᴛʜ ꜱᴜᴩᴇʀ ꜰᴀꜱᴛ ꜱᴩᴇᴇᴅ. ᴡᴏʀᴋꜱ ʙᴏᴛ ᴀɴᴅ ɢʀᴏᴜᴩꜱ ᴏɴʟy...</b> 
+ <b>Téléchargez n'importe quelle musique à vitesse rapide. Fonctionne en groupe et en MP...</b> 
   
-  /song ꜱᴏɴɢ ɴᴀᴍᴇ</b>"""
+  /song nom de la chanson</b>"""
 
-    INSTAGRAM_TXT = """<b>Wɪᴛʜ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ʏᴏᴜ ᴡɪʟʟ ʙᴇ ᴀʙʟᴇ ᴛᴏ ᴇᴀsɪʟʏ ᴅᴏᴡɴʟᴏᴀᴅ ᴀɴʏ Iɴsᴛᴀɢʀᴀᴍ ʀᴇᴇʟs.
+    INSTAGRAM_TXT = """<b>Avec cette commande, vous pouvez facilement télécharger des Reels Instagram.
 
-/Instagram  sᴇɴᴅ ɪɴsᴛᴀɢʀᴀᴍ ʀᴇᴇʟ,sᴛᴏʀɪᴇs ᴀɴᴅ ᴘᴏsᴛ ʟɪɴᴋ ᴛᴏ ᴛʜɪs ʙᴏᴛ, ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ, ᴘᴜʙʟɪᴄ ᴏɴʟʏ.
+/Instagram envoyez un lien de Reel, Story ou Post public pour le télécharger.
 
-Exᴀᴍᴘʟᴇ 👉 /Instagram ʜᴛᴛᴘs://ᴡᴡᴡ.ɪɴsᴛᴀɢʀᴀᴍ.ᴄᴏᴍ/ʀᴇᴇʟ/CᴠTɴᴋᴄ𝟷ᴏᴜD𝟹/?ɪɢsʜ=YᴢʟᴊYTᴋ𝟷ODɢ𝟹Zɢ==<b>"""
+Exemple 👉 /Instagram https://www.instagram.com/reel/CvTNkc1ouD3/?igsh=YzljYTk1ODg3Zg==<b>"""
     
     JSON_TXT = """<b> 
- ᴊsᴏɴ:  
- ʙᴏᴛ ʀᴇᴛᴜʀɴs ᴊsᴏɴ ꜰᴏʀ ᴀʟʟ ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇs ᴡɪᴛʜ /json 
+ JSON :  
+ Le bot retourne du JSON pour tous les messages avec /json 
   
- ꜰᴇᴀᴛᴜʀᴇs: 
+ Fonctionnalités : 
   
- ᴍᴇssᴀɢᴇ ᴇᴅɪᴛᴛɪɴɢ ᴊsᴏɴ 
- ᴘᴍ sᴜᴘᴘᴏʀᴛ 
- ɢʀᴏᴜᴘ sᴜᴘᴘᴏʀᴛ 
+ Édition de message en JSON 
+ Support en PV 
+ Support en groupe 
   
- ɴᴏᴛᴇ: 
+ Note : 
   
- ᴇᴠᴇʀʏᴏɴᴇ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ , ɪꜰ sᴘᴀᴍɪɴɢ ʜᴀᴘᴘᴇɴs ʙᴏᴛ ᴡɪʟʟ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ʙᴀɴ ʏᴏᴜ ꜰʀᴏᴍ ᴛʜᴇ ɢʀᴏᴜᴘ.</b>"""
+ Tout le monde peut utiliser cette commande, en cas de spam vous serez banni automatiquement.</b>"""
 
-    EXTRA_TXT =""" <b> ʜᴇʀᴇ ɪꜱ ᴍʏ ᴇxᴛʀᴀ ꜰᴇᴀᴛᴜʀᴇꜱ 
+    EXTRA_TXT =""" <b> Mes fonctionnalités supplémentaires 
 
-›› /stickerid : ᴛᴏ ɢᴇᴛ ꜱᴛɪᴄᴋᴇʀ 
-❏ /json : ʀᴇᴛᴜʀɴs ᴊsᴏɴ ꜰᴏʀ ᴀʟʟ ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇs
-›› /telegraph : ꜱᴇɴᴅ ᴍᴇ ᴘɪᴄᴛᴜʀᴇ ᴏʀ ᴠɪᴅᴇᴏ ᴜɴᴅᴇʀ (5ᴍʙ)
-❏ /song : ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ                  
-›› /Instagram  sᴇɴᴅ ɪɴsᴛᴀɢʀᴀᴍ ʀᴇᴇʟ,sᴛᴏʀɪᴇs ᴀɴᴅ ᴘᴏsᴛ ʟɪɴᴋ ᴛᴏ ᴛʜɪs ʙᴏᴛ, ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ, ᴘᴜʙʟɪᴄ ᴏɴʟʏ.                         
+›› /stickerid : obtenir l'ID d'un sticker
+❏ /json : retourne du JSON pour les messages
+›› /telegraph : envoyez une image/vidéo (<5MB)
+❏ /song : télécharger une musique                  
+›› /Instagram télécharger des Reels/Stories (public uniquement)                         
 </b>"""
 
     CHATGPT = """
-» ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ꜰᴏʀ aɪ :
+» Commandes disponibles pour l'IA :
 
- ᴀɪ ᴄᴀɴ ᴀɴsᴡᴇʀ ʏᴏᴜʀ ǫᴜᴇsᴛɪᴏɴ  ᴀɴᴅ sʜᴏᴡs ʏᴏᴜ ᴛʜᴇ ʀᴇsᴜʟᴛ
+L'IA peut répondre à vos questions et afficher les résultats
 
- ❍ /chatgpt  : ʀᴇᴘʟʏ ᴛᴏ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ
- ❍ /lucy : ʀᴇᴘʟʏ ᴛᴏ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ
- ❍ /ask : ᴀɪ ɢᴏᴏɢʟᴇ ᴀɪ 
+ ❍ /chatgpt : répondez à un message ou envoyez du texte
+ ❍ /lucy : répondez à un message ou envoyez du texte
+ ❍ /ask : IA Google 
  ❍ /gpt : chatgpt
- ❍ /chat :  ʀᴇᴘʟʏ ᴛᴏ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ
+ ❍ /chat : répondez à un message ou envoyez du texte
 """
 
     TORRENT = """
-ᴛᴏʀʀᴇɴᴛ sᴇᴀʀᴄʜ ᴄᴏᴍᴍᴀɴᴅ
+Commande de recherche Torrent
 
-ᴇxᴀᴍᴘʟᴇ : /torrent ᴍᴏɴᴇʏ ʜᴇɪsᴛ
+Exemple : /torrent Spider Man
 """
 
     MONGO_TXT = """
-ᴍᴏɴɢᴏ ᴄʜᴇᴄᴋ ᴄᴏᴍᴍᴀɴᴅ
+Commande de vérification MongoDB
 
-ᴇɴᴛᴇʀ ʏᴏᴜʀ MᴏɴɢᴏDB URL ᴀғᴛᴇʀ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ.
+Entrez votre URL MongoDB après la commande.
 
-exᴀᴍᴘʟᴇ: /mongo ʏᴏᴜʀ_ᴍᴏɴɢᴏᴅʙ_ᴜʀʟ
+Exemple : /mongo votre_url_mongodb
 """
 
-    FONT_TXT = """Hᴇʟᴘ : <b>Fᴏɴᴛ</b>
+    FONT_TXT = """Aide : <b>Police</b>
 
-<b>Nᴏᴛᴇ</b>: ʏᴏᴜ ᴄᴀɴ ᴜꜱᴇ ᴛʜɪꜱ ᴍᴏᴅᴇ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ꜰᴏɴᴛꜱ ꜱᴛʏʟᴇ, ᴊᴜꜱᴛ ꜱᴇɴᴅ ᴍᴇ ʟɪᴋᴇ ᴛʜɪꜱ ꜰᴏʀᴍᴀᴛ. 
+<b>Note</b>: Vous pouvez utiliser ce module pour changer le style de police, envoyez simplement :
 
-<code>/font Subaru</code>"""
+<code>/font Kingcey est le meilleure</code>"""
 
     IMAGE_TXT = """
-» ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ꜰᴏʀ image search:
+» Commandes disponibles pour la recherche d'images :
 
-❍ /image: sᴇᴀʀᴄʜ image ᴏғ ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ
-Example:
+❍ /image : rechercher une image correspondant au texte
+Exemple :
 
 /image Subaru
 """
 
-    MONGO_TXT = """
-ᴍᴏɴɢᴏ ᴄʜᴇᴄᴋ ᴄᴏᴍᴍᴀɴᴅ
-
-ᴇɴᴛᴇʀ ʏᴏᴜʀ MᴏɴɢᴏDB URL ᴀғᴛᴇʀ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ.
-
-exᴀᴍᴘʟᴇ: /mongo ʏᴏᴜʀ_ᴍᴏɴɢᴏᴅʙ_ᴜʀʟ
-"""
-
     ANIME_TXT = """
-<b>Get information about animes!
+<b>Obtenez des informations sur des animes !
 
-USAGE:
-➢ /anime [name] - Get the information about the anime."""
+UTILISATION :
+➢ /anime [nom] - Obtenir les infos sur l'anime</b>"""
 
     STREAM = """
-With the help of this command you can stream any file without downloading it and also download it fast. .
+Avec cette commande, vous pouvez streamer n'importe quel fichier sans le télécharger.
 
-Just send the /stream command first and then send any file, then the bot will give you the stream and download link
+Envoyez d'abord /stream puis un fichier, le bot vous donnera un lien de stream et de téléchargement
 """
 
     APPROVE_TXT = """
-ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ɪɴ ᴜʀ ᴄʜᴀɴɴᴇʟ ᴏʀ ɢʀᴏᴜᴘ ᴀɴᴅ sᴇᴇ ᴍᴀɢɪᴄ
+Ajoutez-moi simplement à votre chaîne ou groupe et voyez la magie opérer
 """
 
     AI_TXT = """
-ᴛʜᴇsᴇ ᴀʀᴇ sᴏᴍᴇ ᴀɪ/ᴇxᴘᴇʀᴛ ᴄᴏᴍᴍᴀɴᴅs
+Voici quelques commandes IA/expert
 
-➻ Lucy - ʏᴏᴜ ᴄᴀɴ ᴀᴄᴄᴇꜱꜱ ᴊᴀʀᴠɪꜱ ʙʏ ᴛʜɪꜱ.
-➻ Assis - ᴛʜᴇ ᴀɪ ᴡɪʟʟ ʀᴇꜱᴘᴏɴᴅ ɪɴ ᴀᴜᴅɪᴏ ꜰᴏʀᴍᴀᴛ.
-➻ /gpt - ᴀᴄᴄᴇꜱꜱ ɢᴘᴛ ꜰᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
-➻ /chatgpt - ᴀᴄᴄᴇꜱꜱ ɢᴘᴛ ꜰᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
-➻ /bard - ɪɴᴠᴏᴋᴇ ᴛʜᴇ ʙᴀʀᴅ ꜰᴇᴀᴛᴜʀᴇ.
-➻ /llama - ᴇɴɢᴀɢᴇ ᴡɪᴛʜ ʟʟᴀᴍᴀ ᴍᴏᴅᴇ.
-➻ /gemini - ɪɴᴠᴏᴋᴇ ᴛʜᴇ ɢᴇᴍɪɴɪ ꜰᴇᴀᴛᴜʀᴇ.
-➻ /geminivision - ᴇxᴘʟᴏʀᴇ ɢᴇᴍɪɴɪ ᴍᴏᴅᴇ.
-➻ /mistral - ᴀᴄᴛɪᴠᴀᴛᴇ ᴍɪꜱᴛʀᴀʟ ᴄᴏᴅᴇ.
-➻ /tts - ᴄᴏɴᴠᴇʀᴛ ᴛᴇxᴛ ᴛᴏ ꜱᴘᴇᴇᴄʜ.
-➻ /upscale - ɪᴍᴀɢᴇ ᴜᴘsᴄᴀʟᴇ ғʀᴇᴇ ᴀᴘɪ.
-➻ /blackbox : ᴛᴇxᴛ ᴡɪᴛʜ ʀᴇᴘʟʏ ᴛᴏ ᴛʜᴇ ᴘʜᴏᴛᴏ ᴏʀ ᴊᴜsᴛ ᴛᴇxᴛ
+➻ Lucy - accédez à Jarvis
+➻ Assis - l'IA répondra en audio
+➻ /gpt - fonctionnalité GPT
+➻ /chatgpt - fonctionnalité GPT
+➻ /bard - fonction Bard
+➻ /llama - mode Llama
+➻ /gemini - fonction Gemini
+➻ /geminivision - mode Gemini
+➻ /mistral - code Mistral
+➻ /tts - conversion texte vers parole
+➻ /upscale - API gratuite d'amélioration d'image
+➻ /blackbox : texte avec réponse à une photo ou juste texte
 """
     

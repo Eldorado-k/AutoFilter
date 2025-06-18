@@ -11,18 +11,18 @@ async def pinterest(client, message):
     try:
         query = message.text.split(None , 1)[1]
     except:
-        return await message.reply("ɢɪᴠᴇ ɪᴍᴀɢᴇ ɴᴀᴍᴇ ғᴏʀ sᴇᴀʀᴄʜ")
+        return await message.reply("Donne moi le nom d'une image pour la rechercher")
 
     images = get(f"https://pinterest-api-one.vercel.app/?q={query}").json()
 
     media_group = []
     count = 0
 
-    msg = await message.reply(f"sᴄʀᴀᴘɪɴɢ ɪᴍᴀɢᴇs ғʀᴏᴍ ᴘɪɴᴛᴇʀᴇᴛs...")
+    msg = await message.reply(f"Recherche image sur pinterest...")
     for url in images["images"][:6]:
         media_group.append(InputMediaPhoto(media=url))
         count += 1
-        await msg.edit(f"=> ᴏᴡᴏ sᴄʀᴀᴘᴇᴅ ɪᴍᴀɢᴇs {count}")
+        await msg.edit(f"=> Owo scraping Image. {count}")
 
     try:
 
@@ -34,4 +34,4 @@ async def pinterest(client, message):
 
     except Exception as e:
         await msg.delete()
-        return await message.reply(f"ᴇʀʀᴏʀ : {e}")
+        return await message.reply(f"Erreur : {e}")

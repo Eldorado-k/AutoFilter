@@ -747,7 +747,7 @@ async def send_all(bot, userid, files, ident, chat_id, user_name, query):
             for file in files:
                 title = file.file_name
                 size = get_size(file.file_size)
-                await bot.send_message(chat_id=userid, text=f"<b>Hᴇʏ ᴛʜᴇʀᴇ {user_name} 👋🏽 \n\n✅ Sᴇᴄᴜʀᴇ ʟɪɴᴋ ᴛᴏ ʏᴏᴜʀ ғɪʟᴇ ʜᴀs sᴜᴄᴄᴇssғᴜʟʟʏ ʙᴇᴇɴ ɢᴇɴᴇʀᴀᴛᴇᴅ ᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴅᴏᴡɴʟᴏᴀᴅ ʙᴜᴛᴛᴏɴ\n\n🗃️ Fɪʟᴇ Nᴀᴍᴇ : {title}\n🔖 Fɪʟᴇ Sɪᴢᴇ : {size}</b>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📤 Dᴏᴡɴʟᴏᴀᴅ 📥", url=await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}"))]]))
+                await bot.send_message(chat_id=userid, text=f"<b>Salut {user_name} 👋🏽 \n\n✅ Lien sécurisé généré avec succès. Cliquez sur le bouton de téléchargement.\n\n🗃️ Nom du fichier : {title}\n🔖 Taille du fichier : {size}</b>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📤 Télécharger 📥", url=await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}"))]]))
         else:
             for file in files:
                     f_caption = file.caption
@@ -771,27 +771,27 @@ async def send_all(bot, userid, files, ident, chat_id, user_name, query):
                         reply_markup=InlineKeyboardMarkup(
                             [
                                 [
-                                InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                                InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
+                                InlineKeyboardButton('Groupe de Support', url=GRP_LNK),
+                                InlineKeyboardButton('Chaîne des Mises à Jour', url=CHNL_LNK)
                             ],[
-                                InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/cosmic_freak")
+                                InlineKeyboardButton("Propriétaire du Bot", url="t.me/Kingcey")
                                 ]
                             ]
                         )
                     )
     except UserIsBlocked:
-        await query.answer('Uɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ ᴍᴀʜɴ !', show_alert=True)
+        await query.answer('Débloque le bot, mon pote !', show_alert=True)
     except PeerIdInvalid:
-        await query.answer('Hᴇʏ, Sᴛᴀʀᴛ Bᴏᴛ Fɪʀsᴛ Aɴᴅ Cʟɪᴄᴋ Sᴇɴᴅ Aʟʟ', show_alert=True)
+        await query.answer('Hey, démarre le bot d\'abord et clique sur "Envoyer Tout"', show_alert=True)
     except Exception as e:
-        await query.answer('Hᴇʏ, Sᴛᴀʀᴛ Bᴏᴛ Fɪʀsᴛ Aɴᴅ Cʟɪᴄᴋ Sᴇɴᴅ Aʟʟ', show_alert=True)
+        await query.answer('Hey, démarre le bot d\'abord et clique sur "Envoyer Tout"', show_alert=True)
         
 async def get_cap(settings, remaining_seconds, files, query, total_results, search):
     if settings["imdb"]:
         IMDB_CAP = temp.IMDB_CAP.get(query.from_user.id)
         if IMDB_CAP:
             cap = IMDB_CAP
-            cap+="\n\n<b>📚 <u>Your Requested Files</u> 👇\n</b>"
+            cap+="\n\n<b>📚 <u>Vos Fichiers Demandés</u> 👇\n</b>"
             for file in files:
                 cap += f"<b><a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>📁 [{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
         else:
@@ -829,35 +829,35 @@ async def get_cap(settings, remaining_seconds, files, query, total_results, sear
                     url=imdb['url'],
                     **locals()
                 )
-                cap+="\n\n<b>📚 <u>Your Requested Files</u> 👇\n\n</b>"
+                cap+="\n\n<b>📚 <u>Vos Fichiers Demandés</u> 👇\n\n</b>"
                 for file in files:
                     cap += f"<b><a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>📁 {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
             else:
-                cap = f"<b>🧿 ᴛɪᴛʟᴇ : <code>{search}</code>\n📂 ᴛᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n⏰ ʀᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n⚜️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ {message.chat.title}\n</b>"
-                cap+="\n\n<b>📚 <u>Your Requested Files</u> 👇\n\n</b>"
+                cap = f"<b>🧿 Titre : <code>{search}</code>\n📂 Total des fichiers : <code>{total_results}</code>\n📝 Demandé par : {message.from_user.mention}\n⏰ Résultat en : <code>{remaining_seconds} Secondes</code>\n⚜️ Propulsé par : 👇\n⚡ {message.chat.title}\n</b>"
+                cap+="\n\n<b>📚 <u>Vos Fichiers Demandés</u> 👇\n\n</b>"
                 for file in files:
                     cap += f"<b><a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>📁 {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
     else:
-        cap = f"<b>🧿 ᴛɪᴛʟᴇ : <code>{search}</code>\n📂 ᴛᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {query.from_user.mention}\n⚜️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ DEENDAYAL_DHAKAD\n</b>"
-        cap+="\n\n<b>📚 <u>Your Requested Files</u> 👇\n\n</b>"
+        cap = f"<b>🧿 Titre : <code>{search}</code>\n📂 Total des fichiers : <code>{total_results}</code>\n📝 Demandé par : {query.from_user.mention}\n⚜️ Propulsé par : 👇\n⚡ DEENDAYAL_DHAKAD\n</b>"
+        cap+="\n\n<b>📚 <u>Vos Fichiers Demandés</u> 👇\n\n</b>"
         for file in files:
             cap += f"<b><a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>📁 {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
     return cap
 
 
 async def log_error(client, error_message):
-    """Logs errors to the specified LOG_CHANNEL."""
+    """Log les erreurs dans le LOG_CHANNEL spécifié."""
     try:
         await client.send_message(
             chat_id=LOG_CHANNEL, 
-            text=f"<b>⚠️ Error Log:</b>\n<code>{error_message}</code>"
+            text=f"<b>⚠️ Journal des Erreurs :</b>\n<code>{error_message}</code>"
         )
     except Exception as e:
-        print(f"Failed to log error: {e}")
+        print(f"Échec de la journalisation : {e}")
 
 
 def get_time(seconds):
-    periods = [(' ᴅᴀʏs', 86400), (' ʜᴏᴜʀ', 3600), (' ᴍɪɴᴜᴛᴇ', 60), (' sᴇᴄᴏɴᴅ', 1)]
+    periods = [(' jours', 86400), (' heure', 3600), (' minute', 60), (' seconde', 1)]
     result = ''
     for period_name, period_seconds in periods:
         if seconds >= period_seconds:
