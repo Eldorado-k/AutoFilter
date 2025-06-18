@@ -102,8 +102,8 @@ async def give_filter(client, message):
         if total_results == 0:
             return
         else:
-            return await message.reply_text(f"<b>Bonjour {message.from_user.mention},\n\nVotre recherche est déjà disponible ✅\n\n📂 Fichiers trouvés : {str(total_results)}\n Recherche :</b> <code>{search}</code>\n\n<b>‼️ Ceci est un <u>groupe de support</u> donc vous ne pouvez pas obtenir de fichiers ici...\n\n📝 Recherchez ici : 👇</b>",   
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Rejoindre et rechercher ici", url=GRP_LNK)]]))
+            return await message.reply_text(f"<b>Salut {message.from_user.mention},\n\nTa requête est disponible ✅\n\n📂 Fichiers Trouvé: {str(total_results)}\n Cherche :</b> <code>{search}</code>\n\n<b>‼️ Ceci est un <u>Groupe de support</u> Mais tu peux obtenir tes fichiers...\n\n📝 Recherche ici : 👇</b>",   
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("ᴊᴏɪɴ ᴀɴᴅ ꜱᴇᴀʀᴄʜ ʜᴇʀᴇ", url=GRP_LNK)]]))
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
@@ -122,22 +122,22 @@ async def pm_text(bot, message):
             await auto_filter(bot, message)
         else:
             await message.reply_text(
-             text=f"<b>🙋 Bonjour {user} 😍 ,\n\nVous pouvez rechercher des films uniquement dans notre Groupe Films. Vous n'êtes pas autorisé à rechercher des films via le Bot Direct. Veuillez rejoindre notre groupe films en cliquant sur le bouton RECHERCHER ICI ci-dessous et cherchez votre film préféré là-bas 👇</b>",   
-             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 Rechercher ici ", url=GRP_LNK)]])
+             text=f"<b>🙋 Yo {user} 😍 ,\n\n𝑽𝒐𝒖𝒔 𝒑𝒐𝒖𝒗𝒆𝒛 𝒓𝒆𝒄𝒉𝒆𝒓𝒄𝒉𝒆𝒓 𝒅𝒆𝒔 𝒇𝒊𝒍𝒎𝒔 𝒖𝒏𝒊𝒒𝒖𝒆𝒎𝒆𝒏𝒕 𝒅𝒂𝒏𝒔 𝒏𝒐𝒕𝒓𝒆 𝑮𝒓𝒐𝒖𝒑𝒆 𝒅𝒆 𝑭𝒊𝒍𝒎𝒔. 𝑽𝒐𝒖𝒔 𝒏'𝒆̂𝒕𝒆𝒔 𝒑𝒂𝒔 𝒂𝒖𝒕𝒐𝒓𝒊𝒔𝒆́ 𝒂̀ 𝒇𝒂𝒊𝒓𝒆 𝒅𝒆𝒔 𝒓𝒆𝒄𝒉𝒆𝒓𝒄𝒉𝒆𝒔 𝒔𝒖𝒓 𝒍𝒆 𝑩𝒐𝒕 𝑫𝒊𝒓𝒆𝒄𝒕. 𝑺𝒗𝒑, 𝒓𝒆𝒋𝒐𝒊𝒈𝒏𝒆𝒛 𝒏𝒐𝒕𝒓𝒆 𝒈𝒓𝒐𝒖𝒑𝒆 𝒆𝒏 𝒄𝒍𝒊𝒒𝒖𝒂𝒏𝒕 𝒔𝒖𝒓 𝒍𝒆 𝒃𝒐𝒖𝒕𝒐𝒏 𝑭𝑨𝑰𝑹𝑬 𝑼𝑵𝑬 𝑫𝑬𝑴𝑨𝑵𝑫𝑬 𝒄𝒊-𝒅𝒆𝒔𝒔𝒐𝒖𝒔 𝒆𝒕 𝒓𝒆𝒄𝒉𝒆𝒓𝒄𝒉𝒆𝒛 𝒗𝒐𝒔 𝒇𝒊𝒍𝒎𝒔 𝒑𝒓𝒆́𝒇𝒆́𝒓𝒆́𝒔 𝒍𝒂-𝒃𝒂𝒔. 👇</b>",   
+             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 Demande ici ", url=GRP_LNK)]])
             )
             await bot.send_message(
                 chat_id=LOG_CHANNEL,
-                text=f"<b>#MP_MSG\n\n👤 Nom : {user}\n🆔 ID : {user_id}\n💬 Message : {content}</b>"
+                text=f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\n👤 Nom : {user}\n🆔 ID : {user_id}\n💬 Mᴇssᴀɢᴇ : {content}</b>"
             )
     except Exception as e:
-        # Log de l'erreur
-        print(f"Une erreur est survenue : {str(e)}")
+        # Log the error
+        print(f"An error occurred: {str(e)}")
 
 
 @Client.on_callback_query(filters.regex(r"^reffff"))
 async def refercall(bot, query):
     btn = [[
-        InlineKeyboardButton('Lien d\'invitation', url=f'https://telegram.me/share/url?url=https://t.me/{bot.me.username}?start=reff_{query.from_user.id}&text=Bonjour%21%20Découvrez%20un%20bot%20avec%20une%20vaste%20bibliothèque%20de%20films%20et%20séries%20illimités.%20%F0%9F%98%83'),
+        InlineKeyboardButton('Lien d\'invitation', url=f'https://telegram.me/share/url?url=https://t.me/{bot.me.username}?start=reff_{query.from_user.id}&text=Hello%21%20Experience%20a%20bot%20that%20offers%20a%20vast%20library%20of%20unlimited%20movies%20and%20series.%20%F0%9F%98%83'),
         InlineKeyboardButton(f'⏳ {referdb.get_refer_points(query.from_user.id)}', callback_data='ref_point'),
         InlineKeyboardButton('Retour', callback_data='premium_info')
     ]]
@@ -148,7 +148,7 @@ async def refercall(bot, query):
             InputMediaPhoto("https://graph.org/file/1a2e64aee3d4d10edd930.jpg")
         )
     await query.message.edit_text(
-        text=f'Voici votre lien de parrainage :\n\nhttps://t.me/{bot.me.username}?start=reff_{query.from_user.id}\n\nPartagez ce lien avec vos amis, pour chaque inscription, vous obtiendrez 10 points et après 100 points vous recevrez 1 mois d\'abonnement premium.',
+        text=f'Hey Voici Ton Lien de parrainage:\n\nhttps://t.me/{bot.me.username}?start=reff_{query.from_user.id}\n\nPartagez ce lien avec vos amis. Chaque fois qu\'ils rejoignent, vous recevrez 10 points de parrainage et après 100 points, vous obtiendrez 1 mois d\'abonnement premium.',
         reply_markup=reply_markup,
         parse_mode=enums.ParseMode.HTML
         )
@@ -157,7 +157,7 @@ async def refercall(bot, query):
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
-    curr_time = datetime.now(pytz.timezone('Europe/Paris')).time()
+    curr_time = datetime.now(pytz.timezone('Africa/Lome')).time()
     if int(req) not in [query.from_user.id, 0]:
         return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
     try:
@@ -197,7 +197,7 @@ async def next_page(bot, query):
 
         btn.insert(0, 
             [
-                InlineKeyboardButton("⇈ Sélectionner une option ici ⇈", 'reqinfo')
+                InlineKeyboardButton("⇈ Selectionne L\'option ici ⇈", 'reqinfo')
             ]
         )
         btn.insert(0, 
@@ -208,8 +208,8 @@ async def next_page(bot, query):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Supprimer les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-            InlineKeyboardButton("Tout envoyer", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("Retiré les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
+            InlineKeyboardButton("Envoyer tout", callback_data=f"sendfiles#{key}")
            
         ])
 
@@ -217,7 +217,7 @@ async def next_page(bot, query):
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton("⇈ Sélectionner une option ici ⇈", 'reqinfo')
+                InlineKeyboardButton("⇈ Selectionne L\'option ici ⇈", 'reqinfo')
             ]
         )
         btn.insert(0, 
@@ -228,8 +228,8 @@ async def next_page(bot, query):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Supprimer les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-            InlineKeyboardButton("Tout envoyer", callback_data=f"sendfiles#{key}") 
+            InlineKeyboardButton("Retiré les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
+            InlineKeyboardButton("Envoyer tout", callback_data=f"sendfiles#{key}") 
            
         ])
 
@@ -243,14 +243,14 @@ async def next_page(bot, query):
                 off_set = offset - 10
             if n_offset == 0:
                 btn.append(
-                    [InlineKeyboardButton("⋞ Précédent", callback_data=f"next_{req}_{key}_{off_set}"), InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages")]
+                    [InlineKeyboardButton("⋞ Retour", callback_data=f"next_{req}_{key}_{off_set}"), InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages")]
                 )
             elif off_set is None:
-                btn.append([InlineKeyboardButton("Page", callback_data="pages"), InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages"), InlineKeyboardButton("Suivant ⋟", callback_data=f"next_{req}_{key}_{n_offset}")])
+                btn.append([InlineKeyboardButton("Page", callback_data="pages"), InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages"), InlineKeyboardButton("ɴᴇxᴛ ⋟", callback_data=f"next_{req}_{key}_{n_offset}")])
             else:
                 btn.append(
                     [
-                        InlineKeyboardButton("⋞ Précédent", callback_data=f"next_{req}_{key}_{off_set}"),
+                        InlineKeyboardButton("⋞ Retour", callback_data=f"next_{req}_{key}_{off_set}"),
                         InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages"),
                         InlineKeyboardButton("Suivant ⋟", callback_data=f"next_{req}_{key}_{n_offset}")
                     ],
@@ -264,14 +264,14 @@ async def next_page(bot, query):
                 off_set = offset - int(MAX_B_TN)
             if n_offset == 0:
                 btn.append(
-                    [InlineKeyboardButton("⋞ Précédent", callback_data=f"next_{req}_{key}_{off_set}"), InlineKeyboardButton(f"{math.ceil(int(offset)/int(MAX_B_TN))+1} / {math.ceil(total/int(MAX_B_TN))}", callback_data="pages")]
+                    [InlineKeyboardButton("⋞ Retour", callback_data=f"next_{req}_{key}_{off_set}"), InlineKeyboardButton(f"{math.ceil(int(offset)/int(MAX_B_TN))+1} / {math.ceil(total/int(MAX_B_TN))}", callback_data="pages")]
                 )
             elif off_set is None:
                 btn.append([InlineKeyboardButton("Page", callback_data="pages"), InlineKeyboardButton(f"{math.ceil(int(offset)/int(MAX_B_TN))+1} / {math.ceil(total/int(MAX_B_TN))}", callback_data="pages"), InlineKeyboardButton("Suivant ⋟", callback_data=f"next_{req}_{key}_{n_offset}")])
             else:
                 btn.append(
                     [
-                        InlineKeyboardButton("⋞ Précédent", callback_data=f"next_{req}_{key}_{off_set}"),
+                        InlineKeyboardButton("⋞ Retour", callback_data=f"next_{req}_{key}_{off_set}"),
                         InlineKeyboardButton(f"{math.ceil(int(offset)/int(MAX_B_TN))+1} / {math.ceil(total/int(MAX_B_TN))}", callback_data="pages"),
                         InlineKeyboardButton("Suivant ⋟", callback_data=f"next_{req}_{key}_{n_offset}")
                     ],
@@ -286,14 +286,14 @@ async def next_page(bot, query):
             off_set = offset - 10
         if n_offset == 0:
             btn.append(
-                [InlineKeyboardButton("⋞ Précédent", callback_data=f"next_{req}_{key}_{off_set}"), InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages")]
+                [InlineKeyboardButton("⋞ Retour", callback_data=f"next_{req}_{key}_{off_set}"), InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages")]
             )
         elif off_set is None:
             btn.append([InlineKeyboardButton("Page", callback_data="pages"), InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages"), InlineKeyboardButton("Suivant ⋟", callback_data=f"next_{req}_{key}_{n_offset}")])
         else:
             btn.append(
                 [
-                    InlineKeyboardButton("⋞ Précédent", callback_data=f"next_{req}_{key}_{off_set}"),
+                    InlineKeyboardButton("⋞ Retour", callback_data=f"next_{req}_{key}_{off_set}"),
                     InlineKeyboardButton(f"{math.ceil(int(offset)/10)+1} / {math.ceil(total/10)}", callback_data="pages"),
                     InlineKeyboardButton("Suivant ⋟", callback_data=f"next_{req}_{key}_{n_offset}")
                 ],
@@ -350,26 +350,31 @@ async def advantage_spoll_choker(bot, query):
                 
                 # Create the button for contacting admin
                 contact_admin_button = InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("Cliquez ici pour contacter l'admin", url=OWNER_LNK)]]
+                    [[InlineKeyboardButton("𝘾𝙡𝙞𝙦𝙪𝙚𝙯 𝙞𝙘𝙞 & 𝙛𝙖𝙞𝙩𝙚𝙨 𝙪𝙣𝙚 𝙙𝙚𝙢𝙖𝙣𝙙𝙚 𝙖𝙪𝙥𝙧𝙚̀𝙨 𝙙𝙪 𝙖𝙙𝙢𝙞𝙣", url=OWNER_LNK)]]
                 )
                 
                 k = await query.message.edit(script.MVE_NT_FND, reply_markup=contact_admin_button)
                 await asyncio.sleep(10)
                 await k.delete()
                 
-# Qualités 
+#Qualities 
 @Client.on_callback_query(filters.regex(r"^qualities#"))
 async def qualities_cb_handler(client: Client, query: CallbackQuery):
 
     try:
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"⚠️ Bonjour {query.from_user.first_name},\nCe n'est pas votre demande de film,\nFaites votre propre demande...",
+                f"⚠️ Salut {query.from_user.first_name},\n𝘾𝙚𝙘𝙞 𝙣'𝙚𝙨𝙩 𝙥𝙖𝙨 𝙫𝙤𝙩𝙧𝙚 𝙙𝙚𝙢𝙖𝙣𝙙𝙚 𝙙𝙚 𝙛𝙞𝙡𝙢,\n𝙛𝙖𝙞𝙩𝙚𝙨 𝙡𝙖 𝙫𝙤̂𝙩𝙧𝙚....",
                 show_alert=True,
             )
     except:
         pass
     _, key = query.data.split("#")
+    # if BUTTONS.get(key+"1")!=None:
+    #     search = BUTTONS.get(key+"1")
+    # else:
+    #     search = BUTTONS.get(key)
+    #     BUTTONS[key+"1"] = search
     search = FRESH.get(key)
     search = search.replace(' ', '_')
     btn = []
@@ -389,13 +394,13 @@ async def qualities_cb_handler(client: Client, query: CallbackQuery):
         0,
         [
             InlineKeyboardButton(
-                text="⇊ Sélectionnez une qualité ⇊", callback_data="ident"
+                text="⇊ Choisis la qualité ⇊", callback_data="ident"
             )
         ],
     )
     req = query.from_user.id
     offset = 0
-    btn.append([InlineKeyboardButton(text="↭ Retour aux fichiers ↭", callback_data=f"fq#homepage#{key}")])
+    btn.append([InlineKeyboardButton(text="↭ Retour au fichiers ↭", callback_data=f"fq#homepage#{key}")])
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
  
@@ -403,7 +408,7 @@ async def qualities_cb_handler(client: Client, query: CallbackQuery):
 @Client.on_callback_query(filters.regex(r"^fq#"))
 async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
     _, qual, key = query.data.split("#")
-    curr_time = datetime.now(pytz.timezone('Europe/Paris')).time()
+    curr_time = datetime.now(pytz.timezone('Africa/Lome')).time()
     search = FRESH.get(key)
     search = search.replace("_", " ")
     baal = qual in search
@@ -417,7 +422,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
     try:
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"⚠️ Bonjour {query.from_user.first_name},\nCe n'est pas votre demande de film,\nFaites votre propre demande...",
+                f"⚠️ Salut {query.from_user.first_name},\n𝘾𝙚𝙘𝙞 𝙣'𝙚𝙨𝙩 𝙥𝙖𝙨 𝙫𝙤𝙩𝙧𝙚 𝙙𝙚𝙢𝙖𝙣𝙙𝙚 𝙙𝙚 𝙛𝙞𝙡𝙢,\n𝙛𝙖𝙞𝙩𝙚𝙨 𝙡𝙖 𝙫𝙤̂𝙩𝙧𝙚....",
                 show_alert=True,
             )
     except:
@@ -428,7 +433,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
 
     files, offset, total_results = await get_search_results(chat_id, search, offset=0, filter=True)
     if not files:
-        await query.answer("Aucun fichier trouvé", show_alert=1)
+        await query.answer("Aucun fichier Trouvé", show_alert=1)
         return
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
@@ -444,7 +449,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
         ]
         btn.insert(0, 
             [
-                InlineKeyboardButton("⇈ Sélectionnez une option ici ⇈", 'reqinfo')
+                InlineKeyboardButton("⇈ Choisis L'option ici ⇈", 'reqinfo')
             ]
         )
         btn.insert(0, 
@@ -455,8 +460,8 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Supprimer les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-            InlineKeyboardButton("Tout envoyer", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("Retiré les Pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
+            InlineKeyboardButton("Envoyer tout", callback_data=f"sendfiles#{key}")
            
         ])
 
@@ -464,19 +469,19 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton("⇈ Sélectionnez une option ici ⇈", 'reqinfo')
+                InlineKeyboardButton("⇈ Choisis l'option ⇈", 'reqinfo')
             ]
         )
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'Qualité', callback_data=f"qualities#{key}"),
                 InlineKeyboardButton("Langue", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Saison",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton("Saisons",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Supprimer les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-            InlineKeyboardButton("Tout envoyer", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("Retiré les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
+            InlineKeyboardButton("Envoyer tout", callback_data=f"sendfiles#{key}")
            
         ])
 
@@ -498,11 +503,11 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
             )
     else:
         btn.append(
-            [InlineKeyboardButton(text="↭ Plus de pages disponibles ↭",callback_data="pages")]
+            [InlineKeyboardButton(text="↭ ɴᴏ ᴍᴏʀᴇ ᴘᴀɢᴇꜱ ᴀᴠᴀɪʟᴀʙʟᴇ ↭",callback_data="pages")]
         )
     
     if not settings["button"]:
-        cur_time = datetime.now(pytz.timezone('Africca/Lome')).time()
+        cur_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
         time_difference = timedelta(hours=cur_time.hour, minutes=cur_time.minute, seconds=(cur_time.second+(cur_time.microsecond/1000000))) - timedelta(hours=curr_time.hour, minutes=curr_time.minute, seconds=(curr_time.second+(curr_time.microsecond/1000000)))
         remaining_seconds = "{:.2f}".format(time_difference.total_seconds())
         cap = await get_cap(settings, remaining_seconds, files, query, total_results, search)
@@ -526,12 +531,17 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     try:
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"⚠️ Bonjour {query.from_user.first_name},\nCe n'est pas votre demande de film,\nFaites votre propre demande...",
+                f"⚠️ Salut {query.from_user.first_name},\n𝘾𝙚𝙘𝙞 𝙣'𝙚𝙨𝙩 𝙥𝙖𝙨 𝙫𝙤𝙩𝙧𝙚 𝙙𝙚𝙢𝙖𝙣𝙙𝙚 𝙙𝙚 𝙛𝙞𝙡𝙢,\n𝙛𝙖𝙞𝙩𝙚𝙨 𝙡𝙖 𝙫𝙤̂𝙩𝙧𝙚....",
                 show_alert=True,
             )
     except:
         pass
     _, key = query.data.split("#")
+    # if BUTTONS.get(key+"1")!=None:
+    #     search = BUTTONS.get(key+"1")
+    # else:
+    #     search = BUTTONS.get(key)
+    #     BUTTONS[key+"1"] = search
     search = FRESH.get(key)
     search = search.replace(' ', '_')
     btn = []
@@ -551,13 +561,13 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
         0,
         [
             InlineKeyboardButton(
-                text="⇊ Sélectionnez la langue ⇊", callback_data="ident"
+                text="⇊ Choisis la langue ⇊", callback_data="ident"
             )
         ],
     )
     req = query.from_user.id
     offset = 0
-    btn.append([InlineKeyboardButton(text="↭ Retour aux fichiers ↭", callback_data=f"fl#homepage#{key}")])
+    btn.append([InlineKeyboardButton(text="↭ Retour aux fichiers ​↭", callback_data=f"fl#homepage#{key}")])
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
     
@@ -565,7 +575,7 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
 @Client.on_callback_query(filters.regex(r"^fl#"))
 async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     _, lang, key = query.data.split("#")
-    curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
+    curr_time = datetime.now(pytz.timezone('Africa/Lome')).time()
     search = FRESH.get(key)
     search = search.replace("_", " ")
     baal = lang in search
@@ -579,7 +589,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     try:
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"⚠️ Bonjour {query.from_user.first_name},\nCe n'est pas votre demande de film,\nFaites votre propre demande...",
+                f"⚠️ Salut {query.from_user.first_name},\n𝘾𝙚𝙘𝙞 𝙣'𝙚𝙨𝙩 𝙥𝙖𝙨 𝙫𝙤𝙩𝙧𝙚 𝙙𝙚𝙢𝙖𝙣𝙙𝙚 𝙙𝙚 𝙛𝙞𝙡𝙢,\n𝙛𝙖𝙞𝙩𝙚𝙨 𝙡𝙖 𝙫𝙤̂𝙩𝙧𝙚....",
                 show_alert=True,
             )
     except:
@@ -590,7 +600,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
 
     files, offset, total_results = await get_search_results(chat_id, search, offset=0, filter=True)
     if not files:
-        await query.answer("Aucun fichier trouvé", show_alert=1)
+        await query.answer("Aucun fichiers trouvés", show_alert=1)
         return
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
@@ -606,19 +616,19 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         ]
         btn.insert(0, 
             [
-                InlineKeyboardButton("⇈ Sélectionnez une option ici ⇈", 'reqinfo')
+                InlineKeyboardButton("⇈ Sᴇʟᴇᴄᴛ Oᴘᴛɪᴏɴ Hᴇʀᴇ ⇈", 'reqinfo')
             ]
         )
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Qualité', callback_data=f"qualities#{key}"),
-                InlineKeyboardButton("Langue", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Saison",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton(f'Qᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
+                InlineKeyboardButton("Lᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Supprimer les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-            InlineKeyboardButton("Tout envoyer", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
+            InlineKeyboardButton("Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
             
         ])
 
@@ -626,19 +636,19 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton("⇈ Sélectionnez une option ici ⇈", 'reqinfo')
+                InlineKeyboardButton("⇈ Sᴇʟᴇᴄᴛ Oᴘᴛɪᴏɴ Hᴇʀᴇ ⇈", 'reqinfo')
             ]
         )
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Qualité', callback_data=f"qualities#{key}"),
-                InlineKeyboardButton("Langue", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Saison",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton(f'Qᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
+                InlineKeyboardButton("Lᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Supprimer les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-            InlineKeyboardButton("Tout envoyer", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
+            InlineKeyboardButton("Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
             
         ])
 
@@ -646,21 +656,21 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         try:
             if settings['max_btn']:
                 btn.append(
-                    [InlineKeyboardButton("Page", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="Suivant ⋟",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⋟",callback_data=f"next_{req}_{key}_{offset}")]
                 )
     
             else:
                 btn.append(
-                    [InlineKeyboardButton("Page", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="Suivant ⋟",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⋟",callback_data=f"next_{req}_{key}_{offset}")]
                 )
         except KeyError:
             await save_group_settings(query.message.chat.id, 'max_btn', True)
             btn.append(
-                [InlineKeyboardButton("Page", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="Suivant ⋟",callback_data=f"next_{req}_{key}_{offset}")]
+                [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⋟",callback_data=f"next_{req}_{key}_{offset}")]
             )
     else:
         btn.append(
-            [InlineKeyboardButton(text="↭ Plus de pages disponibles ↭",callback_data="pages")]
+            [InlineKeyboardButton(text="↭ ɴᴏ ᴍᴏʀᴇ ᴘᴀɢᴇꜱ ᴀᴠᴀɪʟᴀʙʟᴇ ↭",callback_data="pages")]
         )
     
     if not settings["button"]:
@@ -688,12 +698,17 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
     try:
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"⚠️ Bonjour {query.from_user.first_name},\nCe n'est pas votre demande de film,\nFaites votre propre demande...",
+                f"⚠️ ʜᴇʟʟᴏ {query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ,\nʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
                 show_alert=True,
             )
     except:
         pass
     _, key = query.data.split("#")
+    # if BUTTONS.get(key+"2")!=None:
+    #     search = BUTTONS.get(key+"2")
+    # else:
+    #     search = BUTTONS.get(key)
+    #     BUTTONS[key+"2"] = search
     search = FRESH.get(key)
     BUTTONS[key] = None
     search = search.replace(' ', '_')
@@ -714,13 +729,13 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
         0,
         [
             InlineKeyboardButton(
-                text="⇊ Sélectionnez la saison ⇊", callback_data="ident"
+                text="⇊ ꜱᴇʟᴇᴄᴛ ꜱᴇᴀꜱᴏɴ ⇊", callback_data="ident"
             )
         ],
     )
     req = query.from_user.id
     offset = 0
-    btn.append([InlineKeyboardButton(text="↭ Retour aux fichiers ↭", callback_data=f"next_{req}_{key}_{offset}")])
+    btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"next_{req}_{key}_{offset}")])
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
 
@@ -748,7 +763,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     try:
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"⚠️ Bonjour {query.from_user.first_name},\nCe n'est pas votre demande de film,\nFaites votre propre demande...",
+                f"⚠️ ʜᴇʟʟᴏ {query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ,\nʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
                 show_alert=True,
             )
     except:
@@ -782,7 +797,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         files.extend(files2)
         
     if not files:
-        await query.answer("Aucun fichier trouvé", show_alert=1)
+        await query.answer("ɴᴏ ꜰɪʟᴇꜱ ᴡᴇʀᴇ ꜰᴏᴜɴᴅ", show_alert=1)
         return
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
@@ -797,26 +812,26 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             for file in files
         ]
         btn.insert(0, [
-            InlineKeyboardButton("Supprimer les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-            InlineKeyboardButton("Sélectionner à nouveau", callback_data=f"seasons#{key}")
+            InlineKeyboardButton("ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
+            InlineKeyboardButton("ꜱᴇʟᴇᴄᴛ ᴀɢᴀɪɴ", callback_data=f"seasons#{key}")
         ])
     else:
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton("⇈ Sélectionnez une option ici ⇈", 'reqinfo')
+                InlineKeyboardButton("⇈ Sᴇʟᴇᴄᴛ Oᴘᴛɪᴏɴ Hᴇʀᴇ ⇈", 'reqinfo')
             ]
         )
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Qualité', callback_data=f"qualities#{key}"),
-                InlineKeyboardButton("Langue", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Saison",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton(f'Qᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
+                InlineKeyboardButton("Lᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Supprimer les pubs", url=f"https://t.me/{temp.U_NAME}?start=plan"),
-            InlineKeyboardButton("Tout envoyer", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=plan"),
+            InlineKeyboardButton("Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
             
         ])
     
@@ -824,7 +839,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
 
     btn.append([
             InlineKeyboardButton(
-                text="↭ Retour aux fichiers ↭",
+                text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ↭",
                 callback_data=f"next_{req}_{key}_{offset}"
                 ),
     ])
@@ -858,12 +873,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.delete()
     elif query.data == "gfiltersdeleteallconfirm":
         await del_allg(query.message, 'gfilters')
-        await query.answer("Terminé !")
+        await query.answer("ᴅᴏɴᴇ !")
         return
     elif query.data == "gfiltersdeleteallcancel": 
         await query.message.reply_to_message.delete()
         await query.message.delete()
-        await query.answer("Processus annulé !")
+        await query.answer("ᴘʀᴏᴄᴇꜱꜱ ᴄᴀɴᴄᴇʟʟᴇᴅ !")
         return
     elif query.data == "delallconfirm":
         userid = query.from_user.id
@@ -877,11 +892,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat = await client.get_chat(grpid)
                     title = chat.title
                 except:
-                    await query.message.edit_text("Assurez-vous que je suis présent dans votre groupe !!", quote=True)
+                    await query.message.edit_text("Mᴀᴋᴇ sᴜʀᴇ I'ᴍ ᴘʀᴇsᴇɴᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ!!", quote=True)
                     return await query.answer(MSG_ALRT)
             else:
                 await query.message.edit_text(
-                    "Je ne suis connecté à aucun groupe !\nVérifiez /connections ou connectez-vous à des groupes.",
+                    "I'ᴍ ɴᴏᴛ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ ᴀɴʏ ɢʀᴏᴜᴘs !\nCʜᴇᴄᴋ /connections ᴏʀ ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ᴀɴʏ ɢʀᴏᴜᴘs.",
                     quote=True
                 )
                 return await query.answer(MSG_ALRT)
@@ -897,7 +912,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if (st.status == enums.ChatMemberStatus.OWNER) or (str(userid) in ADMINS):
             await del_all(query.message, grp_id, title)
         else:
-            await query.answer("Vous devez être propriétaire du groupe ou un utilisateur autorisé pour faire cela !", show_alert=True)
+            await query.answer("Yᴏᴜ ɴᴇᴇᴅ ᴛᴏ ʙᴇ Gʀᴏᴜᴘ Oᴡɴᴇʀ ᴏʀ ᴀɴ Aᴜᴛʜ Usᴇʀ ᴛᴏ ᴅᴏ ᴛʜᴀᴛ !", show_alert=True)
     elif query.data == "delallcancel":
         userid = query.from_user.id
         chat_type = query.message.chat.type
@@ -916,7 +931,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 except:
                     pass
             else:
-                await query.answer("Ce n'est pas pour vous !!", show_alert=True)
+                await query.answer("Tʜᴀᴛ's ɴᴏᴛ ғᴏʀ ʏᴏᴜ!!", show_alert=True)
     elif "groupcb" in query.data:
         await query.answer()
 
@@ -928,20 +943,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
         user_id = query.from_user.id
 
         if act == "":
-            stat = "connecter"
+            stat = "ᴄᴏɴɴᴇᴄᴛ"
             cb = "connectcb"
         else:
-            stat = "déconnecter"
+            stat = "ᴅɪꜱᴄᴏɴɴᴇᴄᴛ"
             cb = "disconnect"
 
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton(f"{stat}", callback_data=f"{cb}:{group_id}"),
-             InlineKeyboardButton("supprimer", callback_data=f"deletecb:{group_id}")],
-            [InlineKeyboardButton("retour", callback_data="backcb")]
+             InlineKeyboardButton("ᴅᴇʟᴇᴛᴇ", callback_data=f"deletecb:{group_id}")],
+            [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="backcb")]
         ])
 
         await query.message.edit_text(
-            f"Nom du groupe : **{title}**\nID du groupe : `{group_id}`",
+            f"Gʀᴏᴜᴘ Nᴀᴍᴇ : **{title}**\nGʀᴏᴜᴘ ID : `{group_id}`",
             reply_markup=keyboard,
             parse_mode=enums.ParseMode.MARKDOWN
         )
@@ -961,11 +976,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if mkact:
             await query.message.edit_text(
-                f"Connecté à **{title}**",
+                f"Cᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ **{title}**",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
         else:
-            await query.message.edit_text('Une erreur est survenue !!', parse_mode=enums.ParseMode.MARKDOWN)
+            await query.message.edit_text('Sᴏᴍᴇ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ!!', parse_mode=enums.ParseMode.MARKDOWN)
         return await query.answer(MSG_ALRT)
     elif "disconnect" in query.data:
         await query.answer()
@@ -981,12 +996,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if mkinact:
             await query.message.edit_text(
-                f"Déconnecté de **{title}**",
+                f"Dɪsᴄᴏɴɴᴇᴄᴛᴇᴅ ғʀᴏᴍ **{title}**",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
         else:
             await query.message.edit_text(
-                f"Une erreur est survenue !!",
+                f"Sᴏᴍᴇ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
         return await query.answer(MSG_ALRT)
@@ -1000,11 +1015,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if delcon:
             await query.message.edit_text(
-                "Connexion supprimée avec succès !"
+                "Sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴄᴏɴɴᴇᴄᴛɪᴏɴ !"
             )
         else:
             await query.message.edit_text(
-                f"Une erreur est survenue !!",
+                f"Sᴏᴍᴇ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
         return await query.answer(MSG_ALRT)
@@ -1016,7 +1031,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         groupids = await all_connections(str(userid))
         if groupids is None:
             await query.message.edit_text(
-                "Il n'y a aucune connexion active !! Connectez-vous d'abord à des groupes.",
+                "Tʜᴇʀᴇ ᴀʀᴇ ɴᴏ ᴀᴄᴛɪᴠᴇ ᴄᴏɴɴᴇᴄᴛɪᴏɴs!! Cᴏɴɴᴇᴄᴛ ᴛᴏ sᴏᴍᴇ ɢʀᴏᴜᴘs ғɪʀsᴛ.",
             )
             return await query.answer(MSG_ALRT)
         buttons = []
@@ -1025,7 +1040,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ttl = await client.get_chat(int(groupid))
                 title = ttl.title
                 active = await if_active(str(userid), str(groupid))
-                act = " - ACTIF" if active else ""
+                act = " - ACTIVE" if active else ""
                 buttons.append(
                     [
                         InlineKeyboardButton(
@@ -1037,7 +1052,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 pass
         if buttons:
             await query.message.edit_text(
-                "Détails de vos groupes connectés :\n\n",
+                "Yᴏᴜʀ ᴄᴏɴɴᴇᴄᴛᴇᴅ ɢʀᴏᴜᴘ ᴅᴇᴛᴀɪʟs ;\n\n",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
 
@@ -1072,7 +1087,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
         if not files_:
-            return await query.answer('Aucun fichier existant.')
+            return await query.answer('Nᴏ sᴜᴄʜ ғɪʟᴇ ᴇxɪsᴛ.')
         files = files_[0]
         title = files.file_name
         size = get_size(files.file_size)
@@ -1097,15 +1112,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=short_{file_id}")
                     return
                 else:
-                    await query.answer(f"Salut {query.from_user.first_name},\nCe n'est pas ta demande de film.\nFais ta propre demande !", show_alert=True)
+                    await query.answer(f"Hᴇʏ {query.from_user.first_name},\nTʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ.\nRᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
             else:
                 if clicked == query.from_user.id:
                     await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start={ident}_{file_id}")
                     return
                 else:
-                    await query.answer(f"Salut {query.from_user.first_name},\nCe n'est pas ta demande de film.\nFais ta propre demande !", show_alert=True)
+                    await query.answer(f"Hᴇʏ {query.from_user.first_name},\nTʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ.\nRᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
         except UserIsBlocked:
-            await query.answer('Débloque le bot !', show_alert=True)
+            await query.answer('Uɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ ᴍᴀʜɴ !', show_alert=True)
         except PeerIdInvalid:
             await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start={ident}_{file_id}")
         except Exception as e:
@@ -1124,7 +1139,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=allfiles_{key}")
                 return
         except UserIsBlocked:
-            await query.answer('Débloque le bot !', show_alert=True)
+            await query.answer('Uɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ ᴍᴀʜɴ !', show_alert=True)
         except PeerIdInvalid:
             await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=sendfiles3_{key}")
         except Exception as e:
@@ -1136,7 +1151,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
         if not files_:
-            return await query.answer('Aucun fichier existant.')
+            return await query.answer('Nᴏ sᴜᴄʜ ғɪʟᴇ ᴇxɪsᴛ.')
         files = files_[0]
         title = files.file_name
         size = get_size(files.file_size)
@@ -1161,12 +1176,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = await is_subscribed(client, query, channels)
             if btn:
                 await query.answer(
-                    f"👋 Bonjour {query.from_user.first_name},\n\n"
-                    "Vous n'avez pas rejoint tous les canaux requis.\n"
-                    "Veuillez rejoindre chaque canal listé ci-dessous et réessayer.\n\n",
+                    f"👋 Hello {query.from_user.first_name},\n\n"
+                    "Yᴏᴜ ʜᴀᴠᴇ ɴᴏᴛ ᴊᴏɪɴᴇᴅ ᴀʟʟ ʀᴇǫᴜɪʀᴇᴅ ᴜᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟs.\n"
+                    "Pʟᴇᴀsᴇ ᴊᴏɪɴ ᴇᴀᴄʜ ᴄʜᴀɴɴᴇʟ ʟɪsᴛᴇᴅ ʙᴇʟᴏᴡ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ.\n\n",
                     show_alert=True
                 )
-                btn.append([InlineKeyboardButton("Réessayer", callback_data=f"checksub#{kk}#{file_id}")])
+                btn.append([InlineKeyboardButton("ᴛʀʏ ᴀɢᴀɪɴ", callback_data=f"checksub#{kk}#{file_id}")])
                 await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(btn))
                 return
         await query.answer(url=f"https://t.me/{temp.U_NAME}?start={kk}_{file_id}")
@@ -1189,7 +1204,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         search = BUTTONS2.get(key)
         files, n_offset, total = await get_search_results(query.message.chat.id, search, offset=int(offset), filter=True)
         await send_all(client, query.from_user.id, files, ident, query.message.chat.id, query.from_user.first_name, query)
-        await query.answer(f"Salut {query.from_user.first_name}, tous les fichiers de cette page t'ont été envoyés en DM !", show_alert=True)
+        await query.answer(f"ʜᴇʏ {query.from_user.first_name}, ᴀʟʟ ꜰɪʟᴇꜱ ᴏɴ ᴛʜɪꜱ ᴘᴀɢᴇ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴛᴏ ʏᴏᴜ ʙʏ ᴅᴍ !", show_alert=True)
         
     elif query.data.startswith("send_fall"):
         temp_var, ident, key, offset = query.data.split("#")
@@ -1202,13 +1217,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             return
         files, n_offset, total = await get_search_results(query.message.chat.id, search, offset=int(offset), filter=True)
         await send_all(client, query.from_user.id, files, ident, query.message.chat.id, query.from_user.first_name, query)
-        await query.answer(f"Salut {query.from_user.first_name}, tous les fichiers de cette page t'ont été envoyés en DM !", show_alert=True)
+        await query.answer(f"ʜᴇʏ {query.from_user.first_name}, ᴀʟʟ ꜰɪʟᴇꜱ ᴏɴ ᴛʜɪꜱ ᴘᴀɢᴇ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴛᴏ ʏᴏᴜ ʙʏ ᴅᴍ !", show_alert=True)
         
     elif query.data.startswith("killfilesdq"):
         ident, keyword = query.data.split("#")
-        await query.message.edit_text(f"<b>Recherche des fichiers pour ta requête {keyword} dans la base de données... Patientez...</b>")
+        await query.message.edit_text(f"<b>Fetching Files for your query {keyword} on DB... Please wait...</b>")
         files, total = await get_bad_files(keyword)
-        await query.message.edit_text("<b>La suppression des fichiers commencera dans 5 secondes !</b>")
+        await query.message.edit_text("<b>ꜰɪʟᴇ ᴅᴇʟᴇᴛɪᴏɴ ᴘʀᴏᴄᴇꜱꜱ ᴡɪʟʟ ꜱᴛᴀʀᴛ ɪɴ 5 ꜱᴇᴄᴏɴᴅꜱ !</b>")
         await asyncio.sleep(5)
         deleted = 0
         async with lock:
@@ -1224,15 +1239,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             '_id': file_ids,
                         })
                     if result.deleted_count:
-                        logger.info(f'Fichier trouvé pour ta requête {keyword}! Suppression réussie de {file_name} depuis la base de données.')
+                        logger.info(f'ꜰɪʟᴇ ꜰᴏᴜɴᴅ ꜰᴏʀ ʏᴏᴜʀ ǫᴜᴇʀʏ {keyword}! ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ {file_name} ꜰʀᴏᴍ ᴅᴀᴛᴀʙᴀꜱᴇ.')
                     deleted += 1
                     if deleted % 20 == 0:
-                        await query.message.edit_text(f"<b>Processus de suppression démarré. {str(deleted)} fichiers supprimés pour ta requête {keyword} !\n\nPatientez...</b>")
+                        await query.message.edit_text(f"<b>ᴘʀᴏᴄᴇꜱꜱ ꜱᴛᴀʀᴛᴇᴅ ꜰᴏʀ ᴅᴇʟᴇᴛɪɴɢ ꜰɪʟᴇꜱ ꜰʀᴏᴍ ᴅʙ. ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ {str(deleted)} ꜰɪʟᴇꜱ ꜰʀᴏᴍ ᴅʙ ꜰᴏʀ ʏᴏᴜʀ ǫᴜᴇʀʏ {keyword} !\n\nᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ...</b>")
             except Exception as e:
                 logger.exception(e)
-                await query.message.edit_text(f'Erreur : {e}')
+                await query.message.edit_text(f'Error: {e}')
             else:
-                await query.message.edit_text(f"<b>Processus terminé !\n\n{str(deleted)} fichiers supprimés pour ta requête {keyword}.</b>")
+                await query.message.edit_text(f"<b>ᴘʀᴏᴄᴇꜱꜱ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ꜰᴏʀ ꜰɪʟᴇ ᴅᴇʟᴇᴛᴀᴛɪᴏɴ !\n\nꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ {str(deleted)} ꜰɪʟᴇꜱ ꜰʀᴏᴍ ᴅʙ ꜰᴏʀ ʏᴏᴜʀ ǫᴜᴇʀʏ {keyword}.</b>")
     
     elif query.data.startswith("opnsetgrp"):
         ident, grp_id = query.data.split("#")
@@ -1243,78 +1258,78 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 and st.status != enums.ChatMemberStatus.OWNER
                 and str(userid) not in ADMINS
         ):
-            await query.answer("Tu n'as pas les droits pour faire ça !", show_alert=True)
+            await query.answer("ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ʀɪɢʜᴛꜱ ᴛᴏ ᴅᴏ ᴛʜɪꜱ !", show_alert=True)
             return
         title = query.message.chat.title
         settings = await get_settings(grp_id)
         if settings is not None:
             buttons = [
                 [
-                    InlineKeyboardButton('Page de résultats',
+                    InlineKeyboardButton('ʀᴇꜱᴜʟᴛ ᴘᴀɢᴇ',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Bouton' if settings["button"] else 'Texte',
+                    InlineKeyboardButton('ʙᴜᴛᴛᴏɴ' if settings["button"] else 'ᴛᴇxᴛ',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Mode d\'envoi', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Manuel' if settings["botpm"] else 'Auto',
+                    InlineKeyboardButton('ꜰɪʟᴇ ꜱᴇɴᴅ ᴍᴏᴅᴇ', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('ꜱᴛᴀʀᴛ' if settings["botpm"] else 'ᴀᴜᴛᴏ',
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Sécurité fichiers',
+                    InlineKeyboardButton('ꜰɪʟᴇ ꜱᴇᴄᴜʀᴇ',
                                          callback_data=f'setgs#file_secure#{settings["file_secure"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["file_secure"] else 'Désactivé',
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["file_secure"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#file_secure#{settings["file_secure"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Poster IMDB', callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["imdb"] else 'Désactivé',
+                    InlineKeyboardButton('ɪᴍᴅʙ ᴘᴏꜱᴛᴇʀ', callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["imdb"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Vérif. orthographe',
+                    InlineKeyboardButton('ꜱᴘᴇʟʟ ᴄʜᴇᴄᴋ',
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["spell_check"] else 'Désactivé',
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["spell_check"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Msg de bienvenue', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["welcome"] else 'Désactivé',
+                    InlineKeyboardButton('ᴡᴇʟᴄᴏᴍᴇ ᴍꜱɢ', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["welcome"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Suppr. auto',
+                    InlineKeyboardButton('ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ',
                                          callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["auto_delete"] else 'Désactivé',
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["auto_delete"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Filtre auto',
+                    InlineKeyboardButton('ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ',
                                          callback_data=f'setgs#auto_ffilter#{settings["auto_ffilter"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["auto_ffilter"] else 'Désactivé',
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["auto_ffilter"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#auto_ffilter#{settings["auto_ffilter"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Boutons max',
+                    InlineKeyboardButton('ᴍᴀx ʙᴜᴛᴛᴏɴꜱ',
                                          callback_data=f'setgs#max_btn#{settings["max_btn"]}#{str(grp_id)}'),
                     InlineKeyboardButton('10' if settings["max_btn"] else f'{MAX_B_TN}',
                                          callback_data=f'setgs#max_btn#{settings["max_btn"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Raccourcis',
+                    InlineKeyboardButton('ꜱʜᴏʀᴛʟɪɴᴋ',
                                          callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["is_shortlink"] else 'Désactivé',
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["is_shortlink"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('⇋ Fermer le menu ⇋', 
+                    InlineKeyboardButton('⇋ ᴄʟᴏꜱᴇ ꜱᴇᴛᴛɪɴɢꜱ ᴍᴇɴᴜ ⇋', 
                                          callback_data='close_data'
                                          )
                 ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
-                text=f"<b>Configure les paramètres pour {title} comme tu le souhaites ⚙</b>",
+                text=f"<b>ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ꜱᴇᴛᴛɪɴɢꜱ ꜰᴏʀ {title} ᴀꜱ ʏᴏᴜ ᴡɪꜱʜ ⚙</b>",
                 disable_web_page_preview=True,
                 parse_mode=enums.ParseMode.HTML
             )
@@ -1329,77 +1344,77 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 and st.status != enums.ChatMemberStatus.OWNER
                 and str(userid) not in ADMINS
         ):
-            await query.answer("Vous n'avez pas les droits suffisants pour faire ceci !", show_alert=True)
+            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢʜᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
             return
         title = query.message.chat.title
         settings = await get_settings(grp_id)
         btn2 = [[
-                 InlineKeyboardButton("Vérifier mes messages 🗳️", url=f"telegram.me/{temp.U_NAME}")
+                 InlineKeyboardButton("ᴄʜᴇᴄᴋ ᴍʏ ᴅᴍ 🗳️", url=f"telegram.me/{temp.U_NAME}")
                ]]
         reply_markup = InlineKeyboardMarkup(btn2)
-        await query.message.edit_text(f"<b>Votre menu de paramètres pour {title} a été envoyé en message privé.</b>")
+        await query.message.edit_text(f"<b>ʏᴏᴜʀ sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ ғᴏʀ {title} ʜᴀs ʙᴇᴇɴ sᴇɴᴛ ᴛᴏ ʏᴏᴜ ʙʏ ᴅᴍ.</b>")
         await query.message.edit_reply_markup(reply_markup)
         if settings is not None:
             buttons = [
                 [
-                    InlineKeyboardButton('Page de résultats',
+                    InlineKeyboardButton('ʀᴇꜱᴜʟᴛ ᴘᴀɢᴇ',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Bouton' if settings["button"] else 'Texte',
+                    InlineKeyboardButton('ʙᴜᴛᴛᴏɴ' if settings["button"] else 'ᴛᴇxᴛ',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Mode d\'envoi', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Manuel' if settings["botpm"] else 'Auto',
+                    InlineKeyboardButton('ꜰɪʟᴇ ꜱᴇɴᴅ ᴍᴏᴅᴇ', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('ꜱᴛᴀʀᴛ' if settings["botpm"] else 'ᴀᴜᴛᴏ',
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Sécurité fichiers',
+                    InlineKeyboardButton('ꜰɪʟᴇ ꜱᴇᴄᴜʀᴇ',
                                          callback_data=f'setgs#file_secure#{settings["file_secure"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["file_secure"] else 'Désactivé',
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["file_secure"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#file_secure#{settings["file_secure"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Poster IMDB', callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["imdb"] else 'Désactivé',
+                    InlineKeyboardButton('ɪᴍᴅʙ ᴘᴏꜱᴛᴇʀ', callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["imdb"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Vérif. orthographe',
+                    InlineKeyboardButton('ꜱᴘᴇʟʟ ᴄʜᴇᴄᴋ',
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["spell_check"] else 'Désactivé',
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["spell_check"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Msg bienvenue', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["welcome"] else 'Désactivé',
+                    InlineKeyboardButton('ᴡᴇʟᴄᴏᴍᴇ ᴍꜱɢ', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["welcome"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Suppr. auto',
+                    InlineKeyboardButton('ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ',
                                          callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["auto_delete"] else 'Désactivé',
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["auto_delete"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Filtre auto',
+                    InlineKeyboardButton('ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ',
                                          callback_data=f'setgs#auto_ffilter#{settings["auto_ffilter"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["auto_ffilter"] else 'Désactivé',
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["auto_ffilter"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#auto_ffilter#{settings["auto_ffilter"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Boutons max',
+                    InlineKeyboardButton('ᴍᴀx ʙᴜᴛᴛᴏɴꜱ',
                                          callback_data=f'setgs#max_btn#{settings["max_btn"]}#{str(grp_id)}'),
                     InlineKeyboardButton('10' if settings["max_btn"] else f'{MAX_B_TN}',
                                          callback_data=f'setgs#max_btn#{settings["max_btn"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Raccourcis',
+                    InlineKeyboardButton('ꜱʜᴏʀᴛʟɪɴᴋ',
                                          callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Activé' if settings["is_shortlink"] else 'Désactivé',
+                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["is_shortlink"] else 'ᴅɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('⇋ Fermer le menu ⇋', 
+                    InlineKeyboardButton('⇋ ᴄʟᴏꜱᴇ ꜱᴇᴛᴛɪɴɢꜱ ᴍᴇɴᴜ ⇋', 
                                          callback_data='close_data'
                                          )
                 ]
@@ -1407,7 +1422,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await client.send_message(
                 chat_id=userid,
-                text=f"<b>Modifiez vos paramètres pour {title} comme vous le souhaitez ⚙</b>",
+                text=f"<b>ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ꜱᴇᴛᴛɪɴɢꜱ ꜰᴏʀ {title} ᴀꜱ ʏᴏᴜ ᴡɪꜱʜ ⚙</b>",
                 reply_markup=reply_markup,
                 disable_web_page_preview=True,
                 parse_mode=enums.ParseMode.HTML,
@@ -1417,35 +1432,35 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data.startswith("show_option"):
         ident, from_user = query.data.split("#")
         btn = [[
-                InlineKeyboardButton("Indisponible", callback_data=f"unavailable#{from_user}"),
-                InlineKeyboardButton("Uploadé", callback_data=f"uploaded#{from_user}")
+                InlineKeyboardButton("ᴜɴᴀᴠᴀɪʟᴀʙʟᴇ", callback_data=f"unavailable#{from_user}"),
+                InlineKeyboardButton("ᴜᴘʟᴏᴀᴅᴇᴅ", callback_data=f"uploaded#{from_user}")
              ],[
-                InlineKeyboardButton("Déjà disponible", callback_data=f"already_available#{from_user}")
+                InlineKeyboardButton("ᴀʟʀᴇᴀᴅʏ ᴀᴠᴀɪʟᴀʙʟᴇ", callback_data=f"already_available#{from_user}")
              ],[
-                InlineKeyboardButton("Pas encore sorti", callback_data=f"Not_Released#{from_user}"),
-                InlineKeyboardButton("Corriger l'orthographe", callback_data=f"Type_Correct_Spelling#{from_user}")
+                InlineKeyboardButton("Not Released", callback_data=f"Not_Released#{from_user}"),
+                InlineKeyboardButton("Type Correct Spelling", callback_data=f"Type_Correct_Spelling#{from_user}")
              ],[
-                InlineKeyboardButton("Non disponible en Hindi", callback_data=f"Not_Available_In_The_Hindi#{from_user}")
+                InlineKeyboardButton("Not Available In The Hindi", callback_data=f"Not_Available_In_The_Hindi#{from_user}")
              ]]
         btn2 = [[
-                 InlineKeyboardButton("Voir le statut", url=f"{query.message.link}")
+                 InlineKeyboardButton("ᴠɪᴇᴡ ꜱᴛᴀᴛᴜꜱ", url=f"{query.message.link}")
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_reply_markup(reply_markup)
-            await query.answer("Voici les options disponibles !")
+            await query.answer("Hᴇʀᴇ ᴀʀᴇ ᴛʜᴇ ᴏᴘᴛɪᴏɴs !")
         else:
-            await query.answer("Vous n'avez pas les droits suffisants pour faire ceci !", show_alert=True)
+            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢʜᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
         
     elif query.data.startswith("unavailable"):
         ident, from_user = query.data.split("#")
         btn = [[
-                InlineKeyboardButton("⚠️ Indisponible ⚠️", callback_data=f"unalert#{from_user}")
+                InlineKeyboardButton("⚠️ ᴜɴᴀᴠᴀɪʟᴀʙʟᴇ ⚠️", callback_data=f"unalert#{from_user}")
               ]]
         btn2 = [[
-                 InlineKeyboardButton('Rejoindre le canal', url=link.invite_link),
-                 InlineKeyboardButton("Voir le statut", url=f"{query.message.link}")
+                 InlineKeyboardButton('ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ', url=link.invite_link),
+                 InlineKeyboardButton("ᴠɪᴇᴡ ꜱᴛᴀᴛᴜꜱ", url=f"{query.message.link}")
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -1453,22 +1468,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
             content = query.message.text
             await query.message.edit_text(f"<b><strike>{content}</strike></b>")
             await query.message.edit_reply_markup(reply_markup)
-            await query.answer("Marqué comme Indisponible !")
+            await query.answer("Sᴇᴛ ᴛᴏ Uɴᴀᴠᴀɪʟᴀʙʟᴇ !")
             try:
-                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, Désolé mais votre demande est indisponible. Nos modérateurs ne peuvent pas l'uploader.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, Sᴏʀʀʏ Yᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ ɪs ᴜɴᴀᴠᴀɪʟᴀʙʟᴇ. Sᴏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs ᴄᴀɴ'ᴛ ᴜᴘʟᴏᴀᴅ ɪᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
             except UserIsBlocked:
-                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, Désolé mais votre demande est indisponible. Nos modérateurs ne peuvent pas l'uploader.\n\nNote : Ce message est envoyé ici car vous avez bloqué le bot. Pour le recevoir en MP, vous devez débloquer le bot.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, Sᴏʀʀʏ Yᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ ɪs ᴜɴᴀᴠᴀɪʟᴀʙʟᴇ. Sᴏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs ᴄᴀɴ'ᴛ ᴜᴘʟᴏᴀᴅ ɪᴛ.\n\nNᴏᴛᴇ: Tʜɪs ᴍᴇssᴀɢᴇ ɪs sᴇɴᴛ ᴛᴏ ᴛʜɪs ɢʀᴏᴜᴘ ʙᴇᴄᴀᴜsᴇ ʏᴏᴜ'ᴠᴇ ʙʟᴏᴄᴋᴇᴅ ᴛʜᴇ ʙᴏᴛ. Tᴏ sᴇɴᴅ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴛᴏ ʏᴏᴜʀ PM, Mᴜsᴛ ᴜɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
         else:
-            await query.answer("Vous n'avez pas les droits suffisants pour faire ceci !", show_alert=True)
+            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢʜᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
             
     elif query.data.startswith("Not_Released"):
         ident, from_user = query.data.split("#")
         btn = [[
-                InlineKeyboardButton("📌 Pas encore sorti 📌", callback_data=f"unalert#{from_user}")
+                InlineKeyboardButton("📌 Not Released 📌", callback_data=f"unalert#{from_user}")
               ]]
         btn2 = [[
-                 InlineKeyboardButton('Rejoindre le canal', url=link.invite_link),
-                 InlineKeyboardButton("Voir le statut", url=f"{query.message.link}")
+                 InlineKeyboardButton('ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ', url=link.invite_link),
+                 InlineKeyboardButton("ᴠɪᴇᴡ ꜱᴛᴀᴛᴜꜱ", url=f"{query.message.link}")
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -1476,22 +1491,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
             content = query.message.text
             await query.message.edit_text(f"<b><strike>{content}</strike></b>")
             await query.message.edit_reply_markup(reply_markup)
-            await query.answer("Marqué comme Pas encore sorti !")
+            await query.answer("Sᴇᴛ ᴛᴏ Uɴᴀᴠᴀɪʟᴀʙʟᴇ !")
             try:
-                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, Le film que vous avez demandé n'est pas encore sorti. Nos modérateurs ne peuvent donc pas l'uploader.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, The movie you requested has not been released yet. Sᴏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs ᴄᴀɴ'ᴛ ᴜᴘʟᴏᴀᴅ ɪᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
             except UserIsBlocked:
-                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, Le film que vous avez demandé n'est pas encore sorti. Nos modérateurs ne peuvent donc pas l'uploader.\n\nNote : Ce message est envoyé ici car vous avez bloqué le bot. Pour le recevoir en MP, vous devez débloquer le bot.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, The movie you requested has not been released yet. Sᴏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs ᴄᴀɴ'ᴛ ᴜᴘʟᴏᴀᴅ ɪᴛ.\n\nNᴏᴛᴇ: Tʜɪs ᴍᴇssᴀɢᴇ ɪs sᴇɴᴛ ᴛᴏ ᴛʜɪs ɢʀᴏᴜᴘ ʙᴇᴄᴀᴜsᴇ ʏᴏᴜ'ᴠᴇ ʙʟᴏᴄᴋᴇᴅ ᴛʜᴇ ʙᴏᴛ. Tᴏ sᴇɴᴅ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴛᴏ ʏᴏᴜʀ PM, Mᴜsᴛ ᴜɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
         else:
-            await query.answer("Vous n'avez pas les droits suffisants pour faire ceci !", show_alert=True)
+            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢʜᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
 
     elif query.data.startswith("Type_Correct_Spelling"):
         ident, from_user = query.data.split("#")
         btn = [[
-                InlineKeyboardButton("♨️ Corriger l'orthographe ♨️", callback_data=f"unalert#{from_user}")
+                InlineKeyboardButton("♨️ Type Correct Spelling ♨️", callback_data=f"unalert#{from_user}")
               ]]
         btn2 = [[
-                 InlineKeyboardButton('Rejoindre le canal', url=link.invite_link),
-                 InlineKeyboardButton("Voir le statut", url=f"{query.message.link}")
+                 InlineKeyboardButton('ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ', url=link.invite_link),
+                 InlineKeyboardButton("ᴠɪᴇᴡ ꜱᴛᴀᴛᴜꜱ", url=f"{query.message.link}")
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -1499,22 +1514,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
             content = query.message.text
             await query.message.edit_text(f"<b><strike>{content}</strike></b>")
             await query.message.edit_reply_markup(reply_markup)
-            await query.answer("Marqué comme Orthographe incorrecte !")
+            await query.answer("Sᴇᴛ ᴛᴏ Type Correct Spelling !")
             try:
-                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, L'orthographe du film demandé est incorrecte. Veuillez saisir le bon titre et réessayer.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, The spelling of the movie you requested is incorrect. Please type the correct spelling of the movie name and try again.</b>", reply_markup=InlineKeyboardMarkup(btn2))
             except UserIsBlocked:
-                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, L'orthographe du film demandé est incorrecte. Veuillez saisir le bon titre et réessayer.\n\nNote : Ce message est envoyé ici car vous avez bloqué le bot. Pour le recevoir en MP, vous devez débloquer le bot.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, The spelling of the movie you requested is incorrect. Please type the correct spelling of the movie name and try again.\n\nNᴏᴛᴇ: Tʜɪs ᴍᴇssᴀɢᴇ ɪs sᴇɴᴛ ᴛᴏ ᴛʜɪs ɢʀᴏᴜᴘ ʙᴇᴄᴀᴜsᴇ ʏᴏᴜ'ᴠᴇ ʙʟᴏᴄᴋᴇᴅ ᴛʜᴇ ʙᴏᴛ. Tᴏ sᴇɴᴅ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴛᴏ ʏᴏᴜʀ PM, Mᴜsᴛ ᴜɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
         else:
-            await query.answer("Vous n'avez pas les droits suffisants pour faire ceci !", show_alert=True)
+            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢʜᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
 
     elif query.data.startswith("Not_Available_In_The_Hindi"):
         ident, from_user = query.data.split("#")
         btn = [[
-                InlineKeyboardButton("⚜️ Non disponible en Hindi ⚜️", callback_data=f"unalert#{from_user}")
+                InlineKeyboardButton("⚜️ Not Available In The Hindi ⚜️", callback_data=f"unalert#{from_user}")
               ]]
         btn2 = [[
-                 InlineKeyboardButton('Rejoindre le canal', url=link.invite_link),
-                 InlineKeyboardButton("Voir le statut", url=f"{query.message.link}")
+                 InlineKeyboardButton('ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ', url=link.invite_link),
+                 InlineKeyboardButton("ᴠɪᴇᴡ ꜱᴛᴀᴛᴜꜱ", url=f"{query.message.link}")
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -1522,24 +1537,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
             content = query.message.text
             await query.message.edit_text(f"<b><strike>{content}</strike></b>")
             await query.message.edit_reply_markup(reply_markup)
-            await query.answer("Marqué comme Non disponible en Hindi !")
+            await query.answer("Sᴇᴛ ᴛᴏ Not Available In The Hindi  !")
             try:
-                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, Votre demande n'est pas disponible en version Hindi. Nos modérateurs ne peuvent donc pas l'uploader.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, Your request is not available in the Hindi language. Sᴏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs ᴄᴀɴ'ᴛ ᴜᴘʟᴏᴀᴅ ɪᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
             except UserIsBlocked:
-                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, Votre demande n'est pas disponible en version Hindi. Nos modérateurs ne peuvent donc pas l'uploader.\n\nNote : Ce message est envoyé ici car vous avez bloqué le bot. Pour le recevoir en MP, vous devez débloquer le bot.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, Your request is not available in the Hindi language. Sᴏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs ᴄᴀɴ'ᴛ ᴜᴘʟᴏᴀᴅ ɪᴛ.\n\nNᴏᴛᴇ: Tʜɪs ᴍᴇssᴀɢᴇ ɪs sᴇɴᴛ ᴛᴏ ᴛʜɪs ɢʀᴏᴜᴘ ʙᴇᴄᴀᴜsᴇ ʏᴏᴜ'ᴠᴇ ʙʟᴏᴄᴋᴇᴅ ᴛʜᴇ ʙᴏᴛ. Tᴏ sᴇɴᴅ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴛᴏ ʏᴏᴜʀ PM, Mᴜsᴛ ᴜɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
         else:
-            await query.answer("Vous n'avez pas les droits suffisants pour faire ceci !", show_alert=True)
+            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢʜᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
 
     elif query.data.startswith("uploaded"):
         ident, from_user = query.data.split("#")
         btn = [[
-                InlineKeyboardButton("🟢 Uploadé 🟢", callback_data=f"upalert#{from_user}")
+                InlineKeyboardButton("🟢 ᴜᴘʟᴏᴀᴅᴇᴅ 🟢", callback_data=f"upalert#{from_user}")
               ]]
         btn2 = [[
-                 InlineKeyboardButton('Rejoindre le canal', url=link.invite_link),
-                 InlineKeyboardButton("Voir le statut", url=f"{query.message.link}")
+                 InlineKeyboardButton('ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ', url=link.invite_link),
+                 InlineKeyboardButton("ᴠɪᴇᴡ ꜱᴛᴀᴛᴜꜱ", url=f"{query.message.link}")
                ],[
-                 InlineKeyboardButton("🔍 Rechercher ici 🔎", url=GRP_LNK)
+                 InlineKeyboardButton("🔍 ꜱᴇᴀʀᴄʜ ʜᴇʀᴇ 🔎", url=GRP_LNK)
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -1547,24 +1562,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
             content = query.message.text
             await query.message.edit_text(f"<b><strike>{content}</strike></b>")
             await query.message.edit_reply_markup(reply_markup)
-            await query.answer("Marqué comme Uploadé !")
+            await query.answer("Sᴇᴛ ᴛᴏ Uᴘʟᴏᴀᴅᴇᴅ !")
             try:
-                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, Votre demande a été uploadée par nos modérateurs. Veuillez la rechercher dans notre groupe.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, Yᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ ʜᴀs ʙᴇᴇɴ ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs. Kɪɴᴅʟʏ sᴇᴀʀᴄʜ ɪɴ ᴏᴜʀ Gʀᴏᴜᴘ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
             except UserIsBlocked:
-                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, Votre demande a été uploadée par nos modérateurs. Veuillez la rechercher dans notre groupe.\n\nNote : Ce message est envoyé ici car vous avez bloqué le bot. Pour le recevoir en MP, vous devez débloquer le bot.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, Yᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ ʜᴀs ʙᴇᴇɴ ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ ᴏᴜʀ ᴍᴏᴅᴇʀᴀᴛᴏʀs. Kɪɴᴅʟʏ sᴇᴀʀᴄʜ ɪɴ ᴏᴜʀ Gʀᴏᴜᴘ.\n\nNᴏᴛᴇ: Tʜɪs ᴍᴇssᴀɢᴇ ɪs sᴇɴᴛ ᴛᴏ ᴛʜɪs ɢʀᴏᴜᴘ ʙᴇᴄᴀᴜsᴇ ʏᴏᴜ'ᴠᴇ ʙʟᴏᴄᴋᴇᴅ ᴛʜᴇ ʙᴏᴛ. Tᴏ sᴇɴᴅ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴛᴏ ʏᴏᴜʀ PM, Mᴜsᴛ ᴜɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
         else:
-            await query.answer("Vous n'avez pas les droits suffisants pour faire ceci !", show_alert=True)
+            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
 
     elif query.data.startswith("already_available"):
         ident, from_user = query.data.split("#")
         btn = [[
-                InlineKeyboardButton("♻️ Déjà disponible ♻️", callback_data=f"alalert#{from_user}")
+                InlineKeyboardButton("♻️ ᴀʟʀᴇᴀᴅʏ ᴀᴠᴀɪʟᴀʙʟᴇ ♻️", callback_data=f"alalert#{from_user}")
               ]]
         btn2 = [[
-                 InlineKeyboardButton('Rejoindre le canal', url=link.invite_link),
-                 InlineKeyboardButton("Voir le statut", url=f"{query.message.link}")
+                 InlineKeyboardButton('ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ', url=link.invite_link),
+                 InlineKeyboardButton("ᴠɪᴇᴡ ꜱᴛᴀᴛᴜꜱ", url=f"{query.message.link}")
                ],[
-                 InlineKeyboardButton("🔍 Rechercher ici 🔎", url=GRP_LNK)
+                 InlineKeyboardButton("🔍 ꜱᴇᴀʀᴄʜ ʜᴇʀᴇ 🔎", url=GRP_LNK)
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -1572,38 +1587,38 @@ async def cb_handler(client: Client, query: CallbackQuery):
             content = query.message.text
             await query.message.edit_text(f"<b><strike>{content}</strike></b>")
             await query.message.edit_reply_markup(reply_markup)
-            await query.answer("Marqué comme Déjà disponible !")
+            await query.answer("Sᴇᴛ ᴛᴏ Aʟʀᴇᴀᴅʏ Aᴠᴀɪʟᴀʙʟᴇ !")
             try:
-                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, Votre demande est déjà disponible dans notre base de données. Veuillez la rechercher dans notre groupe.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(from_user), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, Yᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ ɪs ᴀʟʀᴇᴀᴅʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴏᴜʀ ʙᴏᴛ's ᴅᴀᴛᴀʙᴀsᴇ. Kɪɴᴅʟʏ sᴇᴀʀᴄʜ ɪɴ ᴏᴜʀ Gʀᴏᴜᴘ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
             except UserIsBlocked:
-                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Bonjour {user.mention}, Votre demande est déjà disponible dans notre base de données. Veuillez la rechercher dans notre groupe.\n\nNote : Ce message est envoyé ici car vous avez bloqué le bot. Pour le recevoir en MP, vous devez débloquer le bot.</b>", reply_markup=InlineKeyboardMarkup(btn2))
+                await client.send_message(chat_id=int(SUPPORT_CHAT_ID), text=f"<u>{content}</u>\n\n<b>Hᴇʏ {user.mention}, Yᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ ɪs ᴀʟʀᴇᴀᴅʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴏᴜʀ ʙᴏᴛ's ᴅᴀᴛᴀʙᴀsᴇ. Kɪɴᴅʟʏ sᴇᴀʀᴄʜ ɪɴ ᴏᴜʀ Gʀᴏᴜᴘ.\n\nNᴏᴛᴇ: Tʜɪs ᴍᴇssᴀɢᴇ ɪs sᴇɴᴛ ᴛᴏ ᴛʜɪs ɢʀᴏᴜᴘ ʙᴇᴄᴀᴜsᴇ ʏᴏᴜ'ᴠᴇ ʙʟᴏᴄᴋᴇᴅ ᴛʜᴇ ʙᴏᴛ. Tᴏ sᴇɴᴅ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴛᴏ ʏᴏᴜʀ PM, Mᴜsᴛ ᴜɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ.</b>", reply_markup=InlineKeyboardMarkup(btn2))
         else:
-            await query.answer("Vous n'avez pas les droits suffisants pour faire ceci !", show_alert=True)
+            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
             
     
     elif query.data.startswith("alalert"):
         ident, from_user = query.data.split("#")
         if int(query.from_user.id) == int(from_user):
             user = await client.get_users(from_user)
-            await query.answer(f"Salut {user.first_name}, Votre demande est déjà disponible !", show_alert=True)
+            await query.answer(f"Hᴇʏ {user.first_name}, Yᴏᴜʀ Rᴇᴏ̨ᴜᴇsᴛ ɪs Aʟʀᴇᴀᴅʏ Aᴠᴀɪʟᴀʙʟᴇ !", show_alert=True)
         else:
-            await query.answer("Vous n'avez pas les droits suffisants pour faire ceci !", show_alert=True)
+            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
 
     elif query.data.startswith("upalert"):
         ident, from_user = query.data.split("#")
         if int(query.from_user.id) == int(from_user):
             user = await client.get_users(from_user)
-            await query.answer(f"Salut {user.first_name}, Votre demande a été uploadée !", show_alert=True)
+            await query.answer(f"Hᴇʏ {user.first_name}, Yᴏᴜʀ Rᴇᴏ̨ᴜᴇsᴛ ɪs Uᴘʟᴏᴀᴅᴇᴅ !", show_alert=True)
         else:
-            await query.answer("Vous n'avez pas les droits suffisants pour faire ceci !", show_alert=True)
+            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
         
     elif query.data.startswith("unalert"):
         ident, from_user = query.data.split("#")
         if int(query.from_user.id) == int(from_user):
             user = await client.get_users(from_user)
-            await query.answer(f"Salut {user.first_name}, Votre demande est indisponible !", show_alert=True)
+            await query.answer(f"Hᴇʏ {user.first_name}, Yᴏᴜʀ Rᴇᴏ̨ᴜᴇsᴛ ɪs Uɴᴀᴠᴀɪʟᴀʙʟᴇ !", show_alert=True)
         else:
-            await query.answer("Vous n'avez pas les droits suffisants pour faire ceci !", show_alert=True)
+            await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
 
     
     elif lazyData.startswith("generate_stream_link"):
@@ -1625,18 +1640,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await xo.delete()
 
             await log_msg.reply_text(
-                text=f"•• Lien généré pour l'ID #{user_id} \n•• Utilisateur : {username} \n\n•• Nom du fichier : {fileName}",
+                text=f"•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ꜰᴏʀ ɪᴅ #{user_id} \n•• ᴜꜱᴇʀɴᴀᴍᴇ : {username} \n\n•• ᖴᎥᒪᗴ Nᗩᗰᗴ : {fileName}",
                 quote=True,
                 disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Téléchargement rapide 🚀", url=lazy_download),
-                                                    InlineKeyboardButton('🖥️ Voir en ligne 🖥️', url=lazy_stream)]])
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Fast Download 🚀", url=lazy_download),  # we download Link
+                                                    InlineKeyboardButton('🖥️ Watch online 🖥️', url=lazy_stream)]])  # web stream Link
             )
             lucypro = await query.message.reply_text(
-                text="•• Lien généré ☠︎⚔",
+                text="•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ☠︎⚔",
                 quote=True,
                 disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Téléchargement rapide 🚀", url=lazy_download),
-                                                    InlineKeyboardButton('🖥️ Voir en ligne 🖥️', url=lazy_stream)]])
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Fast Download 🚀", url=lazy_download),  # we download Link
+                                                    InlineKeyboardButton('🖥️ Watch online 🖥️', url=lazy_stream)]])  # web stream Link
             )  
             
             await asyncio.sleep(DELETE_TIME) 
@@ -1644,10 +1659,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             return
             
         except Exception as e:
-            print(e)
-            await query.answer(f"⚠️ UNE ERREUR EST SURVENUE \n\n{e}", show_alert=True)
+            print(e)  # print the error message
+            await query.answer(f"⚠️ SOMETHING WENT WRONG \n\n{e}", show_alert=True)
             return
             
+       #@codeflix_bots
+    
     elif query.data == "pagesn1":
         await query.answer(text=script.PAGE_TXT, show_alert=True)
 
@@ -1668,26 +1685,26 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton(text="💸", callback_data="shortlink_info"),
                     InlineKeyboardButton(text="🖥", callback_data="main"),
                 ],[
-                    InlineKeyboardButton('Ajoutez-moi à votre groupe', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('• Commandes •', callback_data='main'),
-                    InlineKeyboardButton('• AnimLoko •', url='t.me/AnimLoko')
+                    InlineKeyboardButton('• ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='main'),
+                    InlineKeyboardButton('• ᴇᴀʀɴ ᴍᴏɴᴇʏ •', callback_data='shortlink_info')
                 ],[
-                    InlineKeyboardButton('• Premium •', callback_data='premium_info'),
-                    InlineKeyboardButton('• À propos •', callback_data='about')
+                    InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium_info'),
+                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
         current_time = datetime.now(pytz.timezone(TIMEZONE))
         curr_time = current_time.hour        
         if curr_time < 12:
-            gtxt = "Bonjour 👋" 
+            gtxt = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 👋" 
         elif curr_time < 17:
-            gtxt = "Bon après-midi 👋" 
+            gtxt = "ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 👋" 
         elif curr_time < 21:
-            gtxt = "Bonsoir 👋"
+            gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 👋"
         else:
-            gtxt = "Bonne nuit 👋"
+            gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 👋"
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
@@ -1697,17 +1714,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
  
     elif query.data == "main":
         buttons = [[
-            InlineKeyboardButton('• Commandes admin •', callback_data='admic')
+            InlineKeyboardButton('• ʙᴏᴛ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='admic')
         ], [
-            InlineKeyboardButton('• Groupe •', callback_data='users'),
-            InlineKeyboardButton('• Plus •', callback_data='help')
+            InlineKeyboardButton('• ɢʀᴏᴜᴘ •', callback_data='users'),
+            InlineKeyboardButton('• ᴍᴏʀᴇ •', callback_data='help')
         ], [
-            InlineKeyboardButton('• IA •', callback_data='aihelp'),
-            InlineKeyboardButton('• Tendances •', callback_data='topsearch')
+            InlineKeyboardButton('• ᴀɪ •', callback_data='aihelp'),
+            InlineKeyboardButton('• ᴛʀᴇɴᴅɪɴɢ •', callback_data='topsearch')
         ], [
-            InlineKeyboardButton('• Recherches populaires •', callback_data='topsearch')
+            InlineKeyboardButton('• ᴍᴏsᴛ sᴇᴀʀᴄʜ •', callback_data='topsearch')
         ], [
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='start')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1723,11 +1740,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "purchase":
         buttons = [[
-            InlineKeyboardButton('💵 Payer via UPI 💵', callback_data='upi_info')
+            InlineKeyboardButton('💵 ᴘᴀʏ ᴠɪᴀ ᴜᴘɪ ɪᴅ 💵', callback_data='upi_info')
         ],[
-            InlineKeyboardButton('📸 Scanner le QR code 📸', callback_data='qr_info')
+            InlineKeyboardButton('📸 ꜱᴄᴀɴ ǫʀ ᴄᴏᴅᴇ 📸', callback_data='qr_info')
         ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='premium_info')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='premium_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1743,9 +1760,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "donation":
         buttons = [[
-            InlineKeyboardButton('Envoyer capture ici', url=OWNER_LNK)
+            InlineKeyboardButton('sᴇɴᴅ ss ʜᴇʀᴇ', url=OWNER_LNK)
         ],[
-            InlineKeyboardButton('⇍ Retour ⇏', callback_data='start')
+            InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1772,9 +1789,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "upi_info":
         buttons = [[
-            InlineKeyboardButton('📲 Envoyer capture de paiement ici', url=OWNER_LNK)
+            InlineKeyboardButton('📲 ꜱᴇɴᴅ ᴘᴀʏᴍᴇɴᴛ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ʜᴇʀᴇ', url=OWNER_LNK)
         ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='purchase')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='purchase')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1790,9 +1807,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "qr_info":
         buttons = [[
-            InlineKeyboardButton('📲 Envoyer capture de paiement ici', url=OWNER_LNK)
+            InlineKeyboardButton('📲 ꜱᴇɴᴅ ᴘᴀʏᴍᴇɴᴛ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ʜᴇʀᴇ', url=OWNER_LNK)
         ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='purchase')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='purchase')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1810,33 +1827,33 @@ async def cb_handler(client: Client, query: CallbackQuery):
         user_id = query.from_user.id
         has_free_trial = await db.check_trial_status(user_id)
         if has_free_trial:
-            await query.answer("🚸 Vous avez déjà utilisé votre essai gratuit !\n\n📌 Voir nos offres avec : /plan", show_alert=True)
+            await query.answer("🚸 ʏᴏᴜ'ᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴄʟᴀɪᴍᴇᴅ ʏᴏᴜʀ ꜰʀᴇᴇ ᴛʀɪᴀʟ ᴏɴᴄᴇ !\n\n📌 ᴄʜᴇᴄᴋᴏᴜᴛ ᴏᴜʀ ᴘʟᴀɴꜱ ʙʏ : /plan", show_alert=True)
             return
         else:            
             await db.give_free_trial(user_id)
             await query.message.reply_text(
-                text="<b>🥳 Félicitations\n\n🎉 Vous pouvez utiliser l'essai gratuit pendant 5 minutes dès maintenant !</b>",
+                text="<b>🥳 ᴄᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴꜱ\n\n🎉 ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ꜰʀᴇᴇ ᴛʀᴀɪʟ ꜰᴏʀ <u>5 ᴍɪɴᴜᴛᴇs</u> ꜰʀᴏᴍ ɴᴏᴡ !</b>",
                 quote=False,
                 disable_web_page_preview=True,                  
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💸 Voir les offres premium 💸", callback_data='seeplans')]]))
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💸 ᴄʜᴇᴄᴋᴏᴜᴛ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ 💸", callback_data='seeplans')]]))
             return    
 
     elif query.data == "seeplans":
         btn = [[
-            InlineKeyboardButton('Parrainer et obtenir premium', callback_data='reffff') 
+            InlineKeyboardButton('ʀᴇғᴇʀ ᴀɴᴅ ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ', callback_data='reffff') 
         ],[
-            InlineKeyboardButton(' Bronze ', callback_data='broze'),
-            InlineKeyboardButton('Argent', callback_data='silver')
+            InlineKeyboardButton(' ʙʀᴏɴᴢᴇ ', callback_data='broze'),
+            InlineKeyboardButton('ꜱɪʟᴠᴇʀ ', callback_data='silver')
         ],[
-            InlineKeyboardButton('Or', callback_data='gold'),
-            InlineKeyboardButton('Platine', callback_data='platinum')
+            InlineKeyboardButton('ɢᴏʟᴅ ', callback_data='gold'),
+            InlineKeyboardButton('ᴘʟᴀᴛɪɴᴜᴍ ', callback_data='platinum')
         ],[
-            InlineKeyboardButton('Diamant', callback_data='diamond'),
-            InlineKeyboardButton('Autre', callback_data='other')
+            InlineKeyboardButton('ᴅɪᴀᴍᴏɴᴅ ', callback_data='diamond'),
+            InlineKeyboardButton('ᴏᴛʜᴇʀ ', callback_data='other')
         ],[
-            InlineKeyboardButton('Essai gratuit de 5 minutes', callback_data='free')
+            InlineKeyboardButton('ɢᴇᴛ ғʀᴇᴇ ᴛʀᴀɪʟ ғᴏʀ 𝟻 ᴍɪɴᴜᴛᴇs', callback_data='free')
         ],[            
-            InlineKeyboardButton('❌ Fermer ❌', callback_data='close_data')
+            InlineKeyboardButton('❌ ᴄʟᴏꜱᴇ ❌', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(btn)
         await query.message.reply_photo(
@@ -1849,20 +1866,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "premium_info":
         buttons = [[
-            InlineKeyboardButton('Parrainer et obtenir premium', callback_data='reffff'),
+            InlineKeyboardButton('ʀᴇғᴇʀ ᴀɴᴅ ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ', callback_data='reffff'),
         ],[
-            InlineKeyboardButton('Bronze', callback_data='broze'),
-            InlineKeyboardButton('Argent', callback_data='silver')
+            InlineKeyboardButton('ʙʀᴏɴᴢᴇ ', callback_data='broze'),
+            InlineKeyboardButton('ꜱɪʟᴠᴇʀ ', callback_data='silver')
         ],[
-            InlineKeyboardButton('Or', callback_data='gold'),
-            InlineKeyboardButton('Platine', callback_data='platinum')
+            InlineKeyboardButton('ɢᴏʟᴅ ', callback_data='gold'),
+            InlineKeyboardButton('ᴘʟᴀᴛɪɴᴜᴍ ', callback_data='platinum')
         ],[
-            InlineKeyboardButton('Diamant', callback_data='diamond'),
-            InlineKeyboardButton('Autre', callback_data='other')
+            InlineKeyboardButton('ᴅɪᴀᴍᴏɴᴅ ', callback_data='diamond'),
+            InlineKeyboardButton('ᴏᴛʜᴇʀ ', callback_data='other')
         ],[
-            InlineKeyboardButton('Essai gratuit de 5 minutes ☺️', callback_data='free')
+            InlineKeyboardButton('ɢᴇᴛ ғʀᴇᴇ ᴛʀᴀɪʟ ғᴏʀ 𝟻 ᴍɪɴᴜᴛᴇs ☺️', callback_data='free')
         ],[            
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='start')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1879,13 +1896,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         #@Deendayal_dhakad   
     elif query.data == "free":
         buttons = [[
-            InlineKeyboardButton('⚜️ Cliquez ici pour un essai gratuit', callback_data="give_trial")
+            InlineKeyboardButton('⚜️ ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ɢᴇᴛ ꜰʀᴇᴇ ᴛʀɪᴀʟ', callback_data="give_trial")
         ],[
-            InlineKeyboardButton('◀ Retour', callback_data='other'),
+            InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='other'),
             InlineKeyboardButton('1 / 7', callback_data='pagesn1'),
-            InlineKeyboardButton('Suivant ▶', callback_data='broze')
+            InlineKeyboardButton('ɴᴇxᴛ ⋟', callback_data='broze')
         ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='premium_info')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='premium_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1896,13 +1913,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "broze":
         buttons = [[
-            InlineKeyboardButton('🔐 Cliquez ici pour acheter Premium', callback_data='purchase')
+            InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
-            InlineKeyboardButton('◀ Retour', callback_data='free'),
+            InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='free'),
             InlineKeyboardButton('2 / 7', callback_data='pagesn1'),
-            InlineKeyboardButton('Suivant ▶', callback_data='silver')
+            InlineKeyboardButton('ɴᴇxᴛ ⋟', callback_data='silver')
         ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='premium_info')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='premium_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1918,13 +1935,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "silver":
         buttons = [[
-            InlineKeyboardButton('🔐 Cliquez ici pour acheter Premium', callback_data='purchase')
+            InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
-            InlineKeyboardButton('◀ Retour', callback_data='broze'),
+            InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='broze'),
             InlineKeyboardButton('3 / 7', callback_data='pagesn1'),
-            InlineKeyboardButton('Suivant ▶', callback_data='gold')
+            InlineKeyboardButton('ɴᴇxᴛ ⋟', callback_data='gold')
         ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='premium_info')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='premium_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1937,16 +1954,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-
+#Deendayal403
     elif query.data == "gold":
         buttons = [[
-            InlineKeyboardButton('🔐 Cliquez ici pour acheter Premium', callback_data='purchase')
+            InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
-            InlineKeyboardButton('◀ Retour', callback_data='silver'),
+            InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='silver'),
             InlineKeyboardButton('4 / 7', callback_data='pagesn1'),
-            InlineKeyboardButton('Suivant ▶', callback_data='platinum')
+            InlineKeyboardButton('ɴᴇxᴛ ⋟', callback_data='platinum')
         ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='premium_info')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='premium_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1962,13 +1979,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "platinum":
         buttons = [[
-            InlineKeyboardButton('🔐 Cliquez ici pour acheter Premium', callback_data='purchase')
+            InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
-            InlineKeyboardButton('◀ Retour', callback_data='gold'),
+            InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='gold'),
             InlineKeyboardButton('5 / 7', callback_data='pagesn1'),
-            InlineKeyboardButton('Suivant ▶', callback_data='diamond')
+            InlineKeyboardButton('ɴᴇxᴛ ⋟', callback_data='diamond')
         ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='premium_info')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='premium_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1984,13 +2001,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "diamond":
         buttons = [[
-            InlineKeyboardButton('🔐 Cliquez ici pour acheter Premium', callback_data='purchase')
+            InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
-            InlineKeyboardButton('◀ Retour', callback_data='platinum'),
+            InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='platinum'),
             InlineKeyboardButton('6 / 7', callback_data='pagesn1'),
-            InlineKeyboardButton('Suivant ▶', callback_data='other')
+            InlineKeyboardButton('ɴᴇxᴛ ⋟', callback_data='other')
         ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='start')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -2001,13 +2018,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "other":
         buttons = [[
-            InlineKeyboardButton('☎️ Contactez le propriétaire pour en savoir plus', url=OWNER_LNK)
+            InlineKeyboardButton('☎️ ᴄᴏɴᴛᴀᴄᴛ ᴏᴡɴᴇʀ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ', url=OWNER_LNK)
         ],[
-            InlineKeyboardButton('◀ Retour', callback_data='diamond'),
+            InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='diamond'),
             InlineKeyboardButton('7 / 7', callback_data='pagesn1'),
-            InlineKeyboardButton('Suivant ▶', callback_data='free')
+            InlineKeyboardButton('ɴᴇxᴛ ⋟', callback_data='free')
         ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='premium_info')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='premium_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -2023,17 +2040,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "group_info":
         buttons = [[
-            InlineKeyboardButton('× Canal de bots ×', url="https://t.me/BotZFlix")
+            InlineKeyboardButton('× ᴀʟʟ ᴏᴜʀ ʟɪɴᴋꜱ ×', url="https://t.me/nova_flix")
        ],[
-            InlineKeyboardButton('• Groupe •', url="t.me/ZFlixTeam"),
-            InlineKeyboardButton('• Mises à jour •', url="t.me/BotZFlix")
+            InlineKeyboardButton('• ɢʀᴏᴜᴘ •', url="t.me/movie7xchat"),
+            InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url="t.me/codeflix_bots")
        ],[
-            InlineKeyboardButton('• SériesFlix •', url="https://t.me/AntiFlix_A"),
-            InlineKeyboardButton('• Contact •', url="https://t.me/Kingcey")
+            InlineKeyboardButton('• sᴇʀɪᴇsғʟɪx •', url="https://t.me/webseries_flix"),
+            InlineKeyboardButton('• ᴍᴏᴠɪᴇғʟɪx •', url="https://t.me/movieflixspot")
        ],[
-            InlineKeyboardButton('• Anime Loko •', url="https://t.me/AnimLoko")
+            InlineKeyboardButton('• ᴀɴɪᴍᴇ ᴄʀᴜɪsᴇ •', url="https://t.me/Anime_Cruise_Netflix")
        ],[ 
-            InlineKeyboardButton('• Retour •', callback_data='start')
+            InlineKeyboardButton('• ʙᴀᴄᴋ •', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -2043,7 +2060,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "users":
         buttons = [[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='help')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -2054,7 +2071,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "group":
         buttons = [[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='help')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -2066,11 +2083,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "admic":
         if query.from_user.id not in ADMINS:
-            return await query.answer("⚠️ Vous n'êtes pas administrateur du bot !", show_alert=True)
+            return await query.answer("⚠️ ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀ ʙᴏᴛ ᴀᴅᴍɪɴ !", show_alert=True)
         page = 0  
         buttons = [
-            [InlineKeyboardButton('Suivant ➡️', callback_data=f'admic_next_{page}')],
-            [InlineKeyboardButton('⇋ Retour ⇋', callback_data='help')]
+            [InlineKeyboardButton('ɴᴇxᴛ ➡️', callback_data=f'admic_next_{page}')],
+            [InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')]
         ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -2086,12 +2103,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         buttons = []
         if page > 0:
-            buttons.append(InlineKeyboardButton('◀ Précédent', callback_data=f'admic_prev_{page}'))
+            buttons.append(InlineKeyboardButton('ᴘʀᴇᴠ ⬅️', callback_data=f'admic_prev_{page}'))
 
         if page < len(commands) - 1:
-            buttons.append(InlineKeyboardButton('Suivant ▶', callback_data=f'admic_next_{page}'))
+            buttons.append(InlineKeyboardButton('ɴᴇxᴛ ➡️', callback_data=f'admic_next_{page}'))
 
-        reply_markup = InlineKeyboardMarkup([buttons, [InlineKeyboardButton('⇋ Retour ⇋', callback_data='help')]])
+        reply_markup = InlineKeyboardMarkup([buttons, [InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')]])
         await query.message.edit_text(
             text=commands[page],
             reply_markup=reply_markup,
@@ -2105,12 +2122,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         buttons = []
         if page > 0:
-            buttons.append(InlineKeyboardButton('◀ Précédent', callback_data=f'admic_prev_{page}'))
+            buttons.append(InlineKeyboardButton('ᴘʀᴇᴠ ⬅️', callback_data=f'admic_prev_{page}'))
 
         if page < len(commands) - 1:
-            buttons.append(InlineKeyboardButton('Suivant ▶', callback_data=f'admic_next_{page}'))
+            buttons.append(InlineKeyboardButton('ɴᴇxᴛ ➡️', callback_data=f'admic_next_{page}'))
 
-        reply_markup = InlineKeyboardMarkup([buttons, [InlineKeyboardButton('⇋ Retour ⇋', callback_data='help')]])
+        reply_markup = InlineKeyboardMarkup([buttons, [InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')]])
         await query.message.edit_text(
             text=commands[page],
             reply_markup=reply_markup,
@@ -2120,20 +2137,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('ChatGPT', callback_data='chatgpt'),
-            InlineKeyboardButton('Approuver', callback_data='approve'),
-            InlineKeyboardButton('Police', callback_data='font')
+            InlineKeyboardButton('ᴄʜᴀᴛɢᴘᴛ', callback_data='chatgpt'),
+            InlineKeyboardButton('ᴀᴘᴘʀᴏᴠᴇ', callback_data='approve'),
+            InlineKeyboardButton('ғᴏɴᴛ', callback_data='font')
         ], [
-            InlineKeyboardButton('Image', callback_data='image'),
-            InlineKeyboardButton('MongoDB', callback_data='mongo'),
-            InlineKeyboardButton('Anime', callback_data='anime')
+            InlineKeyboardButton('ɪᴍᴀɢᴇ', callback_data='image'),
+            InlineKeyboardButton('ᴍᴏɴɢᴏ', callback_data='mongo'),
+            InlineKeyboardButton('ᴀɴɪᴍᴇ', callback_data='anime')
         ], [
-            InlineKeyboardButton('Outils', callback_data='group'),
-            InlineKeyboardButton('Torrent', callback_data='torrent'),
-            InlineKeyboardButton('Stream', callback_data='streamx')
+            InlineKeyboardButton('ᴛᴏᴏʟꜱ', callback_data='group'),
+            InlineKeyboardButton('ᴛᴏʀʀᴇɴᴛ', callback_data='torrent'),
+            InlineKeyboardButton('sᴛʀᴇᴀᴍ', callback_data='streamx')
         ], [
             InlineKeyboardButton('◁', callback_data='main'),
-            InlineKeyboardButton('• Accueil •', callback_data='start'),
+            InlineKeyboardButton('• ʜᴏᴍᴇ •', callback_data='start'),
             InlineKeyboardButton('▷', callback_data='help1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -2145,13 +2162,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "help1":
         buttons = [[
-            InlineKeyboardButton('Extra', callback_data='extra'),
-            InlineKeyboardButton('Telegraph', callback_data='tele')
+            InlineKeyboardButton('ᴇxᴛʀᴀ', callback_data='extra'),
+            InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele')
         ], [
-            InlineKeyboardButton('GitHub', callback_data='git')
+            InlineKeyboardButton('ɢɪᴛʜᴜʙ', callback_data='git')
         ], [
             InlineKeyboardButton('◁', callback_data='help'),
-            InlineKeyboardButton('• Accueil •', callback_data='start'),
+            InlineKeyboardButton('• ʜᴏᴍᴇ •', callback_data='start'),
             InlineKeyboardButton('▷', callback_data='help2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -2163,15 +2180,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('‼️ Avertissement ‼️', callback_data='disclaimer'),
+            InlineKeyboardButton('‼️ ᴅɪꜱᴄʟᴀɪᴍᴇʀ ‼️', callback_data='disclaimer'),
         ], [
-            InlineKeyboardButton('• Support', callback_data='group_info'),
-            InlineKeyboardButton('Commandes •', callback_data='main')
+            InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ', callback_data='group_info'),
+            InlineKeyboardButton('ᴄᴏᴍᴍᴀɴᴅs •', callback_data='main')
         ], [
-            InlineKeyboardButton('• Développeur', user_id=int(6497757690)),
-            InlineKeyboardButton('Réseau •', url="t.me/BotZFlixsupport")
+            InlineKeyboardButton('• ᴅᴇᴠᴇʟᴏᴘᴇʀ', user_id=int(6497757690)),
+            InlineKeyboardButton('ɴᴇᴛᴡᴏʀᴋ •', url="t.me/otakuflix_network")
         ], [
-            InlineKeyboardButton('• Retour •', callback_data='start')
+            InlineKeyboardButton('• ʙᴀᴄᴋ •', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -2182,8 +2199,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('Code source 📜', url='https://t.me/BotZFlix'),
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='about')
+            InlineKeyboardButton('sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 📜', url='https://github.com/codeflix-bots/autofilter.git'),
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -2221,12 +2238,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "sticker":
             btn = [[
-                    InlineKeyboardButton("⇋ Retour ⇋", callback_data="help")                    
+                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="help")                    
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
                 query.message.id, 
                 InputMediaPhoto(random.choice(PICS))
+            )
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
                 text=(script.STICKER_TXT),
@@ -2235,13 +2253,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "tele":
             btn = [[
-                    InlineKeyboardButton("⟸ Retour", callback_data="help1"),
-                    InlineKeyboardButton("Contact", url=OWNER_LNK)
+                    InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="help1"),
+                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url=OWNER_LNK)
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
                 query.message.id, 
                 InputMediaPhoto(random.choice(PICS))
+            )
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
                 text=(script.TELE_TXT),
@@ -2251,13 +2270,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "git":
             btn = [[
-                    InlineKeyboardButton("⟸ Retour", callback_data="help1"),
-                    InlineKeyboardButton("Contact", url=OWNER_LNK)
+                    InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="help1"),
+                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url=OWNER_LNK)
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
                 query.message.id, 
                 InputMediaPhoto(random.choice(PICS))
+            )
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
                 text=(script.GITHUB_TXT),
@@ -2267,13 +2287,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "extra":
             btn = [[
-                    InlineKeyboardButton("⟸ Retour", callback_data="help1"),
-                    InlineKeyboardButton("Contact", url=OWNER_LNK)
+                    InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="help1"),
+                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url=OWNER_LNK)
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
                 query.message.id, 
                 InputMediaPhoto(random.choice(PICS))
+            )
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
                 text=(script.EXTRA_TXT),
@@ -2283,12 +2304,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "font":
             btn = [[
-                    InlineKeyboardButton("⇋ Retour ⇋", callback_data="help")
+                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="help")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
                 query.message.id, 
                 InputMediaPhoto(random.choice(PICS))
+            )
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
                 text=(script.FONT_TXT),
@@ -2298,14 +2320,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "anime":
         buttons = [[
-            InlineKeyboardButton('Retour', callback_data='help'),
-            InlineKeyboardButton('Support', callback_data='group_info')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=script.ANIME_TXT,
             reply_markup=reply_markup,
@@ -2314,18 +2337,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "torrent":
         buttons = [[
-            InlineKeyboardButton('Retour', callback_data='help'),
-            InlineKeyboardButton('Support', callback_data='group_info')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(text="● ◌ ◌")
-        await query.message.edit_text(text="● ● ◌")
-        await query.message.edit_text(text="● ● ●")
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=script.TORRENT,
             reply_markup=reply_markup,
@@ -2333,18 +2363,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "cctools":
         buttons = [[
-            InlineKeyboardButton('Retour', callback_data='help'),
-            InlineKeyboardButton('Support', callback_data='group_info')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(text="● ◌ ◌")
-        await query.message.edit_text(text="● ● ◌")
-        await query.message.edit_text(text="● ● ●")
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=script.CC_TXT,
             reply_markup=reply_markup,
@@ -2353,18 +2390,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "image":
         buttons = [[
-            InlineKeyboardButton('Retour', callback_data='help'),
-            InlineKeyboardButton('Support', callback_data='group_info')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(text="● ◌ ◌")
-        await query.message.edit_text(text="● ● ◌")
-        await query.message.edit_text(text="● ● ●")
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=script.IMAGE_TXT,
             reply_markup=reply_markup,
@@ -2373,13 +2417,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "font":
         buttons = [[
-            InlineKeyboardButton('Retour', callback_data='help'),
-            InlineKeyboardButton('Support', callback_data='group_info')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(text="● ◌ ◌")
-        await query.message.edit_text(text="● ● ◌")
-        await query.message.edit_text(text="● ● ●")
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
@@ -2394,18 +2444,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "approve":
         buttons = [[
-            InlineKeyboardButton('Retour', callback_data='help'),
-            InlineKeyboardButton('Support', callback_data='group_info')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(text="● ◌ ◌")
-        await query.message.edit_text(text="● ● ◌")
-        await query.message.edit_text(text="● ● ●")
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=script.APPROVE_TXT,
             reply_markup=reply_markup,
@@ -2414,18 +2471,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "chatgpt":
         buttons = [[
-            InlineKeyboardButton('Retour', callback_data='help'),
-            InlineKeyboardButton('Support', callback_data='group_info')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(text="● ◌ ◌")
-        await query.message.edit_text(text="● ● ◌")
-        await query.message.edit_text(text="● ● ●")
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=script.CHATGPT,
             reply_markup=reply_markup,
@@ -2434,18 +2498,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "mongo":
         buttons = [[
-            InlineKeyboardButton('Retour', callback_data='help'),
-            InlineKeyboardButton('Support', callback_data='group_info')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(text="● ◌ ◌")
-        await query.message.edit_text(text="● ● ◌")
-        await query.message.edit_text(text="● ● ●")
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=script.MONGO_TXT,
             reply_markup=reply_markup,
@@ -2454,18 +2525,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "streamx":
         buttons = [[
-            InlineKeyboardButton('Retour', callback_data='help'),
-            InlineKeyboardButton('Support', callback_data='group_info')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(text="● ◌ ◌")
-        await query.message.edit_text(text="● ● ◌")
-        await query.message.edit_text(text="● ● ●")
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=script.STREAM,
             reply_markup=reply_markup,
@@ -2474,33 +2552,42 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "aihelp":
         buttons = [[
-            InlineKeyboardButton('Retour', callback_data='main'),
-            InlineKeyboardButton('Support', callback_data='group_info')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='main'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(text="● ◌ ◌")
-        await query.message.edit_text(text="● ● ◌")
-        await query.message.edit_text(text="● ● ●")
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=script.AI_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
 
+
     elif query.data == "ref_point":
-        await query.answer(f'Vous avez : {referdb.get_refer_points(query.from_user.id)} points de parrainage.', show_alert=True)
+        await query.answer(f'You Have: {referdb.get_refer_points(query.from_user.id)} Refferal points.', show_alert=True)
     
+   
     elif query.data == "shortlink_info":
             btn = [[
             InlineKeyboardButton("1 / 3", callback_data="pagesn1"),
-            InlineKeyboardButton("Suivant ⋟", callback_data="shortlink_info2")
+            InlineKeyboardButton("ɴᴇxᴛ ⋟", callback_data="shortlink_info2")
             ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='start')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
             ]]
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
@@ -2510,11 +2597,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )   
     elif query.data == "shortlink_info2":
             btn = [[
-            InlineKeyboardButton("⋞ Retour", callback_data="shortlink_info"),
+            InlineKeyboardButton("⋞ ʙᴀᴄᴋ", callback_data="shortlink_info"),
             InlineKeyboardButton("2 / 3", callback_data="pagesn1"),
-            InlineKeyboardButton("Suivant ⋟", callback_data="shortlink_info3")
+            InlineKeyboardButton("ɴᴇxᴛ ⋟", callback_data="shortlink_info3")
             ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='start')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
             ]]
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
@@ -2524,10 +2611,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
     elif query.data == "shortlink_info3":
             btn = [[
-            InlineKeyboardButton("⋞ Retour", callback_data="shortlink_info2"),
+            InlineKeyboardButton("⋞ ʙᴀᴄᴋ", callback_data="shortlink_info2"),
             InlineKeyboardButton("3 / 3", callback_data="pagesn1")
             ],[
-            InlineKeyboardButton('⇋ Retour ⇋', callback_data='start')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
             ]]
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
@@ -2538,7 +2625,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "disclaimer":
             btn = [[
-                    InlineKeyboardButton("⇋ Retour ⇋", callback_data="about")
+                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="about")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
@@ -2635,35 +2722,40 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     
 async def auto_filter(client, msg, spoll=False):
-    curr_time = datetime.now(pytz.timezone('Europe/Paris')).time()
+    curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
+    # reqstr1 = msg.from_user.id if msg.from_user else 0
+    # reqstr = await client.get_users(reqstr1)
     
     if not spoll:
         message = msg
-        if message.text.startswith("/"): return  # ignorer les commandes
+        if message.text.startswith("/"): return  # ignore commands
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
             return
         if len(message.text) < 100:
             search = message.text         
             search = search.lower()
-            m = await message.reply_text(f'**🔎 Recherche en cours** `{search}`')
+            m=await message.reply_text(f'**🔎 sᴇᴀʀᴄʜɪɴɢ** `{search}`')
             find = search.split(" ")
             search = ""
-            removes = ["dans", "upload", "série", "complet", "horreur", "thriller", "mystère", "impression", "fichier"]
+            removes = ["in","upload", "series", "full", "horror", "thriller", "mystery", "print", "file"]
             for x in find:
                 if x in removes:
                     continue
                 else:
                     search = search + x + " "
+            #search = re.sub(r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|bro|bruh|broh|helo|that|find|dubbed|link|venum|iruka|pannunga|pannungga|anuppunga|anupunga|anuppungga|anupungga|film|undo|kitti|kitty|tharu|kittumo|kittum|movie|any(one)|with\ssubtitle(s)?)", "", search, flags=re.IGNORECASE)
+            #search = re.sub(r"\s+", " ", search).strip()
             search = search.replace("-", " ")
-            search = search.replace(":", "")
-            files, offset, total_results = await get_search_results(message.chat.id, search, offset=0, filter=True)
+            search = search.replace(":","")
+            files, offset, total_results = await get_search_results(message.chat.id ,search, offset=0, filter=True)
             settings = await get_settings(message.chat.id)
             if not files:
+                #await m.delete()
                 if settings["spell_check"]:
-                    ai_sts = await m.edit('Veuillez patienter, vérification orthographique en cours...')
-                    is_misspelled = await ai_spell_check(chat_id=message.chat.id, wrong_name=search)
+                    ai_sts = await m.edit('ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ, ʟᴜᴄʏ ɪꜱ ᴄʜᴇᴄᴋɪɴɢ ʏᴏᴜʀ ꜱᴘᴇʟʟɪɴɢ...')
+                    is_misspelled = await ai_spell_check(chat_id = message.chat.id,wrong_name=search)
                     if is_misspelled:
-                        await ai_sts.edit(f'<b>✅ Correction suggérée : <code>{is_misspelled}</code> \nJe recherche donc : <code>{is_misspelled}</code></b>')
+                        await ai_sts.edit(f'<b>✅ʟᴜᴄʏ sᴜɢɢᴇsᴛᴇᴅ <code> {is_misspelled}</code> \nsᴏ ɪᴍ sᴇᴀʀᴄʜɪɴɢ ғᴏᴛ <code>{is_misspelled}</code></b>')
                         await asyncio.sleep(2)
                         message.text = is_misspelled
                         await ai_sts.delete()
@@ -2673,61 +2765,61 @@ async def auto_filter(client, msg, spoll=False):
         else:
             return
     else:
-        message = msg.message.reply_to_message
+        message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
-        m = await message.reply_text(f'**Recherche...** `{search}`')
+        m=await message.reply_text(f'**sᴇᴀʀᴄʜɪɴɢ...** `{search}`')
         settings = await get_settings(message.chat.id)
         await msg.message.delete()
-    
     pre = 'filep' if settings['file_secure'] else 'file'
     key = f"{message.chat.id}-{message.id}"
     FRESH[key] = search
     temp.GETALL[key] = files
     temp.SHORT[message.from_user.id] = message.chat.id
-    
     if settings["button"]:
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", 
-                    callback_data=f'{pre}#{file.file_id}'
+                    text=f"[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
         ]
         btn.insert(0, 
             [
-                InlineKeyboardButton("⇈ Sélectionnez une option ici ⇈", 'reqinfo')
+                InlineKeyboardButton("⇈ Sᴇʟᴇᴄᴛ Oᴘᴛɪᴏɴ Hᴇʀᴇ ⇈", 'reqinfo')
             ]
         )
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Qualité', callback_data=f"qualities#{key}"),
-                InlineKeyboardButton("Langue", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Saison", callback_data=f"seasons#{key}")
+                InlineKeyboardButton(f'Qᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
+                InlineKeyboardButton("Lᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Supprimer les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-            InlineKeyboardButton("Tout envoyer", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
+            InlineKeyboardButton("Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
+            
         ])
+
     else:
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton("⇈ Sélectionnez une option ici ⇈", 'reqinfo')
+                InlineKeyboardButton("⇈ Sᴇʟᴇᴄᴛ Oᴘᴛɪᴏɴ Hᴇʀᴇ ⇈", 'reqinfo')
             ]
         )
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Qualité', callback_data=f"qualities#{key}"),
-                InlineKeyboardButton("Langue", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Saison", callback_data=f"seasons#{key}")
+                InlineKeyboardButton(f'Qᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
+                InlineKeyboardButton("Lᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Supprimer les pubs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-            InlineKeyboardButton("Tout envoyer", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
+            InlineKeyboardButton("Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
+            
         ])
 
     if offset != "":
@@ -2735,28 +2827,26 @@ async def auto_filter(client, msg, spoll=False):
         try:
             if settings['max_btn']:
                 btn.append(
-                    [InlineKeyboardButton("Page", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}", callback_data="pages"), InlineKeyboardButton(text="Suivant ⋟", callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⋟",callback_data=f"next_{req}_{key}_{offset}")]
                 )
             else:
                 btn.append(
-                    [InlineKeyboardButton("Page", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}", callback_data="pages"), InlineKeyboardButton(text="Suivant ⋟", callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⋟",callback_data=f"next_{req}_{key}_{offset}")]
                 )
         except KeyError:
             await save_group_settings(message.chat.id, 'max_btn', True)
             btn.append(
-                [InlineKeyboardButton("Page", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}", callback_data="pages"), InlineKeyboardButton(text="Suivant ⋟", callback_data=f"next_{req}_{key}_{offset}")]
+                [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⋟",callback_data=f"next_{req}_{key}_{offset}")]
             )
     else:
         btn.append(
-            [InlineKeyboardButton(text="↭ Plus de pages disponibles ↭", callback_data="pages")]
+            [InlineKeyboardButton(text="↭ ɴᴏ ᴍᴏʀᴇ ᴘᴀɢᴇꜱ ᴀᴠᴀɪʟᴀʙʟᴇ ↭",callback_data="pages")]
         )
-    
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
-    cur_time = datetime.now(pytz.timezone('Europe/Paris')).time()
+    cur_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
     time_difference = timedelta(hours=cur_time.hour, minutes=cur_time.minute, seconds=(cur_time.second+(cur_time.microsecond/1000000))) - timedelta(hours=curr_time.hour, minutes=curr_time.minute, seconds=(curr_time.second+(curr_time.microsecond/1000000)))
     remaining_seconds = "{:.2f}".format(time_difference.total_seconds())
     TEMPLATE = script.IMDB_TEMPLATE_TXT
-    
     if imdb:
         cap = TEMPLATE.format(
             qurey=search,
@@ -2791,14 +2881,14 @@ async def auto_filter(client, msg, spoll=False):
         )
         temp.IMDB_CAP[message.from_user.id] = cap
         if not settings["button"]:
-            cap += "\n\n<b>📚 <u>Fichiers demandés</u> 👇\n\n</b>"
+            cap+="\n\n<b>📚 <u>Your Requested Files</u> 👇\n\n</b>"
             for file in files:
                 cap += f"<b>\n<a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'> 📁 {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n</a></b>"
     else:
         if settings["button"]:
-            cap = f"<b>›› Titre : <code>{search}</code>\n›› Total fichiers : <code>{total_results}</code>\n›› Demandé par : {message.from_user.mention}\n›› Résultat en : <code>{remaining_seconds} secondes</code>\n\n›› Fichiers demandés 👇 \n\n</b>"
+            cap = f"<b>›› ᴛɪᴛʟᴇ : <code>{search}</code>\n›› ᴛᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n›› ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n›› ʀᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n\n›› 𝑹𝒆𝒒𝒖𝒆𝒔𝒕𝒆𝒅 𝑭𝒊𝒍𝒆𝒔 👇 \n\n</b>"
         else:
-            cap = f"<b>›› Titre : <code>{search}</code>\n›› Total fichiers : <code>{total_results}</code>\n›› Demandé par : {message.from_user.mention}\n›› Résultat en : <code>{remaining_seconds} secondes</code>\n\n›› Fichiers demandés 👇 \n\n</b>"
+            cap = f"<b>›› ᴛɪᴛʟᴇ : <code>{search}</code>\n›› ᴛᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n›› ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n›› ʀᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n\n›› 𝑹𝒆𝒒𝒖𝒆𝒔𝒕𝒆𝒅 𝑭𝒊𝒍𝒆𝒔 👇 \n\n</b>"
             
             for file in files:
                 cap += f"<b><a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'> 📁 {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
