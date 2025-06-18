@@ -242,12 +242,11 @@ async def anime_search(_, mesg):
                 image, 
                 caption=msg, 
                 reply_markup=InlineKeyboardMarkup(btn)
-            )
         except Exception as e:
             print(f"Erreur d'envoi photo: {e}")
             msg += f" [〽️]({image})"
-            await reply.edit(msg, reply_markup=InlineKeyboardMarkup(btn) if btn else await reply.edit(msg)
+            await reply.edit(msg, reply_markup=InlineKeyboardMarkup(btn) if btn else None)
     else:
-        await reply.edit(msg, reply_markup=InlineKeyboardMarkup(btn)) if btn else await reply.edit(msg)
+        await reply.edit(msg, reply_markup=InlineKeyboardMarkup(btn) if btn else None)
     
     await reply.delete()
