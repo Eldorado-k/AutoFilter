@@ -152,7 +152,7 @@ def shorten(description, info="anilist.co"):
     ms_g = ""
     if len(description) > 700:
         description = f"{description[:500]}...."
-        ms_g += f'\n<strong>Description :</strong> <em>{description}</em><a href="{info}">Plus d'infos</a>'
+        ms_g += f'\n<strong>Description :</strong> <em>{description}</em><a href="{info}">Plus d\'infos</a>'
     else:
         ms_g += f"\n<strong>Description :</strong> <em>{description}</em>"
     return (
