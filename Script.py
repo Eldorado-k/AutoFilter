@@ -265,14 +265,14 @@ Message : <b>{}</b>"""
     IMDB_TEMPLATE_TXT = """
 <b>‣ Titre : <a href={url}>{title}</a>
 
-‣ Genres : {genres}
-‣ Année : <a href={url}/releaseinfo>{year}</a> 
-‣ Note : <a href={url}/ratings>{rating}</a> / 10 (Basé sur {votes} votes)
-‣ Langue : <code>{languages}</code></a>
-‣ Durée : {runtime} Minutes</a>
+‣ 🎭Genres : {genres}
+‣ 📅Année : <a href={url}/releaseinfo>{year}</a> 
+‣ ⭐Note : <a href={url}/ratings>{rating}</a> / 10 (Basé sur {votes} votes)
+‣ 🏳️Langue : <code>Français</code></a>
+‣ ⏳Durée : {runtime} Minutes</a>
 
-» Résultats affichés en : {remaining_seconds} <i>secondes</i>
-» Demandé par : {message.from_user.mention}</b>"""
+» 🕦Résultats affichés en : {remaining_seconds} <i>secondes</i>
+» 👤Demandé par : {message.from_user.mention}</b>"""
     
 
     RESTART_TXT = """
