@@ -107,9 +107,9 @@ merci de renvoyer la demande."""
     MELCOW_ENG = """<b>👋 Salut {},\n\n🍁 Bienvenue dans\n🌟 {} \n\n🔍 Ici tu peux rechercher tes films ou séries préférés en tapant simplement leur nom 🔎\n\n⚠️ Si tu as un problème concernant le téléchargement ou autre, message ici 👇</b>"""
     
     DISCLAIMER_TXT = """
-<b>Ceci est un projet open source.
+<blockquote><b>Ceci est un projet open source.
 
-Tous les fichiers de ce bot sont librement disponibles sur Internet ou postés par quelqu'un d'autre. Juste pour faciliter la recherche, ce bot indexe les fichiers qui sont déjà uploadés sur Telegram. Nous respectons toutes les lois sur le copyright et travaillons en conformité avec le DMCA et l'EUCD. Si quelque chose est illégal, contacte-moi pour que je puisse le supprimer rapidement. Il est interdit de télécharger, streamer, reproduire, partager ou consommer du contenu sans permission explicite du créateur ou du détenteur des droits. Si tu penses que ce bot viole ta propriété intellectuelle, contacte les canaux respectifs pour suppression. Le bot ne possède aucun de ces contenus, il indexe seulement les fichiers depuis Telegram.</b>"""
+Tous les fichiers de ce bot sont librement disponibles sur Internet ou postés par quelqu'un d'autre. Juste pour faciliter la recherche, ce bot indexe les fichiers qui sont déjà uploadés sur Telegram. Nous respectons toutes les lois sur le copyright et travaillons en conformité avec le DMCA et l'EUCD. Si quelque chose est illégal, contacte-moi pour que je puisse le supprimer rapidement. Il est interdit de télécharger, streamer, reproduire, partager ou consommer du contenu sans permission explicite du créateur ou du détenteur des droits. Si tu penses que ce bot viole ta propriété intellectuelle, contacte les canaux respectifs pour suppression. Le bot ne possède aucun de ces contenus, il indexe seulement les fichiers depuis Telegram.</b></blockquote>"""
 
     USERS_TXT = """👋 Salut {},
 
@@ -260,7 +260,7 @@ Nom : {}
 
 Message : <b>{}</b>"""
     
-    CAPTION = """<b><a href="https://t.me/ZFlixTeam">{file_name}</a></b>\n\n<b><blockquote><i>Merci de transférer ces fichiers vers les messages sauvegardés et de fermer ce message</i></blockquote></b>"""
+    CAPTION = """<b>{file_name}\nRej𝗈𝗂𝗇s ➥ 「<a href='t.me/ZFlixTeam'>ZFʟɪx-Tᴇᴀᴍ</a>」\n\n<b><blockquote><i>Merci de transférer ces fichiers vers les messages sauvegardés et de fermer ce message</i></blockquote></b>"""
 
     IMDB_TEMPLATE_TXT = """
 <b>‣ Titre : <a href={url}>{title}</a>
