@@ -260,7 +260,7 @@ Nom : {}
 
 Message : <b>{}</b>"""
     
-    CAPTION = """<b>{file_name}\nRej𝗈𝗂𝗇s ➥ 「<a href='t.me/ZFlixTeam'>ZFʟɪx-Tᴇᴀᴍ</a>」\n\n<b><blockquote><i>Merci de transférer ces fichiers vers les messages sauvegardés et de fermer ce message</i></blockquote></b>"""
+    CAPTION = """<b>{file_name}\nRej𝗈𝗂𝗇s ➥ 「<a href='t.me/ZFlixTeam'>ZFʟɪx-Tᴇᴀᴍ</a>」</b>\n\n<b><blockquote><i>Merci de transférer ces fichiers vers les messages sauvegardés et de fermer ce message</i></blockquote></b>"""
 
     IMDB_TEMPLATE_TXT = """
 <b>‣ Titre : <a href={url}>{title}</a>
