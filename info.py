@@ -47,8 +47,8 @@ auth_channel = environ.get('AUTH_CHANNEL', '-1002722250222')  # Channel/Group ID
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '').split()]
 support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1002165407793')  # Support group id (make sure bot is admin)
 reqst_channel = environ.get('REQST_CHANNEL_ID', '-1002376378205')  # Request channel id (make sure bot is admin)
-AUTH_CHANNEL = [int(fch) if id_pattern.search(fch) else fch for fch in environ.get('AUTH_CHANNEL', '-1002722250222').split()]
-MULTI_FSUB = [int(channel_id) for channel_id in environ.get('MULTI_FSUB', '-1002722250222').split() if re.match(r'^-?\d+$', channel_id)]  # Channel for force sub (make sure bot is admin)
+AUTH_CHANNEL = [int(fch) if id_pattern.search(fch) else fch for fch in environ.get('AUTH_CHANNEL', '-1002800117370 -1002647818964 -1002387859851').split()]
+MULTI_FSUB = [int(channel_id) for channel_id in environ.get('MULTI_FSUB', '-1002800117370 -1002647818964 -1002387859851').split() if re.match(r'^-?\d+$', channel_id)]  # Channel for force sub (make sure bot is admin)
 
 
 # ============================
@@ -124,7 +124,7 @@ P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "True")), False)
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)
 AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "True")), True)
-DELETE_TIME = int(environ.get("DELETE_TIME", "14400"))  #  deletion time in seconds (default: 5 minutes). Adjust as per your needs.
+DELETE_TIME = int(environ.get("DELETE_TIME", "86400"))  #  deletion time in seconds (default: 5 minutes). Adjust as per your needs.
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "False")), False) # pm & Group button or link mode (True) / Off (False)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CAPTION}")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
@@ -156,7 +156,7 @@ SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "seas
 # Server & Web Configuration
 # ============================
 
-STREAM_MODE = bool(environ.get('STREAM_MODE', True)) # Set Stream mode True or False
+STREAM_MODE = bool(environ.get('STREAM_MODE', False)) # Set Stream mode True or False
 
 NO_PORT = bool(environ.get('NO_PORT', False))
 APP_NAME = None
