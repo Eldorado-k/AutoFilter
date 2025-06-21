@@ -74,7 +74,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Lucy_files')
 # ============================
 # Movie Notification & Update Settings
 # ============================
-MOVIE_UPDATE_NOTIFICATION = bool(environ.get('MOVIE_UPDATE_NOTIFICATION', False))  # Notification On (True) / Off (False)
+MOVIE_UPDATE_NOTIFICATION = bool(environ.get('MOVIE_UPDATE_NOTIFICATION', True))  # Notification On (True) / Off (False)
 IMAGE_FETCH = bool(environ.get('IMAGE_FETCH', True))  # On (True) / Off (False)
 CAPTION_LANGUAGES = ["Vostfr", "English", "French"]
 
@@ -149,14 +149,14 @@ AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 LANGUAGES = ["hindi", "english", "french"]
-QUALITIES = ["360P", "HdRip", "480P", "540P", "720P", "bluray", "1080P", "1440P", "2160P", "4k"]
-SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "season 6" , "season 7" , "season 8" , "season 9" , "season 10"]
+QUALITIES = ["360P", "HdRip", "480P", "540P", "720P", "bluray", "1080P", "1440P", "2160P", "4k", "WebRiP"]
+SEASONS = ["saison 1" , "saison 2" , "saison 3" , "saison 4", "saison 5" , "saison 6" , "saison 7" , "saison 8" , "saison 9" , "saison 10"]
 
 # ============================
 # Server & Web Configuration
 # ============================
 
-STREAM_MODE = bool(environ.get('STREAM_MODE', False)) # Set Stream mode True or False
+STREAM_MODE = bool(environ.get('STREAM_MODE', True)) # Set Stream mode True or False
 
 NO_PORT = bool(environ.get('NO_PORT', False))
 APP_NAME = None
@@ -165,12 +165,12 @@ if 'DYNO' in environ:
     APP_NAME = environ.get('APP_NAME')
 else:
     ON_HEROKU = False
-BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
-FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
+BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '8.8.8.8'))
+FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.app.koyeb.com'
 URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else "https://{}/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
-SESSION_NAME = str(environ.get('SESSION_NAME', 'codeflix'))
+SESSION_NAME = str(environ.get('SESSION_NAME', 'kingcey'))
 MULTI_CLIENT = False
 name = str(environ.get('name', 'Deendayal'))
 PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
