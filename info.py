@@ -84,7 +84,7 @@ CAPTION_LANGUAGES = ["Vostfr", "English", "French"]
 VERIFY = bool(environ.get('VERIFY', False))  # Verification On (True) / Off (False)
 VERIFY_EXPIRE = int(environ.get('VERIFY_EXPIRE', 7))  # Add time in hours
 VERIFIED_LOG = int(environ.get('VERIFIED_LOG', '-1002376378205'))  # Log channel id (make sure bot is admin)
-HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/BotZFlix/195')  # How to open tutorial link for verification
+HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/BotZFlix/217')  # How to open tutorial link for verification
 
 # ============================
 # Link Shortener Configuration
@@ -92,7 +92,7 @@ HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/BotZFlix/195')  # How
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shareus.io')
 SHORTLINK_API = environ.get('SHORTLINK_API', 'nJ0xMvXlLEhpVcJK2MjvU6Vxx6u2')
-TUTORIAL = environ.get('TUTORIAL', 'https://t.me/BotZFlix/195')  # Tutorial video link for opening shortlink website
+TUTORIAL = environ.get('TUTORIAL', 'https://t.me/BotZFlix/217')  # Tutorial video link for opening shortlink website
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 
 # ============================
