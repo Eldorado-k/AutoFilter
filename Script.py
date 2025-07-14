@@ -6,7 +6,7 @@ class script(object):
     HELP_TXT = """» Où veux-tu ouvrir le menu des paramètres ?"""
 
     ABOUT_TXT = """<blockquote><b>❍ Mon nom : <a href="https://t.me/Marsh_Mello_bot">Lucy Bot</a>
-❍ Créateur : <a href="https://t.me/Kingcey">Kingcey</a>
+❍ Créateur : Inconnu
 ❍ Bibliothèque : <a href="https://pyrogram.org/">Pyrogram</a>
 ❍ Langage : <a href="https://www.python.org/">Python</a>
 ❍ Base de données : <a href="https://www.mongodb.com/">Mongo DB</a>
@@ -20,14 +20,14 @@ Voici le menu d'aide
 """
 
     SUPPORT_TXT = """Voici mes canaux et groupes de support. Si tu as un problème, signale-le à l'admin.
-Propulsé par - @BotZFlix"""
+Propulsé par - @paq_Land"""
         
     HELPS_TXT = """» Où veux-tu ouvrir le menu des paramètres ?"""
     
     CHANNELS = """
 <b>๏ Clique sur les boutons ci-dessous pour rejoindre les canaux et obtenir plus d'informations sur nous.
 
-Si tu trouves un bug ou si tu veux donner ton avis sur le bot, merci de le signaler au <a href='https://t.me/BotZFlixsupport'>groupe de support</a>.</b>"""
+Si tu trouves un bug ou si tu veux donner ton avis sur le bot, merci de le signaler au <a href='https://t.me/BTZF_CHAT'>groupe de support</a>.</b>"""
 
     
     STATUS_TXT = """<b>╭────[ 🗃 Base de données 1 🗃 ]────⍟</b>
@@ -260,7 +260,7 @@ Nom : {}
 
 Message : <b>{}</b>"""
     
-    CAPTION = """<b>{file_name}\nRej𝗈𝗂𝗇s ➥ 「<a href='t.me/ZFlixTeam'>ZFʟɪx-Tᴇᴀᴍ</a>」</b>\n\n<b><blockquote><i>Merci de transférer ces fichiers vers les messages sauvegardés et de fermer ce message</i></blockquote></b>"""
+    CAPTION = """<b>{file_name}\nRej𝗈𝗂𝗇s ➥ 「<a href='t.me/paq_land'>ZFʟɪx-Tᴇᴀᴍ</a>」</b>\n\n<b><blockquote><i>Merci de transférer ces fichiers vers les messages sauvegardés et de fermer ce message</i></blockquote></b>"""
 
     IMDB_TEMPLATE_TXT = """
 <b>‣ Titre : <a href={url}>{title}</a>
@@ -354,7 +354,7 @@ Le bot fonctionne correctement"""
 ○ Streaming multi-joueurs
 ○ Expérience sans pub
 
-👨‍💻 Contactez le <a href='https://t.me/Kingcey'>propriétaire</a> pour votre essai.
+👨‍💻 Contactez le <a href='https://t.me/JobeBot'>propriétaire</a> pour votre essai.
 
 ➛ Utilisez /plan pour voir nos offres.
 ➛ Vérifiez votre abonnement avec : /myplan</b>"""
@@ -451,7 +451,7 @@ Le bot fonctionne correctement"""
 
     SOURCE_TXT ="""<b>Code source : </b>
 
- Code source disponible ici ◉› :<a href=https://t.me/BotZFlix>Ne Clique Pas</a> """
+ Code source disponible ici ◉› :<a href=https://t.me/JobeTECH>Ne Clique Pas</a> """
 
     EXTRAF_TXT =""" <b> Voici mes fonctionnalités supplémentaires </b>"""
 
