@@ -18,9 +18,9 @@ def is_enabled(value, default):
 # Bot Information Configuration
 # ============================
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', '24817837'))
-API_HASH = environ.get('API_HASH', 'acd9f0cc6beb08ce59383cf250052686')
-BOT_TOKEN = environ.get('BOT_TOKEN', "7783135016:AAG1J9hqw9_W-0v2EdFVqs8HKRBQ4Aqf2cM")
+API_ID = int(environ.get('API_ID', '25926022'))
+API_HASH = environ.get('API_HASH', '30db27d9e56d854fb5e943723268db32')
+BOT_TOKEN = environ.get('BOT_TOKEN', "7720297717:A9ZqjjvQVcQ")
 # ============================
 # Bot Settings Configuration
 # ============================
@@ -39,16 +39,16 @@ FSUB_PICS = (environ.get('FSUB_PICS', 'https://iili.io/FoH1H5x.md.jpg')).split()
 # ============================
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7428552084').split()] # Replace with the actual admin ID(s) to add
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002463797892').split()]  # Channel id for auto indexing (make sure bot is admin)
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002757788052'))  # Log channel id (make sure bot is admin)
-BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1002376378205'))  # Bin channel id (make sure bot is admin)
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002690887186'))  # Log channel id (make sure bot is admin)
+BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1002690887186'))  # Bin channel id (make sure bot is admin)
 MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002376378205'))  # Notification of those who verify will be sent to your channel
-PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1002376378205'))  # Premium logs channel id
-auth_channel = environ.get('AUTH_CHANNEL', '-1002722250222')  # Channel/Group ID for force sub (make sure bot is admin)
+PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1002690887186'))  # Premium logs channel id
+auth_channel = environ.get('AUTH_CHANNEL', '-1002891765974')  # Channel/Group ID for force sub (make sure bot is admin)
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '').split()]
 support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1002165407793')  # Support group id (make sure bot is admin)
-reqst_channel = environ.get('REQST_CHANNEL_ID', '-1002376378205')  # Request channel id (make sure bot is admin)
-AUTH_CHANNEL = [int(fch) if id_pattern.search(fch) else fch for fch in environ.get('AUTH_CHANNEL', '-1002800117370 -1002647818964 -1002387859851').split()]
-MULTI_FSUB = [int(channel_id) for channel_id in environ.get('MULTI_FSUB', '-1002800117370 -1002647818964 -1002387859851').split() if re.match(r'^-?\d+$', channel_id)]  # Channel for force sub (make sure bot is admin)
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1002690887186')  # Request channel id (make sure bot is admin)
+AUTH_CHANNEL = [int(fch) if id_pattern.search(fch) else fch for fch in environ.get('AUTH_CHANNEL', '-1002891765974 -1002818281819').split()]
+MULTI_FSUB = [int(channel_id) for channel_id in environ.get('MULTI_FSUB', '-1002891765974 -1002818281819').split() if re.match(r'^-?\d+$', channel_id)]  # Channel for force sub (make sure bot is admin)
 
 
 # ============================
@@ -59,7 +59,7 @@ OWNER_UPI_ID = environ.get('OWNER_UPI_ID', '@fam')
 
 #Auto approve 
 CHAT_ID = [int(app_chat_id) if id_pattern.search(app_chat_id) else app_chat_id for app_chat_id in environ.get('CHAT_ID', '').split()]
-TEXT = environ.get("APPROVED_WELCOME_TEXT", "<b>{mention},\n\nʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴊᴏɪɴ {title} ɪs ᴀᴘᴘʀᴏᴠᴇᴅ.\n\‣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ @BotZFlix</b>")
+TEXT = environ.get("APPROVED_WELCOME_TEXT", "<b>{mention},\n\nʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴊᴏɪɴ {title} ɪs ᴀᴘᴘʀᴏᴠᴇᴅ.\n\‣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ @JobeTECH</b>")
 APPROVED = environ.get("APPROVED_WELCOME", "on").lower()
 
 
@@ -67,14 +67,14 @@ APPROVED = environ.get("APPROVED_WELCOME", "on").lower()
 # MongoDB Configuration
 # ============================
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://tgbot:4KzEdxEl4YldwwFR@tg.vr8ef.mongodb.net/?retryWrites=true&w=majority&appName=Tg")
-DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://Ethan:Ethan123@telegrambots.lva9j.mongodb.net/?retryWrites=true&w=majority&appName=TELEGRAMBOTS")
+DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://tgbot:4KzEdxEl4YldwwFR@tg.vr8ef.mongodb.net/?retryWrites=true&w=majority&appName=Tg")
 DATABASE_NAME = environ.get('DATABASE_NAME', "kingcey")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Lucy_files')
 
 # ============================
 # Movie Notification & Update Settings
 # ============================
-MOVIE_UPDATE_NOTIFICATION = bool(environ.get('MOVIE_UPDATE_NOTIFICATION', True))  # Notification On (True) / Off (False)
+MOVIE_UPDATE_NOTIFICATION = bool(environ.get('MOVIE_UPDATE_NOTIFICATION', False))  # Notification On (True) / Off (False)
 IMAGE_FETCH = bool(environ.get('IMAGE_FETCH', True))  # On (True) / Off (False)
 CAPTION_LANGUAGES = ["Vostfr", "English", "French"]
 
@@ -100,7 +100,7 @@ IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 # ============================
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/ZFlixTeam')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/AntiFlix_A')
-OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/Kingcey')
+OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/Jobe_TECH_Bot')
 MOVIE_UPDATE_CHANNEL_LNK = environ.get('MOVIE_UPDATE_CHANNEL_LNK', 'https://t.me/AnimLoko')
 OWNERID = int(os.environ.get('OWNERID', '7428552084'))  # Replace with the actual admin ID
 
@@ -148,7 +148,7 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
-LANGUAGES = ["hindi", "english", "french"]
+LANGUAGES = ["vostfr", "english", "french"]
 QUALITIES = ["360P", "HdRip", "480P", "540P", "720P", "bluray", "1080P", "1440P", "2160P", "4k", "WebRiP"]
 SEASONS = ["saison 1" , "saison 2" , "saison 3" , "saison 4", "saison 5" , "saison 6" , "saison 7" , "saison 8" , "saison 9" , "saison 10"]
 
