@@ -37,7 +37,7 @@ FSUB_PICS = (environ.get('FSUB_PICS', 'https://iili.io/FoH1H5x.md.jpg')).split()
 # ============================
 # Admin, Channels & Users Configuration
 # ============================
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7428552084').split()] # Replace with the actual admin ID(s) to add
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '8140299716').split()] # Replace with the actual admin ID(s) to add
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002463797892').split()]  # Channel id for auto indexing (make sure bot is admin)
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002690887186'))  # Log channel id (make sure bot is admin)
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1002690887186'))  # Bin channel id (make sure bot is admin)
@@ -98,18 +98,18 @@ IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 # ============================
 # Channel & Group Links Configuration
 # ============================
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/ZFlixTeam')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/AntiFlix_A')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/paq_land')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/paq_land')
 OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/Jobe_TECH_Bot')
-MOVIE_UPDATE_CHANNEL_LNK = environ.get('MOVIE_UPDATE_CHANNEL_LNK', 'https://t.me/AnimLoko')
-OWNERID = int(os.environ.get('OWNERID', '7428552084'))  # Replace with the actual admin ID
+MOVIE_UPDATE_CHANNEL_LNK = environ.get('MOVIE_UPDATE_CHANNEL_LNK', 'https://t.me/Animetttt')
+OWNERID = int(os.environ.get('OWNERID', '8140299716'))  # Replace with the actual admin ID
 
 # ============================
 # User Configuration
 # ============================
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '7428552084').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '8140299716').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '7428552084').split()]
+PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '8140299716').split()]
 
 # ============================
 # Miscellaneous Configuration
