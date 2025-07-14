@@ -1,7 +1,7 @@
 class script(object):
-    START_TXT = """<b>Salut {}, {}\n\nJe Suis Marsh ƈɾσɯ V2.0 je suis un puissant bot Marsh ƈɾσɯ Je peux vous fournir des Films Et des Séries de tout genre mais je peux maintenant vous fournir des Cartoons (dessin animés). Rejoins mon canal et mon Groupe puis profite de ta journée!\n\n<blockquote>‣ Maintenu par : <a href="https://t.me/BotZFlix">BotZFlix</a></blockquote></b>"""
+    START_TXT = """<b>Salut {}, {}\n\nJe Suis Marsh ƈɾσɯ V2.0 je suis un puissant bot Marsh ƈɾσɯ Je peux vous fournir des Films Et des Séries de tout genre mais je peux maintenant vous fournir des Cartoons (dessin animés). Rejoins mon canal et mon Groupe puis profite de ta journée!\n\n<blockquote>‣ Maintenu par : <a href="https://t.me/JobeTECH">J-TECH</a></blockquote></b>"""
 
-    GSTART_TXT = """<b>Salut {}, {}\n\nJe suis le bot de filtrage automatique le plus puissant avec des fonctionnalités premium, ajoute-moi simplement à ton groupe et profite !\n\n<blockquote>‣ Maintenu par : <a href="https://t.me/BotZFlix">BotZFlix</a></blockquote></b>"""
+    GSTART_TXT = """<b>Salut {}, {}\n\nJe suis le bot de filtrage automatique le plus puissant avec des fonctionnalités premium, ajoute-moi simplement à ton groupe et profite !\n\n<blockquote>‣ Maintenu par : <a href="https://t.me/JobeTECH">BotZFlix</a></blockquote></b>"""
     
     HELP_TXT = """» Où veux-tu ouvrir le menu des paramètres ?"""
 
@@ -410,7 +410,7 @@ Le bot fonctionne correctement"""
 ⏰ Durée personnalisée
 💸 Tarif selon la durée choisie
 
-🏆 Si vous voulez une offre différente de celles proposées, vous pouvez contacter directement notre <a href='https://t.me/Kingcey'>propriétaire</a> en cliquant sur le bouton ci-dessous.
+🏆 Si vous voulez une offre différente de celles proposées, vous pouvez contacter directement notre <a href='https://t.me/Jobe_TECH_Bot'>propriétaire</a> en cliquant sur le bouton ci-dessous.
     
 👨‍💻 Contactez le propriétaire pour une offre personnalisée.
 
