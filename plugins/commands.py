@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 TIMEZONE = "Africa/Lome"
 BATCH_FILES = {}
 
-@Client.on_message(filters.command("start") & filters.incoming)
+@Client.on_message(filters.command("lebot") & filters.incoming)
 async def start(client, message):
     if EMOJI_MODE:    
         await message.react(emoji=random.choice(REACTIONS), big=True) 
