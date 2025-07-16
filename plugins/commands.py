@@ -29,18 +29,18 @@ logger = logging.getLogger(__name__)
 TIMEZONE = "Africa/Lome"
 BATCH_FILES = {}
 
-@Client.on_message(filters.command("lebot") & filters.incoming)
+@Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if EMOJI_MODE:    
         await message.react(emoji=random.choice(REACTIONS), big=True) 
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
-                    InlineKeyboardButton('• Canal Flix •', url=f'http://t.me/t.me/AntiFlix_A')
+                    InlineKeyboardButton('• Canal Anime •', url=f'http://t.me/t.me/Anime Existence')
                 ],[
-                    InlineKeyboardButton('• Maître •', url="https://t.me/Kingcey"),
-                    InlineKeyboardButton('• Support •', url='https://t.me/botzflixsupport')
+                    InlineKeyboardButton('• Maître •', url="https://t.me/ZeeTECHBot"),
+                    InlineKeyboardButton('• Support •', url='https://t.me/btzf_chat')
                 ],[
-                    InlineKeyboardButton('• Rejoindre la chaîne des mises à jour •', url="https://t.me/BotZFlix")
+                    InlineKeyboardButton('• Rejoindre la chaîne des mises à jour •', url="https://t.me/ZeeTECH")
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.GSTART_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup, disable_web_page_preview=True)
