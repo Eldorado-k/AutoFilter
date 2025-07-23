@@ -260,7 +260,7 @@ Nom : {}
 
 Message : <b>{}</b>"""
     
-    CAPTION = """<b>{file_name}\nRej𝗈𝗂𝗇s ➥ 「<a href='t.me/ZeeXClub'>ZeeXClub [ZXC]</a>」</b>\n\nPropulsé par @ZeeXDev & @ZeeXClub.\n\n<b><blockquote><i>Merci de transférer ces fichiers vers les messages sauvegardés et de fermer ce message</i></blockquote></b>"""
+    CAPTION = """<b>📦 Nom du fichier :\n➥ {file_name}📍\n\n<a href='https://t.me/ZeeXClub'>🏮Découvrez plus de films & Séries🏮</a></b>.\n\n\n<b><blockquote><i>Merci de transférer ces fichiers vers les messages sauvegardés et de fermer ce message</i></blockquote></b>"""
 
     IMDB_TEMPLATE_TXT = """
 <b>‣ Titre : <a href={url}>{title}</a>
@@ -451,7 +451,7 @@ Le bot fonctionne correctement"""
 
     SOURCE_TXT ="""<b>Code source : </b>
 
- Code source disponible ici ◉› :<a href=https://t.me/JobeTECH>Ne Clique Pas</a> """
+ Code source disponible ici ◉› :<a href=https://t.me/ZeeXDev>Ne Clique Pas</a> """
 
     EXTRAF_TXT =""" <b> Voici mes fonctionnalités supplémentaires </b>"""
 
